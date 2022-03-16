@@ -21,13 +21,14 @@ class Solution {
         q.add(root);
         while(q.size()>0){
             int size=q.size();
-            TreeNode rnode=null;
+            ans.add(q.peek().val);              
             while(size-->0){
-                rnode=q.remove();
-                if(rnode.left!=null)q.add(rnode.left);
+                TreeNode rnode=q.remove();
                 if(rnode.right!=null)q.add(rnode.right);
+                if(rnode.left!=null)q.add(rnode.left);
+                
             }
-            ans.add(rnode.val);
+            
         }
         return ans;
     }
