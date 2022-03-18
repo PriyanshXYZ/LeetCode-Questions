@@ -17,18 +17,18 @@ class Solution {
     public TreeNode invertTree(TreeNode root) {
        return invertTreeBfs(root);
     }
-    public TreeNode invertTreeDfs(TreeNode root) {
-        //using dfs
-        if(root==null) return null;
-        //faith
-        if(root.left!=null) invertTree(root.left);
-        if(root.right!=null) invertTree(root.right);
-        //post order work
-        TreeNode node=root.left;
-        root.left=root.right;
-        root.right=node;
-        return root;
-    }
+    // public TreeNode invertTreeDfs(TreeNode root) {
+    //     //using dfs
+    //     if(root==null) return null;
+    //     //faith
+    //     if(root.left!=null) invertTree(root.left);
+    //     if(root.right!=null) invertTree(root.right);
+    //     //post order work
+    //     TreeNode node=root.left;
+    //     root.left=root.right;
+    //     root.right=node;
+    //     return root;
+    // }
     public TreeNode invertTreeBfs(TreeNode root){
         //using bfs
         if(root==null) return null;
