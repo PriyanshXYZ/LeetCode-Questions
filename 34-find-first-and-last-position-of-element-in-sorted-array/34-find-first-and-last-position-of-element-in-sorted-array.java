@@ -1,4 +1,5 @@
 class Solution {
+    //if we are not updating like mid+1 or mid-1 for strt or end indx then make sure that iterating condition must be such that i and j must not be adjecant;
     public int[] searchRange(int[] a, int target) {
         if(a.length==0)return new int[]{-1,-1};
         return new int[]{ firstIdxbs(a,target), lastIdxbs(a,target)};
