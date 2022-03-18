@@ -26,6 +26,7 @@ class Solution {
         while(i<j-1){
             int mid=i+(j-i)/2;
             if(a[mid]<=target){
+                //update i drop j
                 i=mid;
             }else{
                j=mid;
