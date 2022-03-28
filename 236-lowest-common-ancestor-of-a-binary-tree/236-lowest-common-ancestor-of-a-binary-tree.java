@@ -9,20 +9,19 @@
  */
 class Solution {
     public TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {
-        if(root==null) return null;
-        if(root.val==p.val || root.val==q.val)return root;
+        if(root==null)return null;
+        //base case
+        if(p.val==root.val || q.val==root.val) return root;
         
-        //faith
-        TreeNode leftAns=lowestCommonAncestor(root.left,p,q);
-        TreeNode rightAns=lowestCommonAncestor(root.right,p,q);
+        //faith 
+        TreeNode leftChild=lowestCommonAncestor(root.left,p,q);
+        TreeNode rightChild=lowestCommonAncestor(root.right,p,q);
         
         //post order work
-        if(leftAns!=null && rightAns!=null){
-            return root;
-        }
-        if(leftAns!=null){
-            return leftAns;
-        }
-        return rightAns;
+        //if left and right child both return something then it mean that the curr root is lowest common ancestor...
+        if(leftChild!=null && rightChild!=null) return root;
+        //if any one of child/descendant returns something just return the same
+        if(leftChild!=null) return leftChild;
+        return rightChild;
     }
 }
