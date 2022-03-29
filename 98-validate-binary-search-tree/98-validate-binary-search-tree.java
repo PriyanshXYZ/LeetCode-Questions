@@ -19,13 +19,13 @@ class Solution {
         if(root==null) return true;
         
      
-        boolean ansLeft=isValidBST(root.left);
+        boolean left=isValidBST(root.left);
         if(prev!=null && prev>=root.val){
             return false;
         }else{
             prev=root.val;
         }
-        boolean ansRight=isValidBST(root.right);
-        return ansLeft && ansRight;
+        boolean right=isValidBST(root.right);
+        return left && right;
     }
 }
