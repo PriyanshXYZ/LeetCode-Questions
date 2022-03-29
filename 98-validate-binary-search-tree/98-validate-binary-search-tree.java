@@ -14,7 +14,7 @@
  * }
  */
 class Solution {
-    Integer prev;
+    Integer prev=null;
     public boolean isValidBST(TreeNode root) {
         if(root==null) return true;
         
