@@ -18,7 +18,7 @@ class Solution {
     public boolean isValidBST(TreeNode root) {
         if(root==null) return true;
         
-        //faith
+     
         boolean ansLeft=isValidBST(root.left);
         if(prev!=null && prev>=root.val){
             return false;
