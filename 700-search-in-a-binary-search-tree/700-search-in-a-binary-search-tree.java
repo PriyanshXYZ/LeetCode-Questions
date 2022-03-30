@@ -15,7 +15,7 @@
  */
 class Solution {
     public TreeNode searchBST(TreeNode root, int val) {
-        return searchBSTusingBFS(root,val);
+        return searchBSTusingDFS(root,val);
     }
     public TreeNode searchBSTusingDFS(TreeNode root,int val){
         if(root==null) return null;
