@@ -14,7 +14,26 @@
  * }
  */
 /*
-public int min(TreeNode root){
+
+    */
+class Solution {
+    //USING INORDER
+    List<Integer> ans=new ArrayList();
+    public List<Integer> dfs(TreeNode root){
+        if(root==null)return new ArrayList();
+        List<Integer> left=dfs(root.left);
+        ans.add(root.val);
+        List<Integer> right=dfs(root.right);
+        return ans;
+    }
+    public int kthSmallest(TreeNode root, int k) {
+        return helper(root,k);
+        // List<Integer> res=dfs(root);
+        // return res.get(k-1);
+    }
+    
+    //USING DELETION
+    public int min(TreeNode root){
         if(root==null)return Integer.MAX_VALUE;
         return Math.min(min(root.left),root.val);
     }
@@ -25,10 +44,10 @@ public int min(TreeNode root){
     public TreeNode deleteNode(TreeNode root, int val) {
         if(root==null)return null;
         if(root.val>val){
-          root.left=deleteNode(root.left,data);
+          root.left=deleteNode(root.left,val);
           return root;
-        }else if(root.val<data){
-          root.right=deleteNode(root.right,data);
+        }else if(root.val<val){
+          root.right=deleteNode(root.right,val);
           return root;
         }else{
           //case1
@@ -50,25 +69,11 @@ public int min(TreeNode root){
         }
     
   }
-    public int kthSmallest(TreeNode root, int k) {
+    public int helper(TreeNode root, int k) {
         if(root==null)return Integer.MAX_VALUE;
         while(k-->1){//delete elements only when we need to find 2nd smallet or larger
             root=deleteNode(root,min(root));
         }
         return min(root);
-    }
-    */
-class Solution {
-    List<Integer> ans=new ArrayList();
-    public List<Integer> dfs(TreeNode root){
-        if(root==null)return new ArrayList();
-        List<Integer> left=dfs(root.left);
-        ans.add(root.val);
-        List<Integer> right=dfs(root.right);
-        return ans;
-    }
-    public int kthSmallest(TreeNode root, int k) {
-        List<Integer> res=dfs(root);
-        return res.get(k-1);
     }
 }
