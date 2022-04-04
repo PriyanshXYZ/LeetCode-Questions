@@ -9,27 +9,20 @@
  * }
  */
 class Solution {
-    public ListNode kthFromEnd(ListNode head,int k){
+
+    public ListNode swapNodes(ListNode head, int k) {
         ListNode slow=head;
         ListNode fast=head;
         while(fast!=null && --k>0){
             fast=fast.next;
         }
+        ListNode kth=fast;
         while(fast.next!=null){
             slow=slow.next;
             fast=fast.next;
         }
-        return slow;
-        
-    }
-    public ListNode swapNodes(ListNode head, int k) {
-        ListNode end=kthFromEnd(head,k);
+        ListNode end=slow;
         // System.out.println(end.val);
-        ListNode kth=head;
-        while(--k>0){
-            kth=kth.next;
-        }
-        // System.out.println(kth.val);
         int temp=end.val;
         end.val=kth.val;
         kth.val=temp;
