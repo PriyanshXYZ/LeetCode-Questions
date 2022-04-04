@@ -9,12 +9,15 @@
  * }
  */
 class Solution {
-    public ListNode swapPairs(ListNode head) {
+    public ListNode swapPairs(ListNode head){
+        return swapPairsRecur(head);
+    }
+    public ListNode swapPairsIter(ListNode head) {
         ListNode dummy=new ListNode(-1);
         ListNode tail=dummy;
         ListNode curr=head;
-        if(curr==null)return null;
-        if(curr.next==null)return curr;
+        //ITERATIVE SOLUTION
+        if(curr==null || curr.next==null)return curr;
         while(curr!=null && curr.next!=null){
             
             ListNode ahead=curr.next;
@@ -28,5 +31,14 @@ class Solution {
         
         
         return dummy.next;
+    }
+    //Recursive
+    public ListNode swapPairsRecur(ListNode head){
+        if(head==null || head.next==null)return head;
+        
+        ListNode ahead=head.next;
+        head.next=swapPairsRecur(head.next.next);
+        ahead.next=head;
+        return ahead;
     }
 }
