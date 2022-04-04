@@ -16,7 +16,7 @@ class Solution {
         ListNode dummy=new ListNode(-1);
         ListNode tail=dummy;
         ListNode curr=head;
-        //ITERATIVE SOLUTION
+        //ITERATIVE SOLUTION time complexity O(N) and space complexity O(1)
         if(curr==null || curr.next==null)return curr;
         while(curr!=null && curr.next!=null){
             
@@ -32,7 +32,7 @@ class Solution {
         
         return dummy.next;
     }
-    //Recursive
+    //Recursive Time complexity O(N) and Space complexity of stack O(N)
     public ListNode swapPairsRecur(ListNode head){
         if(head==null || head.next==null)return head;
         
