@@ -61,7 +61,14 @@ class Solution {
           if(root.right==null){
             return root.left;
           }
-          //case3
+          //case3 -finding left subtree's largest element
+         //finding right subtree's smallest element is also possible
+            if(false){
+                int justLarger=min(root.right);
+                root.val=justLarger;
+                root.right=deleteNode(root.right,justLarger);
+                return root;
+            }
           int justSmaller=max(root.left);
           root.val=justSmaller;
           root.left=deleteNode(root.left,justSmaller);
