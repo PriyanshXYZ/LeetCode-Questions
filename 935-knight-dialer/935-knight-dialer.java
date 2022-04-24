@@ -2,7 +2,7 @@ class Solution {
     public static int max=(int)Math.pow(10,9)+7;
     
     public int knightDialer(int n) {
-        long[][][] dp=new long[5][3][n+1];
+        long[][][] dp=new long[4][3][n+1];
         long s=0;
         for(int r=0;r<4;r++){
             for(int c=0;c<3;c++){
@@ -51,4 +51,6 @@ class Solution {
                 memo(r-2,c-1,n-1,dp)%max;//2 up 1 left
         return dp[r][c][n]=ans;
     }
+    
+    // public long opitmised
 }
