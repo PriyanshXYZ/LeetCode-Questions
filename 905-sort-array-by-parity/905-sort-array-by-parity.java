@@ -4,6 +4,7 @@ class Solution {
         a[i]=a[j];
         a[j]=temp;
     }
+    //O(n^2)
     // public int[] sortArrayByParity(int[] a) {
     //     for(int i=0;i<a.length;i++){
     //         for(int j=i+1;j<a.length;j++){
@@ -15,11 +16,12 @@ class Solution {
     //     return a;
     // }
     public int[] sortArrayByParity(int[] a) {
+        //o(n)
         int left=0,right=a.length-1;
         while(left<right){
             //left even 
             if(a[left]%2==0){
-                //right odd
+                
                 left++;
             }//left odd
             else{
