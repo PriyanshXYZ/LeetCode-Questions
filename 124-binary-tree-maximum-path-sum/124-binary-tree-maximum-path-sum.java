@@ -30,7 +30,7 @@ class Solution {
         int rightIncludingRoot=rightPathSum+root.val;
         int bestLeftRight=Math.max(leftIncludingRoot,rightIncludingRoot);
         int allPath=leftPathSum+rightPathSum +root.val;
-        maxPathSum=Math.max(maxPathSum,Math.max(root.val,Math.max(bestLeftRight,allPath)));
+        maxPathSum=Math.max(maxPathSum,Math.max(root.val,Math.max(bestLeftRight,allPath)));//leftSum and rightSum cannot be added because there possibility of whole tree having negative values;
         return Math.max(root.val,Math.max(leftIncludingRoot,rightIncludingRoot));
     }
 }
