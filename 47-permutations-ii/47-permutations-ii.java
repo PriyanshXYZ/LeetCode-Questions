@@ -7,13 +7,13 @@ class Solution {
     }
     public void backtrack(int idx,int n,int[] nums,List<Integer> list,boolean[] visited){
         if(idx==n){
-            if(!res.contains(list))
-                res.add(new ArrayList(list));
+            res.add(new ArrayList(list));
             return;
         }
         
         for(int i=0;i<n;i++){
             if(visited[i])continue;
+            if(i>0 && nums[i]==nums[i-1] && !visited[i-1])continue;
             visited[i]=true;
             list.add(nums[i]);
             backtrack(idx+1,n,nums,list,visited);
