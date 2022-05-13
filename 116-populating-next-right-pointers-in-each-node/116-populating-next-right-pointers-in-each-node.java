@@ -22,7 +22,26 @@ class Node {
 */
 
 class Solution {
-    public Node connect(Node root) {
+    //O(n) time and O(1) space
+    public Node connect(Node root){
+        Node start=root;
+        while(start!=null){
+            Node curr=start;
+            while(curr!=null){
+                if(curr.left!=null){
+                    curr.left.next=curr.right;
+                }
+                if(curr.right!=null && curr.next!=null){
+                    curr.right.next=curr.next.left;
+                }
+                curr=curr.next;
+            }
+            start=start.left;
+        }
+        return root;
+    }
+    //O(n) time and space complexity
+    public Node connect1(Node root) {
         if(root==null)return root;
         Queue<Node> q=new ArrayDeque();
         q.add(root);
