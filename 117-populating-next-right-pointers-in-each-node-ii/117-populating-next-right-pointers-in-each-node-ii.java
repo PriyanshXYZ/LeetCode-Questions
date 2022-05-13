@@ -22,7 +22,41 @@ class Node {
 */
 
 class Solution {
-    public Node connect(Node root) {
+    //O(n) time and O(1) space
+    public Node connect(Node root){
+        Node start=root;
+        
+        while(start!=null){
+            Node curr=start;
+            Node nextLevelHead=null;
+            Node prev=null; 
+            while(curr!=null){
+                    if(curr.left!=null){
+                    if(prev!=null){
+                        prev.next=curr.left;
+                    }
+                    prev=curr.left;
+                    if(nextLevelHead==null){
+                        nextLevelHead=curr.left;
+                    }
+                }
+                if(curr.right!=null){
+                    if(prev!=null){
+                        prev.next=curr.right;
+                    }
+                    prev=curr.right;
+                    if(nextLevelHead==null){
+                        nextLevelHead=curr.right;
+                    }
+                }
+                curr=curr.next;
+            }
+            start=nextLevelHead;
+        }
+        return root;
+    }
+    //O(n) time and space complexity
+    public Node connect1(Node root) {
         if(root==null)return root;
         Queue<Node> q=new ArrayDeque();
         q.add(root);
@@ -40,6 +74,5 @@ class Solution {
             prev=null;
         }
         return root;
-        
     }
 }
