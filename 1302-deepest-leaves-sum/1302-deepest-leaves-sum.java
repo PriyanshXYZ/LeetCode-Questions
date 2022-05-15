@@ -14,7 +14,34 @@
  * }
  */
 class Solution {
+    int sum=0;
     public int deepestLeavesSum(TreeNode root) {
+        // return bfs(root);
+        int depth= depth(root);
+        // System.out.println(depth);
+        dfs(root,depth);
+        return sum;
+    }
+    public int depth(TreeNode root){
+        if(root==null)return 0;
+        
+        int lch=depth(root.left);
+        int rch=depth(root.right);
+        
+        return Math.max(lch,rch)+1;
+    }
+    public void dfs(TreeNode root,int depth){
+        if(root==null)return;
+        if(depth==1){
+            sum+=root.val;
+            return;
+        }
+        
+        dfs(root.left,depth-1);
+        dfs(root.right,depth-1);
+        
+    }
+    public int bfs(TreeNode root){
         if(root==null)return 0;
         
         Queue<TreeNode> q=new ArrayDeque();
@@ -29,7 +56,6 @@ class Solution {
                 if(rnode.left!=null)q.add(rnode.left);
                 if(rnode.right!=null)q.add(rnode.right);
             }
-            
         }
         return levelsum;
     }
