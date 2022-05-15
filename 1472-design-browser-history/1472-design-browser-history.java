@@ -1,8 +1,45 @@
+// using array/ll
 class BrowserHistory {
+    String[] history=new String[5001];
+    int curr;
+    int max;
+    public BrowserHistory(String homepage) {
+        curr=max;
+        history[curr]=homepage;
+    }
+    
+    public void visit(String url) {
+        curr++;
+        max=curr;//this will delete all forwrd history
+        history[curr]=url;
+    }
+    
+    public String back(int steps) {
+        if(curr-steps<0){
+            curr=0;
+            return history[curr];
+        }else{
+            curr=curr-steps;
+            return history[curr];
+        }
+    }
+    
+    public String forward(int steps) {
+        if(curr+steps>max){
+            curr=max;
+            return history[curr];
+        }else{
+            curr=curr+steps;
+            return history[curr];
+        }
+    }
+}
+//usings stack
+class BrowserHistoryStk {
     Stack<String> bckwrdHistory;
     Stack<String> frwrdHistory;
     
-    public BrowserHistory(String homepage) {
+    public BrowserHistoryStk(String homepage) {
         bckwrdHistory=new Stack();
         frwrdHistory=new Stack();
         bckwrdHistory.push(homepage);
