@@ -129,6 +129,27 @@ class Tree
     {
         // code here
         Queue<Node> q=new ArrayDeque<Node>();
+        Stack<Integer> stk=new Stack<Integer>();
+        q.add(node);
+        
+        while(q.size()>0){
+            Node rnode=q.remove();
+            stk.push(rnode.data);
+            if(rnode.right!=null){
+                q.add(rnode.right);
+            }
+            if(rnode.left!=null){
+                q.add(rnode.left);
+            }
+        }
+        ArrayList<Integer> ans=new ArrayList<Integer>();
+        while(!stk.isEmpty()){
+            ans.add(stk.pop());    
+        }
+        return ans;
+    }
+    public ArrayList<Integer> rLvlOrder(Node node){
+        Queue<Node> q=new ArrayDeque<Node>();
         Stack<ArrayList<Integer>> stk=new Stack<ArrayList<Integer>>();
         q.add(node);
         
@@ -140,7 +161,6 @@ class Tree
                 res.add(rnode.data);
                 if(rnode.left!=null)q.add(rnode.left);
                 if(rnode.right!=null)q.add(rnode.right);    
-                
             }
             stk.add(res);
             res=new ArrayList<Integer>();
