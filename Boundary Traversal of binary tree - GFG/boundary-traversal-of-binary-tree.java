@@ -108,69 +108,60 @@ class GFG
 
 class Solution
 {
-    void leftMost(Node node,ArrayList<Integer> a){
-        if(node==null) return;
-        //we cant add leafnodes as it will be added in other function
-        if(node.left==null && node.right==null){
-            return;
-        }
-        a.add(node.data);
-        //faith
-        if(node.left!=null){
-             leftMost(node.left,a);
-            
-        }else{
-             leftMost(node.right,a);
-        }
-    }
-    void leaf(Node node,ArrayList<Integer> a){
-        if(node==null) return;
-        if(node.left==null && node.right==null){
-            a.add(node.data);
-            return;
-        }
-        //faith
-        leaf(node.left,a);
-        leaf(node.right,a);
-    }
-    void rightMost(Node node,ArrayList<Integer> a){
-        if(node==null) return;
-        //we cant add leafnodes as it will be added in other function
-        if(node.left==null && node.right==null){
-            return;
-        }
-        //faith
-        if(node.right!=null){
-             rightMost(node.right,a);
-            
-        }else{
-             rightMost(node.left,a);
-        }
-        a.add(node.data);
+    void leftnode(Node node,ArrayList<Integer> lm){
+        if(node==null)return;
+        //leaf node will be added in other function so skip here
+        if(node.left==null && node.right==null)return;
         
+        lm.add(node.data);
+        if(node.left!=null){
+            leftnode(node.left,lm);
+        }else{
+            leftnode(node.right,lm);
+        }
+    }
+    void leaf(Node node,ArrayList<Integer> ln){
+        if(node==null)return;
+        //leaf node will be added in other function so skip here
+        if(node.left==null && node.right==null){
+            ln.add(node.data);
+            return;
+        }
+        leaf(node.left,ln);
+        leaf(node.right,ln);
+    }
+    void rightnode(Node node,ArrayList<Integer> rm){
+        if(node==null)return;
+        //leaf node will be added in other function so skip here
+        if(node.left==null && node.right==null)return;
+        
+        
+        if(node.right!=null){
+            rightnode(node.right,rm);
+        }else{
+            rightnode(node.left,rm);
+        }
+        rm.add(node.data);
     }
 	ArrayList <Integer> boundary(Node node)
 	{
-	    ArrayList <Integer> ans=new ArrayList<Integer>();
-	    //add root node manually
+	    ArrayList<Integer> ans=new ArrayList<Integer>();
 	    ans.add(node.data);
-	    if(node.left==null && node.right==null)return ans;
-	    //add leftnode
-	    ArrayList<Integer> lm=new ArrayList<Integer>();
-	    leftMost(node.left,lm);
 	    
-	    //add leafNode
-	    ArrayList<Integer> ln=new ArrayList<Integer>();
-	    leaf(node,ln);
+	    ArrayList<Integer> leftMost=new ArrayList<Integer>();
+	    leftnode(node.left,leftMost);
 	    
-	    //add right most
-	    ArrayList<Integer> rm=new ArrayList<Integer>();
-	    rightMost(node.right,rm);
+	    ArrayList<Integer> leafNodes=new ArrayList<Integer>();
+	    if(node.left!=null || node.right!=null){
+    	    leaf(node,leafNodes);
+	    }
 	    
-	    ans.addAll(lm);
-	    ans.addAll(ln);
-	    ans.addAll(rm);
+	    ArrayList<Integer> rightMost=new ArrayList<Integer>();
+	    rightnode(node.right,rightMost);
 	    
+	    ans.addAll(leftMost);
+	    ans.addAll(leafNodes);
+	    ans.addAll(rightMost);
 	    return ans;
 	}
 }
