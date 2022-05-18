@@ -39,9 +39,9 @@ class Solution {
         
         int rest=n-max;
         
-        if(rest<max){
-            return true ;
+        if(rest>max){
+            return false ;
         }
-        return false;
+        return true;
     }
 }
