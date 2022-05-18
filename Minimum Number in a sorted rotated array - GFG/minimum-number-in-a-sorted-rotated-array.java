@@ -51,6 +51,6 @@ class Solution
                 }
             }
         }
-        return arr[high];
+        return arr[low];
     }
 }
