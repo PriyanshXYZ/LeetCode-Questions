@@ -16,7 +16,10 @@
 class Solution {
     public List<Integer> inorderTraversal(TreeNode root) {
         return morrisTraversal(root);
+        
+        
     }
+    //Time complexity O(n) space Complexity O(1);
     public List<Integer> morrisTraversal(TreeNode root){
         if(root==null)return new ArrayList();
         List<Integer> ans=new ArrayList();
@@ -45,12 +48,14 @@ class Solution {
         }
         return ans;
     }
+    //Time complexity O(n) space Complexity O(n);
     public void dfs(TreeNode root,List<Integer> a){
         if(root==null) return;
         dfs(root.left,a);
         a.add(root.val);
         dfs(root.right,a);
     }
+    //Time complexity O(n) space Complexity O(n);
     public List<Integer> Bfs(TreeNode root) {
         if(root==null) return new ArrayList();
         List<Integer> a=new ArrayList();
