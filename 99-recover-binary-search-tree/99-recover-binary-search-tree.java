@@ -18,8 +18,8 @@ class Solution {
     TreeNode second=null;
     TreeNode prev=null;
     public void recoverTree(TreeNode root) {
-        inorder(root);
-        
+        // inorderDfs(root);
+        morrisTraversal(root);
         swap(first,second);
         
     }
@@ -28,11 +28,61 @@ class Solution {
         n1.val=n2.val;
         n2.val=temp;
     }
-   
-    public void inorder(TreeNode root){
+    public void morrisTraversal(TreeNode root){
+        TreeNode curr=root;
+        while(curr!=null){
+            if(curr.left==null){
+                
+                if(prev!=null){
+                    if(curr.val<=prev.val){
+                        //in case we get curr node smaller than prev node we update first
+                        if(first==null){
+                            first=prev;
+                            second=curr;    
+                        }else{
+                            // when first is already found and we get smaller node than prev
+                            second=curr;
+                        }
+                    }
+                }
+                prev=curr;
+                curr=curr.right;
+            }else{
+                //iop=>inorderPredecessor
+                TreeNode iop=curr.left;
+                while(true){
+                    if(iop.right==null)break;
+                    if(iop.right==curr)break;
+                    iop=iop.right;
+                }
+                if(iop.right==null){
+                    iop.right=curr;//make the link with successor
+                    curr=curr.left;//start traveesing to left of subtree
+                }else{
+                    if(prev!=null){
+                        if(curr.val<=prev.val){
+                            //in case we get curr node smaller than prev node we update first
+                            if(first==null){
+                                first=prev;
+                                second=curr;    
+                            }else{
+                                // when first is already found and we get smaller node than prev
+                                second=curr;
+                            }
+                        }
+                    }
+                    prev=curr;
+                    iop.right=null;
+                    curr=curr.right;
+                }
+            }
+        }
+    }
+
+    public void inorderDfs(TreeNode root){
         if(root==null) return;
         
-        inorder(root.left);
+        inorderDfs(root.left);
         //in case we get curr node smaller than prev node we update first
         if(prev!=null){
             if(first==null && root.val<=prev.val){
@@ -40,12 +90,12 @@ class Solution {
             }
         }
         // when first is already found and we get smaller node than prev
-        if(first!=null && root.val<=prev.val){
+        if(first!=null && prev.val>=root.val){
             second=root;
         }
         prev=root;
 
-        inorder(root.right);
+        inorderDfs(root.right);
         
         return;
     }
