@@ -134,7 +134,7 @@ class Solution
               
               if(curr.left==null){
                   //print
-                  if(prev==x)return curr;    
+                  if(prev==x)return curr;
                   prev=curr;
                   curr=curr.right;
               }else{
