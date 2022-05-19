@@ -38,13 +38,11 @@ class Solution {
                         //in case we get curr node smaller than prev node we update first
                         if(first==null){
                             first=prev;
-                            second=curr;    
-                        }else{
-                            // when first is already found and we get smaller node than prev
-                            second=curr;
+                        }
+                        // when first is already found and we get smaller node than prev
+                        second=curr;
                         }
                     }
-                }
                 prev=curr;
                 curr=curr.right;
             }else{
@@ -60,15 +58,13 @@ class Solution {
                     curr=curr.left;//start traveesing to left of subtree
                 }else{
                     if(prev!=null){
-                        if(curr.val<=prev.val){
-                            //in case we get curr node smaller than prev node we update first
-                            if(first==null){
-                                first=prev;
-                                second=curr;    
-                            }else{
-                                // when first is already found and we get smaller node than prev
-                                second=curr;
-                            }
+                    if(curr.val<=prev.val){
+                        //in case we get curr node smaller than prev node we update first
+                        if(first==null){
+                            first=prev;
+                        }
+                        // when first is already found and we get smaller node than prev
+                        second=curr;
                         }
                     }
                     prev=curr;
