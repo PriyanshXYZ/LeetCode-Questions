@@ -29,16 +29,22 @@ class Solution {
                 ans.add(curr.val);
                 curr=curr.right;
             }else{
-                //check if inorderPredecessor is null or equal to curr node
+                
                 TreeNode inorderPred=curr.left;
-                while(inorderPred.right!=null && inorderPred.right!=curr){
+                while(true){
+                    if(inorderPred.right==null)break;
+                    if(inorderPred.right==curr)break;;
                     inorderPred=inorderPred.right;
                 }
+                
+                
                 //if inorderPredecessor is null meaning we have not visited left subtree
                 if(inorderPred.right==null){
                     inorderPred.right=curr;//making of thread/link to inorderSuccessor
                     curr=curr.left;
-                }else{
+                }
+                else if(inorderPred.right==curr){//left subtree is traversed
+                    
                     //print or changes in the code must be implemented here itself
                     ans.add(curr.val);
                     inorderPred.right=null;
