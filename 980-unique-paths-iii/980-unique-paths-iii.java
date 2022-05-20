@@ -25,9 +25,10 @@ class Solution {
         return recursion(srcx,srcy,destx,desty,grid,visited,validCount);
     }
     public int recursion(int sRow,int sCol,int dRow,int dCol,int[][] grid,boolean[][] visited,int count){
-        if(sRow==dRow && sCol==dCol && count==1)return 1;
+        
         if(sRow>=grid.length || sCol>=grid[0].length || sRow<0 || sCol<0 || grid[sRow][sCol]==-1)return 0;
         
+        if(sRow==dRow && sCol==dCol && count==1)return 1;
         int ans=0;
         visited[sRow][sCol]=true;
         //for up
