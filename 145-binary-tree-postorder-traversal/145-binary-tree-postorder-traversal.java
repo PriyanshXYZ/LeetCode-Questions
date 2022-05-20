@@ -36,11 +36,11 @@ class Solution {
             while(curr!=null){
                
                 stk.push(curr);
-                ans.add(0,curr.val);
-                curr=curr.right;
+                ans.add(0,curr.val);//reverse the process
+                curr=curr.right;//reverse the process
             }
             curr=stk.pop();
-            curr=curr.left;
+            curr=curr.left;//reverse the process
         }
         return ans;
     }
