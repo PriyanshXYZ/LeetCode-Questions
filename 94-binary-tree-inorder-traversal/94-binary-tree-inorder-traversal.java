@@ -16,8 +16,6 @@
 class Solution {
     public List<Integer> inorderTraversal(TreeNode root) {
         return morrisTraversal(root);
-        
-        
     }
     //Time complexity O(n) space Complexity O(1);
     public List<Integer> morrisTraversal(TreeNode root){
@@ -27,6 +25,7 @@ class Solution {
         
         while(curr!=null){
             if(curr.left==null){
+                //print or changes in the code must be implemented here itself
                 ans.add(curr.val);
                 curr=curr.right;
             }else{
@@ -40,6 +39,7 @@ class Solution {
                     inorderPred.right=curr;//making of thread/link to inorderSuccessor
                     curr=curr.left;
                 }else{
+                    //print or changes in the code must be implemented here itself
                     ans.add(curr.val);
                     inorderPred.right=null;
                     curr=curr.right;
