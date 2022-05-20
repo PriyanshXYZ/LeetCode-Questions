@@ -16,7 +16,7 @@
 class Solution {
     
     public List<Integer> preorderTraversal(TreeNode root) {
-        return bfs(root);
+        return morrisTraversal(root);
     }
     public List<Integer> dfs(TreeNode root){
         List<Integer> res=new ArrayList();
