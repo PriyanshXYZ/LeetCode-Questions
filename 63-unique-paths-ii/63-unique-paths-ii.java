@@ -3,8 +3,7 @@ class Solution {
         int n=grid.length;
         int m=grid[0].length;
         int[][] dp=new int[n][m];
-        // boolean[][] visited=new boolean[n][m];
-        
+        //tabulation
         for(int i=0;i<n;i++){
             for(int j=0;j<m;j++){
                 if(i==0 && j==0 && grid[0][0]!=1){
