@@ -1,10 +1,27 @@
 class Solution {
-    public int uniquePathsWithObstacles(int[][] obstacleGrid) {
-        int n=obstacleGrid.length;
-        int m=obstacleGrid[0].length;
+    public int uniquePathsWithObstacles(int[][] grid) {
+        int n=grid.length;
+        int m=grid[0].length;
         int[][] dp=new int[n][m];
-        boolean[][] visited=new boolean[n][m];
-       return memo(n-1,m-1,obstacleGrid,visited,dp);
+        // boolean[][] visited=new boolean[n][m];
+        
+        for(int i=0;i<n;i++){
+            for(int j=0;j<m;j++){
+                if(i==0 && j==0 && grid[0][0]!=1){
+                    dp[i][j]=1;
+                    continue;
+                }
+                int ans=0;
+                if(i>=1 && grid[i-1][j]!=1){
+                    ans+=dp[i-1][j];
+                }
+                if(j>=1 && grid[i][j-1]!=1){
+                    ans+=dp[i][j-1];
+                }
+                dp[i][j]=ans;
+            }
+        }
+        return grid[n-1][m-1]==1?0:dp[n-1][m-1];
     }
     public int recursion(int n,int m,int[][] grid,boolean[][] visited){
         if(m<0 || n<0 || grid[n][m]==1 )return 0; 
