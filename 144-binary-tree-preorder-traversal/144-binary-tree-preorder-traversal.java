@@ -16,7 +16,7 @@
 class Solution {
     
     public List<Integer> preorderTraversal(TreeNode root) {
-        return morrisTraversal(root);
+        return bfs(root);
     }
     public List<Integer> dfs(TreeNode root){
         List<Integer> res=new ArrayList();
@@ -34,6 +34,7 @@ class Solution {
         while(curr!=null){
             
             if(curr.left==null){
+                //print
                 ans.add(curr.val);
                 curr=curr.right;
             }else{
@@ -44,6 +45,7 @@ class Solution {
                 }
                 //if inorderPredecessor is null meaning we have not visited left subtree
                 if(inorderPred.right==null){
+                    //print for preorder
                     ans.add(curr.val);
                     inorderPred.right=curr;//making of thread/link to inorderSuccessor
                     curr=curr.left;
@@ -53,6 +55,23 @@ class Solution {
                     curr=curr.right;
                 }
             }
+        }
+        return ans;
+    }
+    public List<Integer> bfs(TreeNode root){
+        if(root==null)return new ArrayList();
+        List<Integer> ans=new ArrayList();
+        Stack<TreeNode> stk=new Stack();
+        TreeNode curr=root;
+        while(curr!=null || stk.size()>0){
+            while(curr!=null){
+                ans.add(curr.val);
+                stk.push(curr);
+                curr=curr.left;
+                
+            }
+            curr=stk.pop();
+            curr=curr.right;
         }
         return ans;
     }
