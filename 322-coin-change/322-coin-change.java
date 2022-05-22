@@ -1,7 +1,7 @@
 class Solution {
     public int coinChange(int[] coins, int amount) {
         // int ans=recursion(coins.length-1,amount,coins);
-        int[][] dp=new int[coins.length][amount+1];
+        // int[][] dp=new int[coins.length][amount+1];
         // int ans=memo(coins.length-1,amount,coins,dp);
         return tabulation(coins,amount);
         // return ans<Integer.MAX_VALUE-1?ans:-1;
