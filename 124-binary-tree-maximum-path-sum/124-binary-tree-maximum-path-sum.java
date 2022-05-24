@@ -14,23 +14,28 @@
  * }
  */
 class Solution {
-    static int maxPathSum;
+    int maxSum;
     public int maxPathSum(TreeNode root) {
-        maxPathSum=Integer.MIN_VALUE;
+        maxSum=Integer.MIN_VALUE;
         dfs(root);
-        return maxPathSum;
+        return maxSum;
     }
     public int dfs(TreeNode root){
-        if(root==null)return 0;//here we cannot get any gain
+        if(root==null)return 0; //no gain in ans 
         
-        int leftPathSum=dfs(root.left);
-        int rightPathSum=dfs(root.right);
+        int lchMaxSum=dfs(root.left);
+        int rchMaxSum=dfs(root.right);
         
-        int leftIncludingRoot=leftPathSum+root.val;
-        int rightIncludingRoot=rightPathSum+root.val;
-        int bestLeftRight=Math.max(leftIncludingRoot,rightIncludingRoot);
-        int allPath=leftPathSum+rightPathSum +root.val;
-        maxPathSum=Math.max(maxPathSum,Math.max(root.val,Math.max(bestLeftRight,allPath)));//leftSum and rightSum cannot be added because there possibility of whole tree having negative values;
-        return Math.max(root.val,Math.max(leftIncludingRoot,rightIncludingRoot));
+        int lchMaxSumIncRoot=lchMaxSum+root.val;
+        int rchMaxSumIncRoot=rchMaxSum+root.val;
+        
+        int currMaxSum=Math.max(lchMaxSum,rchMaxSum);//this cannot be added to maxSum as path will be discontinous
+        int currMaxSumIncRoot=currMaxSum+root.val;
+        int allPathSum=lchMaxSum+rchMaxSum+root.val;
+        
+        maxSum=Math.max(maxSum,Math.max(currMaxSumIncRoot,Math.max(root.val,allPathSum)));
+        //possibility of root as negative as well
+        return Math.max(root.val,Math.max(lchMaxSumIncRoot,rchMaxSumIncRoot));
+        
     }
 }
