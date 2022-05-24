@@ -115,7 +115,7 @@ class Solution
     public static int maxPathSum(Node root)
     {
         //code here
-        if(root==null)return 0;
+        if(root==null)return Integer.MIN_VALUE;
         if(root.left==null && root.right==null)return root.data;
         
         int lSum=maxPathSum(root.left);
