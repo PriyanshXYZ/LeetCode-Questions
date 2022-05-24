@@ -112,8 +112,14 @@ class Tree {
 
 class Solution
 {
+    //approach 1
     public static int maxPathSum(Node root)
     {
+        maxSum=Integer.MIN_VALUE;
+        traversal(root,0);
+        return maxSum;
+    }
+    public static int dfs(Node root){
         //code here
         if(root==null)return Integer.MIN_VALUE;
         if(root.left==null && root.right==null)return root.data;
@@ -123,5 +129,17 @@ class Solution
         
         int max=Math.max(lSum,rSum)+root.data;
         return max;
+    }
+    //approach 2
+    static int maxSum=Integer.MIN_VALUE;
+    public static void traversal(Node root,int sum){
+        if(root==null)return;
+        if(root.left==null && root.right==null){
+            maxSum=Math.max(maxSum,sum+root.data);
+            return;
+        }
+        traversal(root.left,sum+root.data);
+        traversal(root.right,sum+root.data);
+        
     }
 }
