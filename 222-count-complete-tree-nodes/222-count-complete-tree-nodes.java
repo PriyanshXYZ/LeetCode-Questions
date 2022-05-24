@@ -15,7 +15,7 @@
  */
 class Solution {
     public int countNodes(TreeNode root) {
-        return optimized(root);
+        return size(root);
     }
     
     //TC O(n)
