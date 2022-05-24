@@ -33,8 +33,7 @@ class Solution {
         int currMaxSumIncRoot=currMaxSum+root.val;
         int allPathSum=lchMaxSum+rchMaxSum+root.val;
         
-        maxSum=Math.max(maxSum,Math.max(currMaxSumIncRoot,Math.max(root.val,allPathSum)));
-        //possibility of root as negative as well
+        maxSum=Math.max(maxSum,Math.max(currMaxSumIncRoot,Math.max(root.val,allPathSum)));//leftSum and rightSum cannot be added because there possibility of whole tree having negative values;
         return Math.max(root.val,Math.max(lchMaxSumIncRoot,rchMaxSumIncRoot));
         
     }
