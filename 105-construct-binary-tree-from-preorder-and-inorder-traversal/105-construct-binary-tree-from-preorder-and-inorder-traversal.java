@@ -22,6 +22,7 @@ class Solution {
         if(pre_lo>pre_hi || in_lo>in_hi)return null;
         TreeNode root=new TreeNode(pre[pre_lo]);
         //to get position of  curr node in the inorder array
+        //can also be done using hashmap
         int idx=in_lo;
         while(pre[pre_lo]!=in[idx]){
             idx++;
