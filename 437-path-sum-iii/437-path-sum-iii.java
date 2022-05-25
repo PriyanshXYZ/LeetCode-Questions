@@ -16,11 +16,11 @@
 class Solution {
     int count=0;
     public int pathSum(TreeNode root, int targetSum) {
-        bruteForce(root,targetSum);
-        // if(root==null)return 0;
-        // HashMap<Integer,Integer> map=new HashMap();//(prefixSum,frequency)
-        // map.put(0,1);//here we need to add this because there is a possibility of getting 0 in pSum
-        // dfs(root,root.val,map,targetSum);
+        // bruteForce(root,targetSum);
+        if(root==null)return 0;
+        HashMap<Integer,Integer> map=new HashMap();//(prefixSum,frequency)
+        map.put(0,1);//here we need to add this because there is a possibility of getting 0 in pSum
+        dfs(root,root.val,map,targetSum);
         return count;
     }
     //using O(n^2) appproach
@@ -42,6 +42,7 @@ class Solution {
         int right=everyNodeAsRoot(root.right,target,sum+root.val);
         return left+right;
     }
+    /*--------------------------------------------------------------------------------------------------*/
     //using O(n) approach
     public void dfs(TreeNode root,int pSum,HashMap<Integer,Integer> map,int target){
         if(map.containsKey(pSum-target)){
