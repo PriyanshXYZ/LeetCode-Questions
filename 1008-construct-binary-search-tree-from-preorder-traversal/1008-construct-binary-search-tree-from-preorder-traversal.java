@@ -29,4 +29,20 @@ class Solution {
         node.right=dfs(idx,pre,node.val,max);
         return node;
     }
+    
+    public TreeNode bstFromPostorder(int[] postorder) {
+        int[] idx={postorder.length-1};
+        return dfs(idx,postorder,Integer.MIN_VALUE,Integer.MAX_VALUE);
+    }
+    public TreeNode dfs1(int[] idx,int[] post,int min,int max){
+        //base case
+        if(idx[0]==post.length || post[idx[0]]>=max || post[idx[0]]<=min)return null;
+        
+        TreeNode node=new TreeNode(post[idx[0]]);
+        idx[0]=idx[0]-1;
+        node.right=dfs1(idx,post,node.val,max);
+        node.left=dfs1(idx,post,min,node.val);
+        
+        return node;
+    }
 }
