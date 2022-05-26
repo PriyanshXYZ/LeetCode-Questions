@@ -22,10 +22,11 @@ class Node {
 */
 
 class Solution {
-    public Node connect1(Node root) {
-        Node head=root;
-        while(head!=null){
-            Node curr=head;
+    //O(n) time and O(1) space
+    public Node connect(Node root){
+        Node start=root;
+        while(start!=null){
+            Node curr=start;
             while(curr!=null){
                 if(curr.left!=null){
                     curr.left.next=curr.right;
@@ -35,29 +36,27 @@ class Solution {
                 }
                 curr=curr.next;
             }
-            head=head.left;
+            start=start.left;
         }
         return root;
     }
-    public Node connect(Node root){
-        if(root==null)return null;
+    //O(n) time and space complexity
+    public Node connect1(Node root) {
+        if(root==null)return root;
         Queue<Node> q=new ArrayDeque();
-        root.next=null;
         q.add(root);
-        while(!q.isEmpty()){
+        Node prev=null;
+        while(q.size()!=0){
             int size=q.size();
             Node rnode=null;
-            while(size-- >0){
+            while(size-->0){
                 rnode=q.remove();
                 rnode.next=q.peek();
-                if(rnode.left!=null){
-                    q.add(rnode.left);
-                }
-                if(rnode.right!=null){
-                    q.add(rnode.right);
-                }
+                if(rnode.left!=null)q.add(rnode.left);
+                if(rnode.right!=null)q.add(rnode.right);
             }
             if(rnode!=null)rnode.next=null;
+            prev=null;
         }
         return root;
     }
