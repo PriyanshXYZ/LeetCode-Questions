@@ -112,26 +112,24 @@ class Node{
  */
  class Solution {
     long sum=0;
-    long res=0;
+    // long res=0;
     public long imgMultiply(Node root)
     {
-        // code here
-        sum=root.data*root.data;
-        if(root==null)return sum;
-        helper(root.left,root.right);
-        sum+=res;
-        return sum%(long)(Math.pow(10,9)+7);
-       
+       if(root!=null){
+           sum=root.data*root.data;
+       }
+       if(root.left!=null && root.right!=null){
+           helper(root.left,root.right);
+       }
+       return sum;
     }
     public void helper(Node left,Node right){
-        if(left==null && right==null){
-            return;
-        }
         if(left==null || right==null)return;
-        if(left!=null && right!=null) res+=left.data*right.data;
+        sum=(sum+left.data*right.data)%((long)Math.pow(10,9)+7);
         
         helper(left.left,right.right);
         helper(left.right,right.left);
+        
     }
 }
  //bfs
