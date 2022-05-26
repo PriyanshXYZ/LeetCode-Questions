@@ -110,8 +110,6 @@ class Solution
             diff=Math.min(diff,minDiff(root.right,k));
         }else if(k<root.data){
             diff=Math.min(diff,minDiff(root.left,k));
-        }else{
-            return 0;
         }
         return diff;
     }
