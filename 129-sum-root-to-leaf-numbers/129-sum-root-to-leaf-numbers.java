@@ -14,24 +14,21 @@
  * }
  */
 class Solution {
-    List<String> list=new ArrayList();
+    int sum=0;
     public int sumNumbers(TreeNode root) {
-        dfs(root,"");
-        int sum=0;
-        for(int i=0;i<list.size();i++){
-            sum+=Integer.parseInt(list.get(i));
-        }
+        dfs(root,0);
         return sum;
     }
     
-    private void dfs(TreeNode root,String op){
+    private void dfs(TreeNode root,int  currSum){
         if(root==null)return;
-        op+=root.val;
+        currSum=currSum*10+root.val;
         if(root.left==null && root.right==null){
-            list.add(op);
+           sum+=currSum;
         }
         
-        dfs(root.left,op);
-        dfs(root.right,op);
+        dfs(root.left,currSum);
+        dfs(root.right,currSum);
+        
     } 
 }
