@@ -22,7 +22,7 @@ class Node {
 */
 
 class Solution {
-    public Node connect(Node root) {
+    public Node connect1(Node root) {
         Node head=root;
         while(head!=null){
             Node curr=head;
@@ -36,6 +36,28 @@ class Solution {
                 curr=curr.next;
             }
             head=head.left;
+        }
+        return root;
+    }
+    public Node connect(Node root){
+        if(root==null)return null;
+        Queue<Node> q=new ArrayDeque();
+        root.next=null;
+        q.add(root);
+        while(!q.isEmpty()){
+            int size=q.size();
+            Node rnode=null;
+            while(size-- >0){
+                rnode=q.remove();
+                rnode.next=q.peek();
+                if(rnode.left!=null){
+                    q.add(rnode.left);
+                }
+                if(rnode.right!=null){
+                    q.add(rnode.right);
+                }
+            }
+            if(rnode!=null)rnode.next=null;
         }
         return root;
     }
