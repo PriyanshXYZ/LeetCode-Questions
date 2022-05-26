@@ -14,21 +14,19 @@
  * }
  */
 class Solution {
-    int sum=0;
     public int sumNumbers(TreeNode root) {
-        dfs(root,0);
-        return sum;
+        return dfs(root,0);
     }
     
-    private void dfs(TreeNode root,int  currSum){
-        if(root==null)return;
+    private int dfs(TreeNode root,int  currSum){
+        if(root==null)return 0;
         currSum=currSum*10+root.val;
         if(root.left==null && root.right==null){
-           sum+=currSum;
+          return currSum;
         }
         
-        dfs(root.left,currSum);
-        dfs(root.right,currSum);
-        
+        int leftSum=dfs(root.left,currSum);
+        int rightSum=dfs(root.right,currSum);
+        return leftSum+rightSum;
     } 
 }
