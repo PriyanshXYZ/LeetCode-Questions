@@ -1,7 +1,7 @@
 
 class Solution{
     //TC O(1)
-     public int numberOfSteps(int num) {
+     public int numberOfSteps(int num){
          if(num==0)return 0;
          int res=0;
          while(num!=0){
@@ -11,8 +11,6 @@ class Solution{
          return res-1;
      }
 }
-
-
 class Solution1 {
     //time complexity O(n);
     public int numberOfSteps(int num) {
@@ -29,5 +27,4 @@ class Solution1 {
         }
         return count+1;
     }
-
 }
