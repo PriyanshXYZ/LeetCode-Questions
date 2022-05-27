@@ -60,27 +60,23 @@ class GFG {
 //User function Template for Java
 
 class Solution {
-    static void reArrange(int[] arr, int N) {
+    static void reArrange(int[] arr, int n) {
         // code here
-        List<Integer> oddSet=new ArrayList<Integer>();
-        List<Integer> evenSet=new ArrayList<Integer>();
-        
-        for(int i=0;i<arr.length;i++){
-            if(arr[i]%2==0){
-                evenSet.add(arr[i]);
-            }else{
-                oddSet.add(arr[i]);
-            }
-        }
-        int oddIdx=0;
         int evenIdx=0;
-        for(int i=0;i<arr.length;i++){
-            if(i%2==0){
-                arr[i]=evenSet.get(evenIdx);
-                evenIdx++;
+        int oddIdx=1;
+        while(true){
+            while(evenIdx<n && arr[evenIdx]%2==0){
+                evenIdx=evenIdx+2;
+            }
+            while(oddIdx<n && arr[oddIdx]%2==1){
+                oddIdx=oddIdx+2;
+            }
+            if(evenIdx<n && oddIdx<n){
+                int temp=arr[evenIdx];
+                arr[evenIdx]=arr[oddIdx];
+                arr[oddIdx]=temp;
             }else{
-                arr[i]=oddSet.get(oddIdx);
-                oddIdx++;
+                break;
             }
         }
         
