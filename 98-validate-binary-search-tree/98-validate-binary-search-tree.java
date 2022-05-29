@@ -13,7 +13,7 @@
  *     }
  * }
  */
-class Solution1 {
+class Solution {
     Integer prev;
     public boolean isValidBST(TreeNode root) {
         if(root==null)return true;
@@ -29,7 +29,7 @@ class Solution1 {
         return left && right;
     }
 }
-class Solution {
+class Solution1 {
     class Pair{
         boolean isBst=true;
         long min=Long.MAX_VALUE;
