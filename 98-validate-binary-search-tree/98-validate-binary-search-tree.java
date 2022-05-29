@@ -13,7 +13,7 @@
  *     }
  * }
  */
-class Solution {
+class Solution1 {
     Integer prev;
     public boolean isValidBST(TreeNode root) {
         if(root==null)return true;
@@ -29,7 +29,7 @@ class Solution {
         return left && right;
     }
 }
-class Solution1 {
+class Solution {
     class Pair{
         boolean isBst=true;
         long min=Long.MAX_VALUE;
@@ -47,7 +47,7 @@ class Solution1 {
         
         Pair self=new Pair();
         self.isBst=lp.isBst && rp.isBst && lp.max<root.val && rp.min>root.val;
-        self.min=Math.max(root.val,lp.min);
+        self.min=Math.min(root.val,lp.min);
         self.max=Math.max(root.val,rp.max);
         return self;
     }
