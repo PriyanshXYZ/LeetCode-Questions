@@ -25,33 +25,33 @@ class Solution {
     //O(n) time and O(1) space
     public Node connect(Node root){
         Node start=root;
-        
         while(start!=null){
             Node curr=start;
-            Node nextLevelHead=null;
-            Node prev=null; 
+            Node head=null;
+            Node tail=null;
             while(curr!=null){
-                    if(curr.left!=null){
-                    if(prev!=null){
-                        prev.next=curr.left;
-                    }
-                    prev=curr.left;
-                    if(nextLevelHead==null){
-                        nextLevelHead=curr.left;
+                
+                if(curr.left!=null){
+                    if(head==null){
+                        head=curr.left;
+                        tail=curr.left;
+                    }else{
+                        tail.next=curr.left;
+                        tail=curr.left;
                     }
                 }
                 if(curr.right!=null){
-                    if(prev!=null){
-                        prev.next=curr.right;
-                    }
-                    prev=curr.right;
-                    if(nextLevelHead==null){
-                        nextLevelHead=curr.right;
+                    if(head==null){
+                        head=curr.right;
+                        tail=curr.right;
+                    }else{
+                        tail.next=curr.right;
+                        tail=curr.right;
                     }
                 }
                 curr=curr.next;
             }
-            start=nextLevelHead;
+            start=head;
         }
         return root;
     }
@@ -71,7 +71,7 @@ class Solution {
                 if(rnode.right!=null)q.add(rnode.right);
             }
             if(rnode!=null)rnode.next=null;
-            prev=null;
+            // prev=null;
         }
         return root;
     }
