@@ -19,6 +19,11 @@ class Solution {
         
         return Math.max(max(root.right),root.val);
     }
+    public int min(TreeNode root){
+        if(root==null)return Integer.MAX_VALUE;
+        
+        return Math.min(min(root.left),root.val);
+    }
     public TreeNode deleteNode(TreeNode root, int key) {
         //base case
         if(root==null)return null;
@@ -45,9 +50,19 @@ class Solution {
             }
             //3 : key has both child
             //this can be done by finding justSmaller or justLarger of the subtree and replace the values of it
+            //for justSmaller
+            /*
+            
             int justSmaller=max(root.left);
             root.val=justSmaller;
             root.left=deleteNode(root.left,justSmaller);
+            
+            */
+            
+            //for justLarger
+            int justLarger=min(root.right);
+            root.val=justLarger;
+            root.right=deleteNode(root.right,justLarger);
             return root;
         }
     }
