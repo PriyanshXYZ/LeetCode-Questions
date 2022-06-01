@@ -95,14 +95,14 @@ class Solution {
                 if(count>=0)
                     coil2[count--]=mat[i][minCol-1];
             }
-            minRow++;
+            
             minCol++;
             maxCol--;
             for(int j=minCol-1;j<=maxCol;j++){
                 if(count>=0)
                     coil2[count--]=mat[maxRow][j];
             }
-            
+            minRow++; 
             maxRow--;
             
         }
