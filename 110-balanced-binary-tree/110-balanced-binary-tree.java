@@ -26,7 +26,7 @@ class Solution {
         int lht=recursion(root.left);
         int rht=recursion(root.right);
         
-        balanced &= Math.abs(lht-rht)<=1?true:false;
+        balanced &= Math.abs(lht-rht)<=1;
         return Math.max(lht,rht)+1;
     }
 }
