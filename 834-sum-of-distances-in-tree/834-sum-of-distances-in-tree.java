@@ -1,9 +1,9 @@
 class Solution {
     public int[] sumOfDistancesInTree(int n, int[][] edges) {
-        HashSet<Integer>[] graph =new HashSet[n];
+        ArrayList<Integer>[] graph =new ArrayList[n];
         
         for(int i=0;i<n;i++){
-            graph[i]=new HashSet();
+            graph[i]=new ArrayList();
         }
         
         //creating a graph
@@ -21,7 +21,7 @@ class Solution {
         helper2(graph,nodes,res,0,-1);
         return res;
     }
-    private void helper1(HashSet<Integer>[] graph,int[] nodes,int[] res,int src,int parent){
+    private void helper1(ArrayList<Integer>[] graph,int[] nodes,int[] res,int src,int parent){
         
         for(int nbr:graph[src]){
             if(nbr!=parent){
@@ -32,7 +32,7 @@ class Solution {
         }
         nodes[src]++;//to add self count
     }
-    private void helper2(HashSet<Integer>[] graph,int[] nodes,int[] res,int src,int parent){
+    private void helper2(ArrayList<Integer>[] graph,int[] nodes,int[] res,int src,int parent){
         for(int nbr:graph[src]){
             if(nbr!=parent){
                 res[nbr]=res[src]+(nodes.length-nodes[nbr])-(nodes[nbr]);
