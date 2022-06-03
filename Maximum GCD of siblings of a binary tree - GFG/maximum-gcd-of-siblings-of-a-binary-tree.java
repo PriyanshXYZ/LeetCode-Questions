@@ -33,12 +33,13 @@ class GFG {
 class Solution{
     static int maxBinTreeGCD(ArrayList<ArrayList<Integer>> arr, int n) {
         // code here
-        Collections.sort(arr,new Comparator<ArrayList<Integer>>(){
-            @Override   
-                public int compare(ArrayList<Integer> a1,ArrayList<Integer> a2){
-                    return a1.get(0)-a2.get(0);
-                }
-            });
+        // Collections.sort(arr,new Comparator<ArrayList<Integer>>(){
+        //     @Override   
+        //         public int compare(ArrayList<Integer> a1,ArrayList<Integer> a2){
+        //             return a1.get(0)-a2.get(0);
+        //         }
+        //     });
+        Collections.sort(arr,(a,b)->(a.get(0)-b.get(0)));
         if(n<=2)return 0;
         int max=0;
         int i=0;
