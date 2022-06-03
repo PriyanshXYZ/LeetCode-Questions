@@ -36,7 +36,7 @@ class Solution {
     }
     public TreeNode dfs1(int[] idx,int[] post,int min,int max){
         //base case
-        if(idx[0]==post.length || post[idx[0]]>=max || post[idx[0]]<=min)return null;
+        if(idx[0]==-1 || post[idx[0]]>=max || post[idx[0]]<=min)return null;
         
         TreeNode node=new TreeNode(post[idx[0]]);
         idx[0]=idx[0]-1;
