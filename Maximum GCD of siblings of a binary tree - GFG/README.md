@@ -1,5 +1,5 @@
 # Maximum GCD of siblings of a binary tree
-##  Easy 
+## Easy 
 <div class="problem-statement">
                 <p></p><p><span style="font-size:18px">Given a 2d list that represents the nodes of a <a href="https://www.geeksforgeeks.org/binary-tree-data-structure/" target="_blank">Binary tree</a> with <strong>N</strong> nodes, the task is to find the maximum <a href="https://www.geeksforgeeks.org/c-program-find-gcd-hcf-two-numbers/" target="_blank">GCD</a> of the siblings of this tree without actually constructing it.<br>
 <strong>Note: </strong>If there are no pairs of siblings in the given tree, print 0. Also, if given that there's an edge between a and b in the form of {a,b} in the list, then a is the parent node.</span></p>
