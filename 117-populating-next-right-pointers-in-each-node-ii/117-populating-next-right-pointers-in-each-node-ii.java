@@ -30,23 +30,23 @@ class Solution {
             Node head=null;
             Node tail=null;
             while(curr!=null){
-                
                 if(curr.left!=null){
                     if(head==null){
                         head=curr.left;
                         tail=curr.left;
                     }else{
                         tail.next=curr.left;
-                        tail=curr.left;
+                        tail=tail.next;
                     }
                 }
+                
                 if(curr.right!=null){
                     if(head==null){
                         head=curr.right;
                         tail=curr.right;
                     }else{
                         tail.next=curr.right;
-                        tail=curr.right;
+                        tail=tail.next;
                     }
                 }
                 curr=curr.next;
