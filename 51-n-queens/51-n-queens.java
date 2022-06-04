@@ -20,13 +20,15 @@ class Solution {
         
         for(int c=0;c<n;c++){
             if(isQueenSafe(chess,c,row)){
-                chess[row][c]=true;
+                chess[row][c]=true;//edge pre
                 recursion(n,chess,row+1,c);
-                chess[row][c]=false;
+                chess[row][c]=false;///edge post
             }
                 
         }
-        
+        /*
+            here we did edge pre and edge post beacuse after each traversal of element we have to move to next element so prevoius  element should not be marked true so we do here edge pre and edge post INSTEAD OF NODE PRE AMD NODE POST
+        */
         
     }
     
