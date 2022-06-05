@@ -80,27 +80,27 @@ class GfG
         for(int i=0;i<level.length;i++){
             map.put(level[i],i);
         }
-        
-        Node root=construct(inord,map,0,inord.length-1);
+        Node root=construct(0,inord.length-1,map,inord);
         return root;
     }
-    Node construct(int[] in, HashMap<Integer,Integer> map,int lo,int hi){
+    Node construct(int lo,int hi,HashMap<Integer,Integer> map,int[] in){
         //base case
         if(lo>hi)return null;
-        //finding minidx in from map for range lo to hi and making node of it
-        int minIdx=lo;
-        for(int i=lo;i<hi;i++){
-            if(map.get(in[i])<map.get(in[minIdx])){
-                minIdx=i;
+        
+        int idx=lo;
+        for(int i=lo;i<=hi;i++){
+            if(map.get(in[i])<map.get(in[idx])){
+                idx=i;
             }
         }
+        //we make the node of lowest index
+        Node root=new Node(in[idx]);
         
-        Node node=new Node(in[minIdx]);
-        node.left=construct(in,map,lo,minIdx-1);
-        node.right=construct(in,map,minIdx+1,hi);
-        return node;
+        root.left=construct(lo,idx-1,map,in);
+        root.right=construct(idx+1,hi,map,in);
+        
+        return root;
     }
-    
     
    
 }
