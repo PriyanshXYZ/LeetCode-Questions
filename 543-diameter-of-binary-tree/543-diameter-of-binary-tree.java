@@ -15,7 +15,7 @@
  */
 
 class Solution {
-    int maxDia=0;
+    int maxDia;
     public int diameterOfBinaryTree(TreeNode root) {
         height(root);
         return maxDia;
