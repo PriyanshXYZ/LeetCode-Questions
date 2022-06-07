@@ -124,21 +124,22 @@ class Solution
 	Node lca(Node root, int n1,int n2)
 	{
 		// Your code here
-		if(root==null)return new Node(-1);
-// 		if(n1==n2)return new Node(n1);
-		if(root.data==n1 ||root.data==n2) return root;
-		//faith
-		Node left=null,right=null;
-		if(root.left!=null) left=lca(root.left,n1,n2);
-		if(root.right!=null) right=lca(root.right,n1,n2);
-		
-		if(left!=null && right!=null) return root;
-		else if(left!=null){
-		    return left;
-		}else{
-		    return right;
+		if(n1==n2)return new Node(n1);
+		if(root.data==n1 || root.data==n2){
+		    return root;
 		}
 		
+		Node left=null;
+		Node right=null;
+		if(root.left!=null){
+		    left =lca(root.left,n1,n2);
+		}
+		if(root.right!=null){
+		    right=lca(root.right,n1,n2);
+		}
+		if(left!=null && right!=null)return root;
+		if(left!=null)return left;
+		return right;
 	}
 }
 
