@@ -17,7 +17,7 @@ public class Solution {
             mapA.put(h1,idx);
         }
         
-        for(ListNode h1=headB;h1!=null;h1=h1.next,idx++){
+        for(ListNode h1=headB;h1!=null;h1=h1.next){
             if(mapA.containsKey(h1))return h1;
         }
         
