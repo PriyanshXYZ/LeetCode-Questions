@@ -28,7 +28,7 @@
 </strong>LCA of 3 and 4 is 2.<strong> </strong></span></pre>
 
 <p><span style="font-size:18px"><span style="font-family:arial,helvetica,sans-serif"><strong>Your Task:</strong><br>
-You don't have to read, input, or print anything. Your task is to complete the function <strong>lca()&nbsp;</strong>that takes nodes, <strong>n1, and n2</strong> as parameters and returns the&nbsp;<strong>LCA </strong>node as output. Otherwise, return a node with a value of&nbsp;<strong>-1</strong> if both <strong>n1 </strong>and <strong>n2 </strong>are not present in the tree.</span></span></p>
+You don't have to read, input, or print anything. Your task is to complete the function <strong>lca()&nbsp;</strong>that takes nodes, <strong>n1, and n2</strong> as parameters and returns the&nbsp;<strong>LCA </strong>node as output.&nbsp;</span></span></p>
 
 <p><span style="font-size:18px"><span style="font-family:arial,helvetica,sans-serif"><strong>Expected Time Complexity:</strong>O(N).<br>
 <strong>Expected Auxiliary Space:</strong>O(Height of Tree).</span></span></p>
