@@ -15,7 +15,7 @@
  */
 class Solution {
     public int minDepth(TreeNode root) {
-        return dfs(root);
+        return bfs(root);
     }
     public int bfs(TreeNode root){
         if(root==null){
