@@ -13,6 +13,42 @@
  *     }
  * }
  */
+
+//using DFS
+class Solution1 {
+    class Pair{
+        int maxInLvl;
+        int minInLvl;
+    }
+    
+    int maxWidth=0;
+    public int widthOfBinaryTree(TreeNode root) {
+        HashMap<Integer,Pair> map=new HashMap();
+        dfs(root,0,0,map);
+        return maxWidth;
+    }
+    public void dfs(TreeNode root,int level,int idx,HashMap<Integer,Pair> map){
+        if(root==null)return;
+        
+        dfs(root.left,level+1,2*idx+1,map);
+        dfs(root.right,level+1,2*idx+2,map);
+        
+        Pair p=null;
+        if(map.containsKey(level)){
+            p=map.get(level);
+            p.maxInLvl=idx;
+        }else{
+            p=new Pair();
+            p.minInLvl=idx;
+            p.maxInLvl=idx;
+            map.put(level,p);
+        }
+        
+        maxWidth=Math.max(maxWidth,p.maxInLvl-p.minInLvl+1);
+        
+    }
+}
+//using BFS
 class Solution {
     class Pair{
         TreeNode node;
