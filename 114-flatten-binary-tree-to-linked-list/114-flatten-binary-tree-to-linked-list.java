@@ -16,19 +16,20 @@
 class Solution {
     TreeNode prev;
     public void flatten(TreeNode root) {
-        preorder(root);
+        dfs(root);
     }
-    public void preorder(TreeNode root){
+    
+    public void dfs(TreeNode root){
         if(root==null)return;
         
-        TreeNode origLeft=root.left;//to preserve the nodes which are going to change
-        TreeNode origRight=root.right;//to preserve the nodes which are going to change
+        TreeNode origLeft=root.left;
+        TreeNode origRight=root.right;
         if(prev!=null){
+            prev.right=root;
             prev.left=null;
-            prev.right=root;    
         }
         prev=root;
-        preorder(origLeft);
-        preorder(origRight);
+        dfs(origLeft);
+        dfs(origRight);
     }
 }
