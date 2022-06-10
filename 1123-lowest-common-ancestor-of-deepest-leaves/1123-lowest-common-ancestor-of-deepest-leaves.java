@@ -13,7 +13,7 @@
  *     }
  * }
  */
-class Solution1 {
+class Solution {
     public TreeNode lcaDeepestLeaves(TreeNode root) {
         int maxDepth=depth(root);
         TreeNode lca=lcaAtDepth(root,maxDepth);
@@ -48,7 +48,7 @@ class Solution1 {
         
     }
 }
-class Solution {
+class Solution1 {
     TreeNode lca;
     int maxDepth;
     public TreeNode lcaDeepestLeaves(TreeNode root) {
