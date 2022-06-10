@@ -1,8 +1,8 @@
 class Solution {
-    int maxSum=0;
+    
     public int lengthOfLongestSubstring(String s) {
         if(s.length()==0)return 0;
-        
+        int maxSum=0;
         int j=0;
         List<Character> list=new ArrayList();
         list.add(s.charAt(j));
