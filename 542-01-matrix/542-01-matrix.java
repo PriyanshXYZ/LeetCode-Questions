@@ -14,7 +14,7 @@ class Solution {
         int n=mat.length;
         int m=mat[0].length;
         Queue<Pair> q=new ArrayDeque();
-        int[][] ans=new int[n][m];
+        
         boolean[][] vis=new boolean[n][m];
         for(int r=0;r<n;r++){
             for(int c=0;c<m;c++){
@@ -36,13 +36,13 @@ class Solution {
                     int dist=rPair.dist+1;
 
                     if(nr>=0 && nc>=0 && nr<n && nc<m && vis[nr][nc]==false){
-                        ans[nr][nc]=dist;
+                        mat[nr][nc]=dist;
                         q.add(new Pair(nr,nc,dist));
                         vis[nr][nc]=true;
                     }
                 }
             }
         }
-        return ans;
+        return mat;
     }
 }
