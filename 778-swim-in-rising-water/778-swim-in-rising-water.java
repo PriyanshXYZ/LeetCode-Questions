@@ -28,7 +28,7 @@ class Solution {
         while(pq.size()!=0){
             Pair rPair=pq.remove();
             
-            if(visited[rPair.r][rPair.c]==true){
+            if(visited[rPair.r][rPair.c]==true){//to avoid cyclicity
                 continue;
             }
             visited[rPair.r][rPair.c]=true;
