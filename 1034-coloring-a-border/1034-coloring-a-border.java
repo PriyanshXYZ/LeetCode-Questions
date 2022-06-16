@@ -10,12 +10,13 @@ class Solution {
     
     int[][] dir={{-1,0},{0,1},{1,0},{0,-1}};
     
+    List<Pair> border=new ArrayList();
     public int[][] colorBorder(int[][] grid, int row, int col, int color) {
         int n=grid.length;
         int m=grid[0].length;
         
         boolean[][] visited=new boolean[n][m];
-        List<Pair> border=getBorderElemOfConnectedComp(grid,row,col,grid[row][col],visited);
+        getBorderElemOfConnectedComp(grid,row,col,grid[row][col],visited);
         
         for(Pair p:border){
             grid[p.r][p.c]=color;
@@ -24,25 +25,20 @@ class Solution {
     }
     
     
-    public List<Pair> getBorderElemOfConnectedComp(int[][] grid,int r,int c,int prevColor,boolean[][] visited){
-        if(r<0 || r>=grid.length || c<0 || c>=grid[0].length || grid[r][c]!=prevColor || visited[r][c]==true)return new ArrayList();
+    public void getBorderElemOfConnectedComp(int[][] grid,int r,int c,int prevColor,boolean[][] visited){
+        if(r<0 || r>=grid.length || c<0 || c>=grid[0].length || grid[r][c]!=prevColor || visited[r][c]==true)return;
         
-        List<Pair> ans=new ArrayList();
         visited[r][c]=true;
         for(int i=0;i<4;i++){
             int nr=r+dir[i][0];
             int nc=c+dir[i][1];
             
-            List<Pair> next=getBorderElemOfConnectedComp(grid,nr,nc,prevColor,visited);
-            if(next.size()>0){
-                ans.addAll(next);
-            }
-            
+            getBorderElemOfConnectedComp(grid,nr,nc,prevColor,visited);          
         }
         if(isBorder(grid,r,c,prevColor)){
-            ans.add(new Pair(r,c));
+            border.add(new Pair(r,c));
         }
-        return ans;
+        return;
     }
      public boolean isBorder(int[][] grid,int i,int j,int color){
         if(i==0 || j==0 || j==grid[0].length-1 || i==grid.length-1){
