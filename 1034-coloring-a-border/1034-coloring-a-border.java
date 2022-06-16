@@ -8,7 +8,7 @@ class Solution {
         }
     }
     
-    
+    int[][] dir={{-1,0},{0,1},{1,0},{0,-1}};
     
     List<Pair> border=new ArrayList();
     public int[][] colorBorder(int[][] grid, int row, int col, int color) {
@@ -26,7 +26,6 @@ class Solution {
     
     
     public void getBorderElemOfConnectedComp(int[][] grid,int r,int c,int prevColor,boolean[][] visited){
-        int[][] dir={{-1,0},{0,1},{1,0},{0,-1}};
         if(r<0 || r>=grid.length || c<0 || c>=grid[0].length || grid[r][c]!=prevColor || visited[r][c]==true)return;
         
         visited[r][c]=true;
