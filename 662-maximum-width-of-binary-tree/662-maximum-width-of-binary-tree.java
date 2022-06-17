@@ -15,7 +15,7 @@
  */
 
 //using DFS
-class Solution1 {
+class Solution {
     class Pair{
         int maxInLvl;
         int minInLvl;
@@ -30,9 +30,6 @@ class Solution1 {
     public void dfs(TreeNode root,int level,int idx,HashMap<Integer,Pair> map){
         if(root==null)return;
         
-        dfs(root.left,level+1,2*idx+1,map);
-        dfs(root.right,level+1,2*idx+2,map);
-        
         Pair p=null;
         if(map.containsKey(level)){
             p=map.get(level);
@@ -45,11 +42,15 @@ class Solution1 {
         }
         
         maxWidth=Math.max(maxWidth,p.maxInLvl-p.minInLvl+1);
+        dfs(root.left,level+1,2*idx+1,map);
+        dfs(root.right,level+1,2*idx+2,map);
+        
+        
         
     }
 }
 //using BFS
-class Solution {
+class Solution1 {
     class Pair{
         TreeNode node;
         int idx;
