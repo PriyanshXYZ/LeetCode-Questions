@@ -14,39 +14,36 @@
  * }
  */
 class Solution {
+    HashMap<Integer,Integer> map=new HashMap();
     int maxFreq;
     public int[] findFrequentTreeSum(TreeNode root) {
         maxFreq=0;
-        Map<Integer,Integer> map=new HashMap();
-        dfs(root,map);
+        dfs(root);
+        
         List<Integer> list=new ArrayList();
-        for(int sum:map.keySet()){
-            int freq=map.get(sum);
-            if(freq==maxFreq){
-                list.add(sum);
+        for(Map.Entry<Integer,Integer> entry:map.entrySet()){
+            if(entry.getValue()==maxFreq){
+                list.add(entry.getKey());
             }
         }
-        
-        int[] freq=new int[list.size()];
-        int i=0;
-        for(int sum: list){
-            freq[i]=sum;
-            i++;
+        int[] ans=new int[list.size()];
+        for(int i=0;i<ans.length;i++){
+            ans[i]=list.get(i);
         }
-        return freq;
+        return ans;
     }
     
-    public int dfs(TreeNode root,Map<Integer,Integer> map){
+    public int dfs(TreeNode root){
         if(root==null)return 0;
         
-        int leftSum=dfs(root.left,map);
-        int rightSum=dfs(root.right,map);
+        int leftSum=dfs(root.left);
+        int rightSum=dfs(root.right);
         
-        int currSum=leftSum+rightSum+root.val;
-        map.put(currSum,map.getOrDefault(currSum,0)+1);
-        if(map.get(currSum)>maxFreq){
-            maxFreq=map.get(currSum);
+        int subtreeSum=leftSum+rightSum+root.val;
+        map.put(subtreeSum,map.getOrDefault(subtreeSum,0)+1);
+        if(map.get(subtreeSum)>maxFreq){
+            maxFreq=map.get(subtreeSum);
         }
-        return currSum;
+        return subtreeSum;
     }
 }
