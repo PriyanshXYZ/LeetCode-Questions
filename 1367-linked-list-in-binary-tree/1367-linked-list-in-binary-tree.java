@@ -25,23 +25,20 @@
  */
 class Solution {
     boolean hasList;
-    public TreeNode find(TreeNode root,ListNode head){
-        if(root==null)return null;
+    public void find(TreeNode root,ListNode head){
+        if(root==null)return;
         
         if(root.val==head.val){
             hasList|=dfs(root,head);
             
         }
-        
-        TreeNode lch=find(root.left,head);
-        TreeNode rch=find(root.right,head);
-        if(lch!=null)return lch;
-        return rch;
+        find(root.left,head);
+        find(root.right,head);
     }
     public boolean isSubPath(ListNode head, TreeNode root) {
         hasList=false;
         //1. find the head in tree
-        TreeNode node=find(root,head);
+        find(root,head);
         //2. compare both level wise or apply dfs
         return hasList;
         
