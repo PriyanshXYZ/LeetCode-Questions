@@ -20,13 +20,14 @@ class Node {
 
 class Solution {
     public Node cloneGraph(Node node) {
-        if(node==null)return null;
+        
         Node[] vis=new Node[101];
         Node clone=dfs(node,vis);
         return clone;
     }
     
     public Node dfs(Node node,Node[] vis){
+        if(node==null)return null;
         Node clone=new Node(node.val);
         vis[node.val]=clone;
         for(Node nbr : node.neighbors){
