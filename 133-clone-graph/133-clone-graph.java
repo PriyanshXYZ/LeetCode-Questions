@@ -34,9 +34,9 @@ class Solution {
                 Node newNbr=dfs(nbr,vis);
                 clone.neighbors.add(newNbr);
             }else{
+                
                 clone.neighbors.add(vis[nbr.val]);
             }
-            
         }
         return clone;
     }
