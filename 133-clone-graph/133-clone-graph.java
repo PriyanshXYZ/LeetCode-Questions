@@ -27,21 +27,13 @@ class Solution {
     }
     
     public Node dfs(Node node,Node[] vis){
-        
         Node clone=new Node(node.val);
-        
         vis[node.val]=clone;
-        
         for(Node nbr : node.neighbors){
-            
             if(vis[nbr.val]==null){
-                
                 Node newNbr=dfs(nbr,vis);
-                
                 clone.neighbors.add(newNbr);
-                
             }else{
-                
                 clone.neighbors.add(vis[nbr.val]);
             }
             
