@@ -19,19 +19,19 @@ class Node {
 */
 
 class Solution {
-    Node[] vis;
     public Node cloneGraph(Node node) {
         if(node==null)return null;
-        vis=new Node[101];
-        Node clone=dfs(node);
+        Node[] vis=new Node[101];
+        Node clone=dfs(node,vis);
         return clone;
     }
-    public Node dfs(Node node){
+    
+    public Node dfs(Node node,Node[] vis){
         Node clone=new Node(node.val);
         vis[node.val]=clone;
         for(Node nbr : node.neighbors){
             if(vis[nbr.val]==null){
-                Node newNbr=dfs(nbr);
+                Node newNbr=dfs(nbr,vis);
                 clone.neighbors.add(newNbr);
             }else{
                 clone.neighbors.add(vis[nbr.val]);
