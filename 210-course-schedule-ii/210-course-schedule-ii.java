@@ -1,4 +1,5 @@
 class Solution {
+    //kahn's algorithm
     public int[] findOrder(int numCourses, int[][] a) {
         //reverse topological 
         List<Integer>[] graph=new ArrayList[numCourses];
