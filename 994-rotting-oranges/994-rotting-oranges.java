@@ -59,6 +59,15 @@ class Solution {
     }
 }
 class Solution1 {
+    public class Pair{
+        int row;
+        int col;
+        
+        Pair(int row,int col){
+            this.row=row;
+            this.col=col;
+        }
+    }
     public int orangesRotting(int[][] grid) {
         int n=grid.length;
         int m=grid[0].length;
@@ -107,13 +116,5 @@ class Solution1 {
         return time==0?0:time-1;
     }
     
-    public class Pair{
-        int row;
-        int col;
-        
-        Pair(int row,int col){
-            this.row=row;
-            this.col=col;
-        }
-    }
+    
 }
