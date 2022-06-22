@@ -1,4 +1,4 @@
-class Solution {
+class Solution1 {
     public int findKthLargest(int[] nums, int k) {
         k=nums.length-k;
         int lo=0;
@@ -37,7 +37,7 @@ class Solution {
         a[j]=temp;
     }
 }
-class Solution1 {
+class Solution {
     //tc o(nlogn)
     public int findKthLargest(int[] nums, int k) {
         PriorityQueue<Integer> pq=new PriorityQueue();
