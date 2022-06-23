@@ -1,4 +1,42 @@
 class Solution {
+    //using dfs
+    public boolean isBipartite(int[][] graph) {
+        int vtces=graph.length;
+        int[] vis=new int[vtces];
+        int color=1;//1=> red color -1=> green color
+        for(int v=0;v<vtces;v++){
+            if(vis[v]==0){
+                boolean bipartite=dfs(graph,v,vis,color);
+                if(bipartite==false)return false;
+            }
+        }
+        return true;
+    }
+    
+    public boolean dfs(int[][] graph,int src,int[] vis,int color){
+        //base case 
+        if(vis[src]!=0){//meaning there is a cycle 
+            int oc=vis[src];
+            if(oc==color){//even cycle
+                return true;
+            }else{//odd cycle
+                return false;
+            }
+        }
+        
+        vis[src]=color;
+        for(int nbr:graph[src]){
+            
+            boolean ans=dfs(graph,nbr,vis,color*-1);
+            if(ans==false)return false;
+
+        }
+        return true;
+    }
+}
+
+class Solution1 {
+    //using bfs and checking the  lvl of vtces at which we are visiting again if sum is odd then it is odd cycle..and return false;
     class Pair{
         int src;
         int lvl;
