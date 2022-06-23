@@ -26,7 +26,7 @@ class Solution {
         
         vis[src]=color;
         for(int nbr:graph[src]){
-            
+
             boolean ans=dfs(graph,nbr,vis,color*-1);
             if(ans==false)return false;
 
