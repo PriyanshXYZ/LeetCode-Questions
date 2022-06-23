@@ -11,7 +11,7 @@ class Solution{
                 pq.add(dur);
             } else if (pq.size() > 0 && pq.peek() > dur) {
                 
-                total += dur - pq.poll();
+                total += dur - pq.remove();
                 pq.add(dur);
             }
         }
