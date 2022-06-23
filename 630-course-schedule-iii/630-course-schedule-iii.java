@@ -1,4 +1,5 @@
-class Solution{
+class Solution1{
+    //nlogn tc and n sc
     public int scheduleCourse(int[][] courses) {
         Arrays.sort(courses, (a,b) -> a[1] - b[1]);
         PriorityQueue<Integer> pq = new PriorityQueue<>((a,b) -> b - a);
@@ -18,7 +19,34 @@ class Solution{
         return pq.size();
     }
 }
-class Solution1 {
+class Solution{
+    public int scheduleCourse(int[][] courses) {
+        int n=courses.length;
+        Arrays.sort(courses, (a,b) -> a[1] - b[1]);
+        int time=0;
+        int count=0;
+        for(int i=0;i<n;i++){
+            int dur=courses[i][0],last=courses[i][1];
+            if(dur+time<=last){
+                time+=dur;
+                count++;
+            }else{
+                int prev_max=i;
+                for(int j=0;j<i;j++){
+                    if(courses[j][0]>courses[prev_max][0]){
+                        prev_max=j;
+                    }
+                }
+                if(courses[prev_max][0]>courses[i][0]){
+                    time+=courses[i][0]-courses[prev_max][0];
+                }
+                courses[prev_max][0]=-1;
+            }
+        }
+        return count;
+    }
+}
+class Solution2 {
     //tle memory also exceeded
     public int scheduleCourse(int[][] courses) {
         Arrays.sort(courses,(a,b)->(a[1]-b[1]));
