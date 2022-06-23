@@ -1,4 +1,4 @@
-class Solution1{
+class Solution{
     //nlogn tc and n sc
     public int scheduleCourse(int[][] courses) {
         Arrays.sort(courses, (a,b) -> a[1] - b[1]);
@@ -19,7 +19,7 @@ class Solution1{
         return pq.size();
     }
 }
-class Solution{
+class Solution1{
     public int scheduleCourse(int[][] courses) {
         int n=courses.length;
         Arrays.sort(courses, (a,b) -> a[1] - b[1]);
