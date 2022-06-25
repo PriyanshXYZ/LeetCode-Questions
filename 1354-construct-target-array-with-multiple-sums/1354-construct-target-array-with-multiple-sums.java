@@ -12,11 +12,12 @@ class Solution {
         
         while(pq.peek()!=1){
             int curr=pq.remove();
-            
+            // System.out.println(curr+"<- curr sum->"+sum);
             if(sum-curr==1)return true;
             
             
             int x=curr%(sum-curr);
+            System.out.println(x);
             sum=sum-curr+x;
             
             if(x==0 || x==curr)return false;
