@@ -90,20 +90,18 @@ class Solution
         for(int i=0;i<K;i++){
             graph.add(new ArrayList<Integer>());
         }
-        int i=0;
-        while(i<dict.length-1){
+        for(int i=0;i<dict.length-1;i++){
             int len=Math.min(dict[i].length(),dict[i+1].length());
-            int j=0;
-            while(dict[i].charAt(j)==dict[i+1].charAt(j)){
-                j++;
-                if(j==len){
+            for(int j=0;j<len;j++){
+                char ch1=dict[i].charAt(j);
+                char ch2=dict[i+1].charAt(j);
+                if(ch1!=ch2){
+                    graph.get(ch1-'a').add(ch2-'a');
                     break;
                 }
             }
-            if(j!=len)
-                graph.get(dict[i].charAt(j)-'a').add(dict[i+1].charAt(j)-'a');
-            i++;
         }
+        
         
         boolean[] vis=new boolean[K];
         Stack<Character> stk=new Stack<>();
@@ -112,6 +110,7 @@ class Solution
                 dfs(graph,vis,stk,idx);
             }
         }
+        
         String res="";
         while(stk.size()>0){
             res+=stk.pop();
