@@ -12,6 +12,8 @@ class Solution {
                 }
             }
         });
+        
+        //insertion sort
         for(int i=0;i<people.length;i++){
             int count=0;
             for(int j=0;j<i;j++){
