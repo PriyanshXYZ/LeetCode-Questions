@@ -56,16 +56,16 @@ class Solution
         
         Stack<Integer> stk=new Stack<>();
         boolean[] visited=new boolean[vtces];
-        //1. dfs through all the components
-        for(int u=0;u<vtces;u++){
-            if(visited[u]!=true){
-                dfs(graph,u,stk,visited);
+        
+        for(int v=0;v<vtces;v++){
+            if(visited[v]==false){
+                dfs(graph,stk,visited,v);
             }
         }
         
-        //3. transpose the graph
+        //making of transpose of graph
         ArrayList<ArrayList<Integer>> transpose=new ArrayList<>();
-        for(int i=0;i<vtces;i++){
+        for(int u=0;u<vtces;u++){
             transpose.add(new ArrayList<>());
         }
         
@@ -75,35 +75,35 @@ class Solution
             }
         }
         
-        boolean[] visited2=new boolean[vtces];
-        int scc=0;//strongly connected comp
-        //4. pop from stack
-        while(stk.size()!=0){
-            int u=stk.pop();
-            if(visited2[u]==false){
-                dfs(transpose,u,visited2);
+        int scc=0;
+        boolean[] vis=new boolean[vtces];
+        while(!stk.isEmpty()){
+            int v=stk.pop();
+            if(vis[v]==false){
+                dfs(transpose,vis,v);
                 scc++;
             }
         }
         return scc;
     }
-    public void dfs(ArrayList<ArrayList<Integer>> graph,int src,boolean[] vis){
+    private void dfs(ArrayList<ArrayList<Integer>> graph,Stack<Integer> stk,boolean[] vis,int src){
         vis[src]=true;
+        
         for(int nbr:graph.get(src)){
             if(vis[nbr]==false){
-                dfs(graph,nbr,vis);
+                dfs(graph,stk,vis,nbr);
             }
         }
+        stk.push(src);
     }
     
-    public void dfs(ArrayList<ArrayList<Integer>> graph,int src,Stack<Integer> stk,boolean[] vis){
+    private void dfs(ArrayList<ArrayList<Integer>> graph,boolean[] vis,int src){
         vis[src]=true;
+        
         for(int nbr:graph.get(src)){
             if(vis[nbr]==false){
-                dfs(graph,nbr,stk,vis);
+                dfs(graph,vis,nbr);
             }
         }
-        //2. in post order add them in a stack
-        stk.push(src);
     }
 }
