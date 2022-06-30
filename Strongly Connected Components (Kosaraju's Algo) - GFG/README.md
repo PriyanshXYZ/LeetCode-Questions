@@ -1,5 +1,5 @@
 # Strongly Connected Components (Kosaraju's Algo)
-## Medium 
+##  Medium 
 <div class="problem-statement">
                 <p></p><p><span style="font-size:18px">Given a Directed Graph with<strong> V </strong>vertices <strong>(</strong>Numbered from<strong> 0 to V-1)</strong>&nbsp;and <strong>E</strong> edges</span>, <span style="font-size:18px">Find </span><span style="font-size:18px">the number of strongly connected components in the graph.</span><br>
 &nbsp;</p>
