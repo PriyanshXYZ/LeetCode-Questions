@@ -8,18 +8,15 @@ class Solution {
             prev=nums[i];
             long currDiff=0;
             for(int j=0;j<nums.length;j++){
-                // if(nums[j]>0){
+                
                     if(nums[j]-prev>=0){
                         currDiff+=nums[j]-prev;
                     }else{
                         currDiff+=prev-nums[j];
                     }
-                // }else{
-                    
-                // }
             }
             
-            // System.out.println(currDiff);
+            
             minDiffSum=Math.min(currDiff,minDiffSum);
         }
         return (int)minDiffSum;
