@@ -47,26 +47,16 @@ class Solution
             }
             vis[i]=true;
             
-            int j=origPos.get(nums[i]);
-            int cycleSize=1;
-            
-            while(j!=i){
+            int j=i;
+            int cycleSize=0;
+            do{
                 vis[j]=true;
                 cycleSize++;
                 j=origPos.get(nums[j]);
-            }
+            }while(j!=i);
             ans+=cycleSize-1;
         }
         return ans;
     }
 }
 
-// class Solution1
-// {
-//     int[] parent;
-//     int[] r
-//     public int minSwaps(int nums[])
-//     {
-          
-//     }
-// }
