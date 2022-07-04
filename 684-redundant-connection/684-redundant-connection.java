@@ -35,7 +35,7 @@ class Solution {
     void union(int s1Lead,int s2Lead){
         if(rank[s1Lead]<rank[s2Lead]){
             parent[s1Lead]=s2Lead;
-        }else if(rank[s2Lead]>rank[s1Lead]){
+        }else if(rank[s2Lead]<rank[s1Lead]){
             parent[s2Lead]=s1Lead;
         }else{
             parent[s1Lead]=s2Lead;
