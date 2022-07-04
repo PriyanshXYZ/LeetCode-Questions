@@ -62,11 +62,11 @@ class Solution
         int jobs=0;
         for(Job j:arr){
             int lead=find(j.deadline);
-            if(lead>0){
-                ans+=j.profit;
-                jobs++;
-                parent[lead]=find(lead-1);
-            }
+            if(lead==0)continue;
+            ans+=j.profit;
+            jobs++;
+            parent[lead]=find(lead-1);
+        
         }
         return new int[]{jobs,ans};
     }
