@@ -1,4 +1,4 @@
-class Solution {
+class Solution1 {
     public int longestConsecutive(int[] nums) {
         HashSet<Integer> set=new HashSet<>();
         for(int i=0;i<nums.length;i++){
@@ -22,7 +22,7 @@ class Solution {
         return maxCount;
     }
 }
-class Solution1 {
+class Solution {
     //brute force o(nlogn)
     public int longestConsecutive(int[] nums) {
         Arrays.sort(nums);
