@@ -15,7 +15,8 @@ class Solution {
     public boolean dfs(int n,int k,int max,HashSet<String> vis,StringBuilder res){
         if(vis.size()==max)return true;
         
-        
+        //use n-1 characters already present
+        //add 1 character which is different from before
         String used=res.substring(res.length()-(n-1));
         for(int i=0;i<k;i++){
             
@@ -26,6 +27,7 @@ class Solution {
 
                 boolean flag=dfs(n,k,max,vis,res);
                 if(flag)return true;
+                //backtrack
                 vis.remove(nwpass);
                 res.deleteCharAt(res.length()-1);
             }
