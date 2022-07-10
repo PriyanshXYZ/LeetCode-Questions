@@ -1,14 +1,15 @@
 class Solution {
     
     public int maxResult(int[] nums, int k) {
-        int[] dp=new int[nums.length+1];
-        Arrays.fill(dp,Integer.MIN_VALUE);
+        // int[] dp=new int[nums.length+1];
+        // Arrays.fill(dp,Integer.MIN_VALUE);
         LinkedList<Integer> list=new LinkedList<>();
         
         // return recursion(nums,0,k);
         // return memo(nums,0,k,dp);
-        return optimized(nums,k,dp,list);
+        return optimized(nums,k,list);
     }
+    //o(n^k) tc
     public int recursion(int[] nums,int idx,int k){
         //base
         if(idx==nums.length-1)return nums[idx];
@@ -21,6 +22,7 @@ class Solution {
         }
         return ans;
     }
+    //O(n*k) tc
     public int memo(int[] nums,int idx,int k,int[] dp){
         //base
         if(idx==nums.length-1)return dp[idx]=nums[idx];
@@ -36,10 +38,10 @@ class Solution {
         }
         return dp[idx]=ans;
     }
-    public int optimized(int[] nums,int k,int[] dp,LinkedList<Integer> list){
+    
+    public int optimized(int[] nums,int k,LinkedList<Integer> list){
         int n=nums.length;
         list.add(0);
-        
         for(int i=1;i<n;i++){
             if((list.getFirst()+k)<i)list.removeFirst();
             nums[i]+=nums[list.getFirst()];
