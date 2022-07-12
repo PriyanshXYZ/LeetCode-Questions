@@ -67,8 +67,8 @@ class Solution
                 
                 if(res[u]==(int)1e8){
                     continue;
-                // }else if(res[v]==(int)1e8){
-                //     res[v]=wt;
+                }else if(res[v]==(int)1e8){
+                    res[v]=res[u]+wt;
                 }else{
                     res[v]=Math.min(res[u]+wt,res[v]);
                 }
