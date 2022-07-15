@@ -38,7 +38,7 @@ class Solution
     { 
         // code here
         int[][] graph=new int[N+1][N+1];
-        int[][] revGraph=new int[N+1][N+1];
+        int[][] resGraph=new int[N+1][N+1];
         
         for(List<Integer> edge : Edges){
             int u=edge.get(0);
@@ -48,20 +48,20 @@ class Solution
             graph[u][v]+=wt;
             graph[v][u]+=wt;
             
-            revGraph[u][v]+=wt;
-            revGraph[v][u]+=wt;
+            resGraph[u][v]+=wt;
+            resGraph[v][u]+=wt;
         }
         int maxFlow=0;
         boolean[] vis=new boolean[N+1];
         int[] par=new int[N+1];
-        while(dfs(revGraph,par,1,N,vis)==true){
+        while(dfs(resGraph,par,1,N,vis)==true){
             int flow=Integer.MAX_VALUE;
             
             int v=N;
             //to get maximum possible flow
             while(v!=1){
                 int pv=par[v];
-                int pathFlow=revGraph[pv][v];
+                int pathFlow=resGraph[pv][v];
                 if(pathFlow<flow){
                     flow=pathFlow;
                 }
@@ -73,8 +73,8 @@ class Solution
             //to get update the edges of already flown value;
             while(v!=1){
                 int pv=par[v];
-                revGraph[pv][v]-=flow;
-                revGraph[v][pv]+=flow;
+                resGraph[pv][v]-=flow;
+                resGraph[v][pv]+=flow;
                 
                 v=pv;
             }
@@ -83,16 +83,16 @@ class Solution
         }
         return maxFlow;
     }
-    boolean dfs(int[][] revGraph,int[] par,int src,int dest,boolean[] vis){
+    boolean dfs(int[][] resGraph,int[] par,int src,int dest,boolean[] vis){
         vis[src]=true;
         if(src==dest){
             return true;
         }
         
-        for(int nbr=1;nbr<revGraph.length;nbr++){
-            if(vis[nbr]==false && revGraph[src][nbr]>0){
+        for(int nbr=1;nbr<resGraph.length;nbr++){
+            if(vis[nbr]==false && resGraph[src][nbr]>0){
                 par[nbr]=src;
-                boolean isPathFound=dfs(revGraph,par,nbr,dest,vis);
+                boolean isPathFound=dfs(resGraph,par,nbr,dest,vis);
                 
                 if(isPathFound)return true;
             }
