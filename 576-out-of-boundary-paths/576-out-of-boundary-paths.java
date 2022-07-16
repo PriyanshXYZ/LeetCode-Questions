@@ -1,5 +1,6 @@
 class Solution {
     int[][] dirs={{-1,0},{0,1},{1,0},{0,-1}};
+    // O(m*n*maxMoves) time and space
     public int findPaths(int m, int n, int maxMove, int startRow, int startColumn) {
         int[][][] dp=new int[m+1][n+1][maxMove+1];
         for(int i=0;i<m+1;i++){
