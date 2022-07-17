@@ -36,15 +36,15 @@ class Solution1 {
         }
         return dp[n][k];
     }
-    // public int memo(int num,int n,int k,int[][] dp){
-    //     if(num==n+1)return dp[num][k]=(k==0)?1:0;
-    //     int count=0;
-    //     if(dp[num][k]>=0)return dp[num][k];
-    //     for(int i=Math.max(0,k-(num-1));i<=k;i++){
-    //         count=(count%mod+memo(num+1,n,i,dp)%mod)%mod;
-    //     }
-    //     return dp[num][k]=count;
-    // }
+    public int memo(int num,int n,int k,int[][] dp){
+        if(num==n+1)return dp[num][k]=(k==0)?1:0;
+        int count=0;
+        if(dp[num][k]>=0)return dp[num][k];
+        for(int i=Math.max(0,k-(num-1));i<=k;i++){
+            count=(count%mod+memo(num+1,n,i,dp)%mod)%mod;
+        }
+        return dp[num][k]=count;
+    }
 }
 
 class BruteForcer {
