@@ -27,7 +27,7 @@ class Solution {
             lp=ahead;
         }
         dummyPrev.next=prev;
-        if(lp!=null)start.next=lp;
+        start.next=lp;
         return dummy.next;
     }
 }
