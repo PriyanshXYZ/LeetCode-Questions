@@ -1,5 +1,23 @@
 class Solution {
     public int numPairsDivisibleBy60(int[] time) {
+        int[] fmap=new int[60];
+        int count=0;
+        for(int i=0;i<time.length;i++){
+            int val=time[i]%60;
+            
+            if(val==0){
+                count+=fmap[val];
+            }else{
+                count+=fmap[60-val];
+            }
+            fmap[val]++;
+        }
+        return count;
+    }
+}
+//with hashmap
+class Solution1 {
+    public int numPairsDivisibleBy60(int[] time) {
         HashMap<Integer,Integer> map=new HashMap();
         int count=0;
         for(int i=0;i<time.length;i++){
