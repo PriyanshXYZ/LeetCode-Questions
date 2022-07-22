@@ -3,7 +3,7 @@ class Solution {
         Arrays.sort(people);
         int i=0,j=people.length-1;
         int boats=0;
-        while(i<=j){
+        while(i<j){
             if(people[i]+people[j]<=limit){
                 boats++;
                 i++;
@@ -12,8 +12,8 @@ class Solution {
                 boats++;
                 j--;
             }
-            
         }
+        if(i==j)boats+=1;
         return boats;
     }
 }
