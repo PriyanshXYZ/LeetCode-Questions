@@ -1,4 +1,5 @@
 class Solution {
+    //O(1) space..
     public int partitionDisjoint(int[] nums) {
         int  idx=0;
         int maxTillPartition=nums[0];
