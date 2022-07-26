@@ -10,18 +10,18 @@
 class Solution {
     public TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {
         if(root==null)return null;
+        //base case
+        if(p.val==root.val || q.val==root.val) return root;
         
-        if(root.val==p.val){
-            return root;    
-        }else if(root.val==q.val){
-            return root;
-        }
+        //faith 
+        TreeNode leftChild=lowestCommonAncestor(root.left,p,q);
+        TreeNode rightChild=lowestCommonAncestor(root.right,p,q);
         
-        TreeNode left=lowestCommonAncestor(root.left,p,q);
-        TreeNode right=lowestCommonAncestor(root.right,p,q);
-        
-        if(left!=null && right!=null)return root;
-        if(left!=null)return left;
-        return right;
+        //post order work
+        //if left and right child both return something then it mean that the curr root is lowest common ancestor...
+        if(leftChild!=null && rightChild!=null) return root;
+        //if any one of child/descendant returns something just return the same
+        if(leftChild!=null) return leftChild;
+        return rightChild;
     }
 }
