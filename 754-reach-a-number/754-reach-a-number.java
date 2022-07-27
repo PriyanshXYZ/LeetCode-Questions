@@ -6,15 +6,12 @@ class Solution {
         while( true ){
             int range = moves * ( moves + 1 ) / 2;
             if( range >= target ){
-                if(( range % 2 == 0 && target % 2 == 0 ) || (range % 2 !=0 && target % 2 !=0) ){
+                if( range % 2 == target % 2 ){
                     return moves;
-                }else{
-                    moves++;
                 }
-            }else {
-                moves++;
             }
+            moves++;
         }
-        
+    
     }
 }
