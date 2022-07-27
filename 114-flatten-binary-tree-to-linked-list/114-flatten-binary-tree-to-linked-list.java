@@ -14,23 +14,20 @@
  * }
  */
 class Solution {
-    
+    TreeNode prev;
     public void flatten(TreeNode root) {
-        TreeNode[] prev=new TreeNode[1];
-        dfs(root,prev);
-    }
-    
-    public void dfs(TreeNode root,TreeNode[] prev){
         if(root==null)return;
         
         TreeNode origLeft=root.left;
         TreeNode origRight=root.right;
-        if(prev[0]!=null){
-            prev[0].right=root;
-            prev[0].left=null;
+        
+        if(prev!=null){
+            prev.right=root;
+            prev.left=null;
         }
-        prev[0]=root;
-        dfs(origLeft,prev);
-        dfs(origRight,prev);
+        
+        prev=root;
+        flatten(origLeft);
+        flatten(origRight);
     }
 }
