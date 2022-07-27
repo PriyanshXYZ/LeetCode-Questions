@@ -12,16 +12,20 @@ class Solution {
         
         int ahead=1;
         for(int i=nums.length-1;i>=0;i--){
-            right[i]=ahead*nums[i];
-            ahead=right[i];
+            if(i>=1)
+                left[i]=ahead*left[i-1];
+            else{
+                left[i]=ahead;
+            }
+            ahead=ahead*nums[i];
         }
         
-        int[] ans=new int[nums.length];
-        for(int i=0;i<nums.length;i++){
-            int a=i-1>=0?left[i-1]:1;
-            int b=i+1<nums.length?right[i+1]:1;
-            ans[i]=a*b;
-        }
-        return ans;
+        // int[] ans=new int[nums.length];
+        // for(int i=0;i<nums.length;i++){
+        //     int a=i-1>=0?left[i-1]:1;
+        //     int b=i+1<nums.length?right[i+1]:1;
+        //     ans[i]=a*b;
+        // }
+        return left;
     }
 }
