@@ -24,10 +24,6 @@ class Solution {
                 }
             }
         }
-        int[][] res=new int[ans.size()][2];
-        for(int i=0;i<ans.size();i++){
-            res[i]=ans.get(i);
-        }
-        return res;
+        return ans.toArray(new int[ans.size()][2]);
     }
 }
