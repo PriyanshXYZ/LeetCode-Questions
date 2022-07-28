@@ -4,11 +4,10 @@ class Solution {
         boolean[] a=new boolean[n+1];
         Arrays.fill(a,true);
         for(int div=2;div<=n;div++){
+            if(a[div]==false)continue;
             for(int fa=2;div*fa<=n;fa++){
                 if(a[div*fa]==true){
                     a[div*fa]=false;
-                }else{
-                    continue;
                 }
             }
         }
