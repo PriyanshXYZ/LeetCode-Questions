@@ -10,16 +10,13 @@ class Solution {
             }else{
                 int[] top=ans.get(ans.size()-1);
                 if(top[1]>=intervals[i][0]){
-                    top[1]=Math.max(intervals[i][1],top[1]);
+                    top[1]=Math.max(intervals[i][1],top[1]);// remeber interval can also be [1,4][2,3] ..hence math.max
                 }else{
                     ans.add(intervals[i]);
                 }
             }
         }
-        int[][] res=new int[ans.size()][2];
-        for(int i=0;i<ans.size();i++){
-            res[i]=ans.get(i);
-        }
-        return res;
+        
+        return ans.toArray(new int[ans.size()][2]);
     }
 }
