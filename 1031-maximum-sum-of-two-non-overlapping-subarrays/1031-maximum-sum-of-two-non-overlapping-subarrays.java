@@ -33,16 +33,6 @@ class Solution {
             }
         }
         
-        for(int i=0;i<n;i++){
-            System.out.print(leftMax[i]+" ");
-        }
-        System.out.println();
-        
-        for(int i=0;i<n;i++){
-            System.out.print(rightMax[i]+" ");
-        }
-        System.out.println();
-        
         int maxSum=0;
         for(int i=fl-1;i<n-sl;i++){
             maxSum=Math.max(maxSum,leftMax[i]+rightMax[i+1]);
