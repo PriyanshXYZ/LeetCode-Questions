@@ -26,8 +26,7 @@ class Solution {
                 map.put(ch,map.getOrDefault(ch,0)+1);
                 
             }
-            // System.out.println(map);
-            // System.out.println(map1);
+            
             boolean flag=true;
             for(char key : map1.keySet()){
                 if(!map.containsKey(key) || map.get(key)<map1.get(key)){
