@@ -1,31 +1,38 @@
 class Solution {
-    int row;
-    int col;
     public int uniquePaths(int m, int n) {
-        row=m;
-        col=n;
+        boolean[][] visited=new boolean[m][n];
         int[][] dp=new int[m][n];
-        
-        for(int i=0;i<m;i++){
-            Arrays.fill(dp[i],-1);
-        }
-        return paths(0,0,dp);
+        return memo(m-1,n-1,dp);
     }
-    public int paths(int r,int c,int[][] dp){
-        if(r==row-1 && c==col-1)return 1;
-        
-        if(dp[r][c]!=-1)return dp[r][c];
-        
-        
+    public int recursion(int m,int n,boolean[][] visited){
+        if(m==0 &&n==0)return 1;
+        if(m<0 || n<0)return 0;
         int ans=0;
-        if(r+1<row){
-            ans+=paths(r+1,c,dp);
+        visited[m][n]=true;
+        if(m>=1 && !visited[m-1][n]){
+            ans+=recursion(m-1,n,visited);    
         }
-        if(c+1<col){
-            ans+=paths(r,c+1,dp);
+        if(n>=1 && !visited[m][n-1]){
+            ans+=recursion(m,n-1,visited);
+        }
+        visited[m][n]=false;
+        
+        return ans;
+    }
+    public int memo(int m,int n,int[][] dp){
+        if(m==0 &&n==0)return dp[m][n]=1;
+        if(m<0 || n<0)return dp[m][n]=0;
+        if(dp[m][n]!=0)return dp[m][n];
+        int ans=0;
+        
+        if(m>=1){
+            ans+=memo(m-1,n,dp);    
+        }
+        if(n>=1){
+            ans+=memo(m,n-1,dp);
         }
         
         
-        return dp[r][c]=ans;
+        return dp[m][n]=ans;
     }
 }
