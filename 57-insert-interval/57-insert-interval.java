@@ -2,11 +2,13 @@ class Solution {
     public int[][] insert(int[][] intervals, int[] newInterval) {
         int i=0;
         ArrayList<int[]> res=new ArrayList<>();
-        int idx=0;
+        
+        //adding nonoverlapping intervals
         while(i<intervals.length && intervals[i][1]<newInterval[0]){
             res.add(intervals[i++]);
         }
         
+        //merging intervals
         int[] interval=newInterval;
         while(i<intervals.length && intervals[i][0]<=interval[1]){
             interval[0]=Math.min(intervals[i][0],interval[0]);
@@ -15,6 +17,7 @@ class Solution {
         }
         res.add(interval);
         
+        //adding rest non overlapping intervals....
         while(i<intervals.length){
             res.add(intervals[i++]);
         }
