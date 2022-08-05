@@ -9,11 +9,12 @@ class Solution {
                 cz++;
             }
             
+            //if count of 0 exceeds...
             while(cz>k){
                 if(nums[j]==0){
                     cz--;
                 }
-                j++;
+                j++;//pointer to keep a window..
             }
             // System.out.println(i+" "+j+" "+cz);
             len=Math.max(len,i-j+1);
