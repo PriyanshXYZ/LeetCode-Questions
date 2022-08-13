@@ -59,7 +59,7 @@ class Solution {
                 if(prev.ch=='L'){
                     // System.out.println("L-R =>"+(i-prev.idx-1));
                 }else{
-                    System.out.println("R-R =>"+(i-prev.idx-1));
+                    // System.out.println("R-R =>"+(i-prev.idx-1));
                     int j=prev.idx+1;
                     while(j < i){
                         sb.setCharAt(j,'R');
