@@ -26,7 +26,6 @@ class Solution {
                     }
                 }else{
                     //R-L
-                    //check for odd and even gap between dominoes
                     int dist=i-prev.idx-1;
                     int j=prev.idx+1;
                     int idx=dist/2+j;
