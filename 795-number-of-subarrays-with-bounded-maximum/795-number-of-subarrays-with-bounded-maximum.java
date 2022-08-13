@@ -8,8 +8,6 @@ class Solution {
                 curr=i;
             }else if(nums[i] > right){
                 curr=start=i;
-            }else{
-                
             }
             
             count+=curr-start;
