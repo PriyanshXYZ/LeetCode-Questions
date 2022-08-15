@@ -1,4 +1,29 @@
 class Solution {
+    //O(n) 
+    public int[] maxSlidingWindow(int[] nums, int k) {
+        Deque<Integer> q=new ArrayDeque();//store idx of elem
+        int n=nums.length;
+        int[] res=new int[n-k+1];
+        int idx=0;
+        for(int i=0;i<n;i++){
+            //remove out of window elements
+            while(q.size()>0 && q.peekFirst()<i-k+1){
+                q.removeFirst();
+            }
+            //remove smaller elements than curr
+            while(q.size()>0 && nums[q.peekLast()]<nums[i]){
+                q.removeLast();
+            }
+            q.add(i);
+            if(i>=k-1)
+                res[idx++]=nums[q.peekFirst()];
+        }
+        return res;
+        
+    }
+}
+class Solution1 {
+    //O(nlog(n-k))
     class Pair implements Comparable<Pair>{
         int val;
         int idx;
