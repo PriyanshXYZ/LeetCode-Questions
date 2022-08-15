@@ -20,10 +20,9 @@ class Solution {
         discovery=new int[n];
         lowest=new int[n];
         boolean[] vis=new boolean[n];
-        for(int i=0;i<n;i++){
-            if(!vis[i])
-                dfs(i,-1,graph,vis,0);
-        }
+        
+        dfs(0,-1,graph,vis,0);
+        
         return res;
     }
     
