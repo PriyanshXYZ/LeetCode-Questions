@@ -1,42 +1,74 @@
 class NumArray {
-
-private int[] b;
-private int len;
-private int[] nums;
-
-public NumArray(int[] nums) {
-    this.nums = nums;
-    double l = Math.sqrt(nums.length);
-    len = (int) Math.ceil(nums.length/l);
-    b = new int [len];
-    for (int i = 0; i < nums.length; i++)
-        b[i / len] += nums[i];
-}
-
-public int sumRange(int i, int j) {
-    int sum = 0;
-    int startBlock = i / len;
-    int endBlock = j / len;
-    if (startBlock == endBlock) {
-        for (int k = i; k <= j; k++)
-            sum += nums[k];
-    } else {
-        for (int k = i; k <= (startBlock + 1) * len - 1; k++)
-            sum += nums[k];
-        for (int k = startBlock + 1; k <= endBlock - 1; k++)
-            sum += b[k];
-        for (int k = endBlock * len; k <= j; k++)
-            sum += nums[k];
+    class Node{
+        int strt,end;
+        Node left,right;
+        int val;
     }
-    return sum;
-}
-
-public void update(int i, int val) {
-    int b_l = i / len;
-    b[b_l] = b[b_l] - nums[i] + val;
-    nums[i] = val;
-}
-// Accepted
+    
+    Node root;
+    Node construct(int[] nums,int lo,int hi){
+        if(lo==hi){
+            //code
+            Node node=new Node();
+            node.strt=node.end=lo;
+            node.left=node.right=null;
+            node.val=nums[lo];
+            return node;
+        }
+        
+        Node node=new Node();
+        node.strt=lo;
+        node.end=hi;
+        
+        int mid=(lo+hi)/2;
+        
+        node.left=construct(nums,lo,mid);
+        node.right=construct(nums,mid+1,hi);
+        
+        node.val=node.left.val+node.right.val;
+        
+        return node;
+    }
+    public NumArray(int[] nums) {
+        root=construct(nums,0,nums.length-1);
+    }
+    
+    void update(Node node,int idx,int val){
+        if(node.strt==node.end){
+            node.val=val;
+            return;
+        }
+        
+        int mid=(node.strt+node.end)/2;
+        if(idx<=mid){
+            update(node.left,idx,val);
+        }else{
+            update(node.right,idx,val);
+        }
+      
+        node.val=node.left.val+node.right.val;
+        
+    }
+    
+    public void update(int index, int val) {
+        update(root,index,val);
+    }
+    
+    int sumRange(Node node,int left,int right){
+        if(node.end<left || node.strt>right){
+            return 0;
+        }else if(node.strt>=left && right>=node.end){
+            return node.val;
+        }else{
+            int leftSum=sumRange(node.left,left,right);
+            int rightSum=sumRange(node.right,left,right);
+            return leftSum+rightSum;
+        }
+    }
+    
+    public int sumRange(int left, int right) {
+        return sumRange(root,left,right);
+    }
 }
 
 /**
