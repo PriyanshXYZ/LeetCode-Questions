@@ -3,12 +3,12 @@ class Solution {
                             "-.","---",".--.","--.-",".-.","...","-","..-","...-",".--","-..-","-.--","--.."};
     public int uniqueMorseRepresentations(String[] words) {
         
-        HashMap<String,Integer> map=new HashMap();
+        HashSet<String> map=new HashSet();
         for(String word:words){
             String code="";
             for(char ch:word.toCharArray())
                 code+=morseCode[ch-'a'];
-            map.put(code,map.getOrDefault(code,0)+1);
+            map.add(code);
         }
         return map.size();
     }
