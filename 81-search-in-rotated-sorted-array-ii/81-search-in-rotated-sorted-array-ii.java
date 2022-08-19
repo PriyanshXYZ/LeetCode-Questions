@@ -24,7 +24,6 @@ class Solution {
                 hi--;
             }
         }
-        
         return false;
     }
 }
