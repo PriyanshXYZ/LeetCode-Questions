@@ -10,13 +10,13 @@ class Solution {
     public int minPathSum(int[][] grid) {
         int n=grid.length,m=grid[0].length;
         // return recursion(0,0,n,m,grid);
-        int[][] dp=new int[n][m];
-        for(int i=0;i<n;i++){
-            Arrays.fill(dp[i],-1);
-        }
-        return memo(0,0,n,m,grid,dp);
-        // int[] dp=postFix(grid,n,m);
-        // return optimized(0,0,n,m,grid,dp);
+        // int[][] dp=new int[n][m];
+        // for(int i=0;i<n;i++){
+        //     Arrays.fill(dp[i],-1);
+        // }
+        // return memo(0,0,n,m,grid,dp);
+        int[] dp=postFix(grid,n,m);
+        return optimized(0,0,n,m,grid,dp);
     }
     //time limit excedded in recursion due to Time complexity O(2^n)
     public int recursion(int r,int c,int n,int m,int[][] cost){
@@ -60,10 +60,10 @@ class Solution {
         for(int row=n-2;row>=0;row--){
             for(int col=m-1;col>=0;col--){
                 int ans=Integer.MAX_VALUE;
-                if(row+1<=n-1){
+                if(row+1<n){
                     ans=Math.min(ans,dp[col]);
                 }
-                if(col+1<=m-1){
+                if(col+1<m){
                     ans=Math.min(ans,dp[col+1]);
                 }
                 dp[col]=ans+ cost[row][col];
