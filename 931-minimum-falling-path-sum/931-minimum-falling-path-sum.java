@@ -10,11 +10,7 @@ class Solution {
             dig[i]=matrix[0][i];
         }
         
-        // for(int i=0;i<n;i++){
-        //     System.out.print(dig[i]+" ");
-        // }
-        // System.out.println();
-        
+      
         for(int i=1;i<n;i++){
             int[] temp=new int[m];
             
@@ -30,10 +26,7 @@ class Solution {
                 temp[j]=min+matrix[i][j];
             }
             dig=temp;
-            // for(int k=0;k<n;k++){
-            //     System.out.print(dig[k]+" ");
-            // }
-            // System.out.println();
+            
         }
         
         int ans=Integer.MAX_VALUE;
