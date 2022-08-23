@@ -20,17 +20,19 @@ class Solution {
     }
     //time limit excedded in recursion due to Time complexity O(2^n)
     public int recursion(int r,int c,int n,int m,int[][] cost){
-        if(r==n-1 && c==m-1){
-            return cost[r][c];
-        }
+        //base case
+        if(r==n-1 && c==m-1)return cost[r][c];
         int ans=Integer.MAX_VALUE;
-        if(r+1<=n-1){
+        if(r+1<n){
             ans=Math.min(ans,recursion(r+1,c,n,m,cost));
         }
-        if(c+1<=m-1){
+        if(c+1<m){
             ans=Math.min(ans,recursion(r,c+1,n,m,cost));
         }
-        return ans+cost[r][c];
+        if(ans!=Integer.MAX_VALUE){
+            ans+=cost[r][c];
+        }
+        return ans;
     }
     //accepted solution
     //using memoization we have optimized the call by storing it in the memory
@@ -43,10 +45,10 @@ class Solution {
             return dp[r][c]; //this will return value of already computed in recursion
         }
         int ans=Integer.MAX_VALUE;
-        if(r+1<=n-1){
+        if(r+1<n){
             ans=Math.min(ans,memo(r+1,c,n,m,cost,dp));
         }
-        if(c+1<=m-1){
+        if(c+1<m){
             ans=Math.min(ans,memo(r,c+1,n,m,cost,dp));
         }
         return dp[r][c]=ans+cost[r][c];
