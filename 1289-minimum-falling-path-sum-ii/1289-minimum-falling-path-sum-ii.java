@@ -12,7 +12,7 @@ class Solution {
         }
         
       
-        
+        //keep smallest1 and nextsmaller count to find min path sum
         for(int i=1;i<n;i++){
             int small1=pq.remove();
             int small2=pq.remove();
