@@ -65,66 +65,69 @@ class Solution {
     }
     
     public int buildMST(int n, int[][] edges, int[] edgeToSkip, int[] edgeToPick){
-        PriorityQueue<Edge> pq = new PriorityQueue<>();
+        PriorityQueue<Edge> pq=new PriorityQueue<>();
         
-        for(int[] edge: edges){
-            if(edge == edgeToSkip){
-                continue;
-            } else if(edge == edgeToPick){
+        for(int[] edge:edges){
+            if(edge==edgeToSkip || edge==edgeToPick){
                 continue;
             }
+            int u=edge[0];
+            int v=edge[1];
+            int wt=edge[2];
             
-            int u = edge[0];
-            int v = edge[1];
-            int wt = edge[2];
-            pq.add(new Edge(u, v, wt));
+            pq.add(new Edge(u,v,wt));
         }
         
-        UnionFind uf = new UnionFind(n);
-        int cost = 0;
+        UnionFind uf=new UnionFind(n);
+        int cost=0;
         
-        if(edgeToPick != null){
-            uf.union(edgeToPick[0], edgeToPick[1]);
-            cost += edgeToPick[2];
+        if(edgeToPick!=null){
+            uf.union(edgeToPick[0],edgeToPick[1]);
+            cost+=edgeToPick[2];
         }
         
-        while(pq.size() > 0){
-            Edge rem = pq.remove();
-            if(uf.union(rem.u, rem.v) == true){
-                cost += rem.wt;
+        while(pq.size()>0){
+            Edge rem=pq.remove();
+            if(uf.union(rem.u,rem.v)==false){
+                continue;    
             }
+            cost+=rem.wt;
         }
         
-        if(uf.isConnected() == true){
+        if(uf.isConnected()){
             return cost;
-        } else {
-            return Integer.MAX_VALUE;
+        }else{
+            return Integer.MAX_VALUE;        
         }
     }
     
     public List<List<Integer>> findCriticalAndPseudoCriticalEdges(int n, int[][] edges) {
-        int mstCost = buildMST(n, edges, null, null);
+        //to build a MST 
+        int minCost=buildMST(n,edges,null,null);
         
-        ArrayList<Integer> critical = new ArrayList<>();
-        ArrayList<Integer> pcritical = new ArrayList<>();
+        List<Integer> critical =new ArrayList();
+        List<Integer> pcritical=new ArrayList();
         
-        for(int i = 0; i < edges.length; i++){
-            int[] edge = edges[i];
+        for(int i=0;i<edges.length;i++){
+            int[] edge=edges[i];
+            //if excluding the edges results in more weight than MST=> it is a critical connection
+            //if including the edges results in more weight than MST=> it is redundant connection
+            //rest all would be pseudo critical edges
             
-            int mstCostWithoutEdge = buildMST(n, edges, edge, null);
-            if(mstCostWithoutEdge > mstCost){
+            int mstExcludingEdge = buildMST(n,edges,edge,null);
+            if(mstExcludingEdge>minCost){
                 critical.add(i);
-            } else {
-                int mstCostWithEdge = buildMST(n, edges, null, edge);
-                if(mstCostWithEdge > mstCost){
-                    // redundant
-                } else {
+            }else{
+                int costIncludinhEdge =buildMST(n,edges,null,edge);
+                if(costIncludinhEdge>minCost){
+                    //redundant
+                }else{
                     pcritical.add(i);
                 }
             }
         }
         
-        List<List<Integer>> res = new ArrayList<>();
+        List<List<Integer>> res=new ArrayList();
         res.add(critical);
         res.add(pcritical);
         return res;
