@@ -1,18 +1,18 @@
 class Solution {
     public int maxProfit(int[] prices) {
-        int bp=0;
-        int sp=0;
-        int profit=0;
-        for(int i=0;i<prices.length;i++){
-            if(prices[i]>prices[sp]){
-                sp++;
+        int n=prices.length;
+        int sellpt=0;
+        int buypt=0;
+        int sell=0;
+        for(int i=1;i<n;i++){
+            if(prices[i]>=prices[i-1]){
+                sellpt++;
             }else{
-                profit+=prices[sp]-prices[bp];
-                sp=bp=i;
+                sell+=prices[sellpt]-prices[buypt];
+                buypt=sellpt=i;
             }
         }
-        //for corner case of all increasing stocks
-        profit+=prices[sp]-prices[bp];
-        return profit;
+        sell+=prices[sellpt]-prices[buypt];
+        return sell;
     }
 }
