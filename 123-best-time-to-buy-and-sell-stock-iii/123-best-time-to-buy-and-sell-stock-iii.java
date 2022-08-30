@@ -19,8 +19,8 @@ class Solution {
                     if(flag==1){
                     //buy
                         int profitWhenBuyingHere=-stock[idx] + ahead[0][trCount];
-                        int profitWhenNotBuyinhHere=ahead[1][trCount];
-                        curr[flag][trCount]=Math.max(profitWhenBuyingHere,profitWhenNotBuyinhHere);
+                        int profitWhenNotBuyingHere=ahead[1][trCount];
+                        curr[flag][trCount]=Math.max(profitWhenBuyingHere,profitWhenNotBuyingHere);
                     }else{
                     //sell
                         int profitWhenSellingHere=+stock[idx] + ahead[1][trCount-1];//transaction complete
