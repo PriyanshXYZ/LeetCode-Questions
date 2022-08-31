@@ -14,6 +14,7 @@ class Solution {
             for(int num:nums){
                 if(num > limitSize){
                     int opn = (num) / limitSize;//operation
+                    
                     if(num % limitSize == 0)opn--;
                     maxSize += opn;
                 }
