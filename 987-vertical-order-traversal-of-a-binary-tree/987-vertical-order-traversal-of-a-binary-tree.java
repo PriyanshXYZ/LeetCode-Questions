@@ -39,46 +39,41 @@ class Solution {
     }
     public List<List<Integer>> verticalTraversal(TreeNode root) {
         Queue<Pair> q=new ArrayDeque();
-        Pair rootP=new Pair(root,0,0);
-        q.add(rootP);
+        q.add(new Pair(root,0,0));
+        HashMap<Integer,ArrayList<Pair>> m=new HashMap();
+        
         int leftMostWidth=0;
         int rightMostWidth=0;
-        HashMap<Integer,ArrayList<Pair>> hmap=new HashMap();//(width,arraylist of same depth elements)
+        
         while(q.size()>0){
-            int size=q.size();
-            while(size-- >0){
-                Pair rnodePair=q.remove();
-                if(rnodePair.width<leftMostWidth){
-                    leftMostWidth=rnodePair.width;
-                }
-                if(rnodePair.width>rightMostWidth){
-                    rightMostWidth=rnodePair.width;
-                }
-                if(!hmap.containsKey(rnodePair.width)){
-                    hmap.put(rnodePair.width,new ArrayList());
-                    hmap.get(rnodePair.width).add(rnodePair);
-                }else{
-                    hmap.get(rnodePair.width).add(rnodePair);
-                }
-                
-                if(rnodePair.node.left!=null){
-                    q.add(new Pair(rnodePair.node.left,rnodePair.width-1,rnodePair.depth+1));
-                }
-                if(rnodePair.node.right!=null){
-                    q.add(new Pair(rnodePair.node.right,rnodePair.width+1,rnodePair.depth+1));
-                }
+            Pair rem=q.remove();
+            if(rem.width<leftMostWidth){
+                leftMostWidth=rem.width;
+            }
+            if(rem.width>rightMostWidth){
+                rightMostWidth=rem.width;
+            }
+            if(!m.containsKey(rem.width)){
+                m.put(rem.width,new ArrayList());
+            }
+            m.get(rem.width).add(rem);
+            if(rem.node.left!=null){
+                q.add(new Pair(rem.node.left,rem.width-1,rem.depth+1));
+            }
+            
+            if(rem.node.right!=null){
+                q.add(new Pair(rem.node.right,rem.width+1,rem.depth+1));
             }
         }
+        
         List<List<Integer>> res=new ArrayList();
-        for(int w=leftMostWidth;w<=rightMostWidth;w++){
-            ArrayList<Pair> unsortedList=hmap.get(w);
-            List<Integer> list=new ArrayList();
-            Collections.sort(unsortedList);
-            for(Pair item:unsortedList){
-                int val=item.node.val;
-                list.add(val);
+        
+        for(int i=0,w=leftMostWidth;w<=rightMostWidth;w++,i++){
+            res.add(new ArrayList());
+            Collections.sort(m.get(w));
+            for(int j=0;j<m.get(w).size();j++){
+                res.get(i).add(m.get(w).get(j).node.val);
             }
-            res.add(list);
         }
         return res;
     }
