@@ -29,15 +29,12 @@ class Solution {
         if(l==false && r==false){
             root.left=null;
             root.right=null;
-            return root.val==1 ;
         }
         if(l==false){
             root.left=null;
-            return true;
         }
         if(r==false){
             root.right=null;
-            return true;
         }
         return root.val==1 || l || r;
     }
