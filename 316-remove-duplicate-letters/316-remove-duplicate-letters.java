@@ -1,29 +1,29 @@
 class Solution {
     public String removeDuplicateLetters(String s) {
-         int[] alphabetFreq=new int[26];
-        for(int i=0;i<s.length();i++){
-            char ch=s.charAt(i);
-            alphabetFreq[ch-'a']++;
-        }
-        boolean[] seen=new boolean[26];
-        Stack<Integer> stk=new Stack();
         
-       
-        for(int i=0;i<s.length();i++){
-            int curr=s.charAt(i)-'a';
-            alphabetFreq[curr]--;
-            if(seen[curr])continue;
-            while(!stk.isEmpty() && curr<stk.peek() && alphabetFreq[stk.peek()]>0){
-                int popped=stk.pop();
-                seen[popped]=false;
-                
-            }
-            stk.push(curr);
-            seen[curr]=true;
+        int[] alphaFreq = new int[26];
+        for(char ch : s.toCharArray()){
+            alphaFreq[ch - 'a']++;
         }
-         StringBuilder sb=new StringBuilder();
-        while(stk.size()>0){
-            sb.append((char)(stk.pop()+'a'));
+        
+        boolean[] seen = new boolean[26];
+        Stack<Character> stk=new Stack();
+        
+        for(char ch : s.toCharArray()){
+            
+            alphaFreq[ch-'a']--;
+            
+            if(seen[ch-'a']==true)continue;
+            while(stk.size()>0 && alphaFreq[stk.peek()-'a']>0 && ch<stk.peek()){
+                seen[stk.peek()-'a']=false;
+                stk.pop();
+            }
+            seen[ch-'a']=true;
+            stk.push(ch);
+        }
+        StringBuilder sb=new StringBuilder();
+        while(stk.size()!=0){
+            sb.append(stk.pop());
         }
         return sb.reverse().toString();
     }
