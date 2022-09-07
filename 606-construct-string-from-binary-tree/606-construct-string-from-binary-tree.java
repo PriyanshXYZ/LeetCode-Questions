@@ -33,7 +33,6 @@ class Solution {
                 return;
             }
             str+="()";
-            recursion(root.left);
         }
         
         if(root.right!=null){
