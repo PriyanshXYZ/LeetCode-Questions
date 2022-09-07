@@ -14,31 +14,31 @@
  * }
  */
 class Solution {
-    String str;
+    StringBuilder str;
     public String tree2str(TreeNode root) {
-        str="";
+        str=new StringBuilder();
         recursion(root);
-        return str;
+        return str.toString();
     }
     public void recursion(TreeNode root){
         if(root==null)return;
         
-        str+=root.val+"";
+        str.append(root.val);
         if(root.left!=null){
-            str+='(';
+            str.append('(');
             recursion(root.left);
-            str+=')';
+            str.append(')');
         }else{
             if(root.right==null){
                 return;
             }
-            str+="()";
+            str.append("()");
         }
         
         if(root.right!=null){
-            str+='(';
+            str.append('(');
             recursion(root.right);
-            str+=')';
+            str.append(')');
         }else{
             recursion(root.right);
         }
