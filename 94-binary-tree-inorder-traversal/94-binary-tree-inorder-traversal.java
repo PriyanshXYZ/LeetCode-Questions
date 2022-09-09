@@ -19,35 +19,26 @@ class Solution {
     }
     //Time complexity O(n) space Complexity O(1);
     public List<Integer> morrisTraversal(TreeNode root){
-        if(root==null)return new ArrayList();
         List<Integer> ans=new ArrayList();
         TreeNode curr=root;
         
         while(curr!=null){
             if(curr.left==null){
-                //print or changes in the code must be implemented here itself
                 ans.add(curr.val);
                 curr=curr.right;
             }else{
-                
-                TreeNode inorderPred=curr.left;
+                TreeNode iop=curr.left;
                 while(true){
-                    if(inorderPred.right==null)break;
-                    if(inorderPred.right==curr)break;;
-                    inorderPred=inorderPred.right;
+                    if(iop.right==null || iop.right==curr)break;
+                    iop=iop.right;
                 }
-                
-                
-                //if inorderPredecessor is null meaning we have not visited left subtree
-                if(inorderPred.right==null){
-                    inorderPred.right=curr;//making of thread/link to inorderSuccessor
+                if(iop.right==null){
+                    //create thread
+                    iop.right=curr;
                     curr=curr.left;
-                }
-                else if(inorderPred.right==curr){//left subtree is traversed
-                    
-                    //print or changes in the code must be implemented here itself
+                }else{
                     ans.add(curr.val);
-                    inorderPred.right=null;
+                    iop.right=null;
                     curr=curr.right;
                 }
             }
