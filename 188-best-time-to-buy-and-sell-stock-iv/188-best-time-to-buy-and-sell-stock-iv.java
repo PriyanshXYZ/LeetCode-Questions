@@ -2,16 +2,18 @@ class Solution {
     int BUY=0;
     int SELL=1;
     public int maxProfit(int k, int[] prices) {
-        int[][][] dp=new int[prices.length+1][k+1][2];
-        for(int i=0;i<=prices.length;i++){
-            for(int j=0;j<=k;j++){
-                Arrays.fill(dp[i][j],-1);
-            }
-        }
-        return memo(0,prices,dp,k,BUY);
+        return spaceOptimized(k,prices);
+//         int[][][] dp=new int[prices.length+1][k+1][2];
+//         for(int i=0;i<=prices.length;i++){
+//             for(int j=0;j<=k;j++){
+//                 Arrays.fill(dp[i][j],-1);
+//             }
+//         }
+        
+//         return memo(0,prices,dp,k,BUY);
         // return recursion(0,prices,k,BUY);
     }
-    //time complexity O(2^n) space is recursion call stack
+    //time complexity O(2^nk) space is recursion call stack
     public int recursion(int idx,int[] prices,int k,int curr){
         if(k==0)return 0;
         if(idx==prices.length)return 0;
@@ -26,7 +28,7 @@ class Solution {
             return Math.max(sellingCurrStock,notSellingCurrStock);
         }
     }
-    
+    //time complexity is O(n*k) space is O(nk)
     public int memo(int idx,int[] prices,int[][][] dp,int k,int curr){
         if(k<0)return Integer.MIN_VALUE;
         if(idx==prices.length){
@@ -45,6 +47,29 @@ class Solution {
             dp[idx][k][SELL] = Math.max(sellingCurrStock,notSellingCurrStock);
             return dp[idx][k][SELL];
         }
+    }
+    public int spaceOptimized(int k,int[] s){
+        int[][] dp=new int[k+1][2];
+        
+        for(int idx=s.length-1;idx>=0;idx--){
+            int[][] temp=new int[k+1][2];
+            for(int tr=0;tr<=k;tr++){
+                
+                for(int curr=0;curr<2;curr++){
+                    if(tr==0){
+                        temp[tr][curr]=0;
+                        continue;
+                    }
+                    if(curr==BUY){
+                        temp[tr][BUY]=Math.max(dp[tr][SELL]-s[idx],dp[tr][BUY]);
+                    }else{
+                        temp[tr][SELL]=Math.max(dp[tr-1][BUY]+s[idx],dp[tr][SELL]);
+                    }
+                }
+            }
+            dp=temp;
+        }
+        return dp[k][0];
     }
     
 }
