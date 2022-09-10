@@ -10,7 +10,7 @@ class Solution {
         if(k>sum)return 0;
         
         while(lo<hi){
-            long mid=lo+(hi-lo+1)/2;
+            long mid=lo+(hi-lo+1)/2;//for maximum possible value we use uppper bound of mid
             
             long size=0;
             for(int val:candies){
