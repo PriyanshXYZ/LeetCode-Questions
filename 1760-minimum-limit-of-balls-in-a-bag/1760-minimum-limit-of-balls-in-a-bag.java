@@ -9,18 +9,18 @@ class Solution {
         while(lms<hms){
             int limit=lms+(hms-lms)/2;
             
-            int maxBalls=0;
+            int oprtn=0;
             
             for(int val:nums){
                 if(val>limit){
                     int opn= (val)/limit;
                     
                     if(val%limit==0)opn--;
-                    maxBalls+=opn;
+                    oprtn+=opn;
                 }
             }
             
-            if(maxBalls>maxOperations){
+            if(oprtn>maxOperations){
                 lms=limit+1;
             }else{
                 hms=limit;
