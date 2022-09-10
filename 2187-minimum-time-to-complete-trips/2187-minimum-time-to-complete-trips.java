@@ -1,11 +1,11 @@
 class Solution {
     public long minimumTime(int[] time, int totalTrips) {
-        long lo=0;
-        long hi=Long.MAX_VALUE/time.length;
+        long lo=Integer.MAX_VALUE;
         
         for(int val : time){
             lo=Math.min(val,lo);
         }
+        long hi=lo*totalTrips;
         
         while(lo < hi){
             long timeLimit=(lo+hi)/2;
