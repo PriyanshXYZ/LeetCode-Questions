@@ -6,26 +6,27 @@ class Solution {
             hms = Math.max(num,hms);
         }
         
-        while(lms < hms){
-            int limitSize=(lms + hms) / 2;
+        while(lms<hms){
+            int limit=lms+(hms-lms)/2;
             
-            //get count of smallest possible limit
-            int maxSize=0;
-            for(int num:nums){
-                if(num > limitSize){
-                    int opn = (num) / limitSize;//operation
+            int maxBalls=0;
+            
+            for(int val:nums){
+                if(val>limit){
+                    int opn= (val)/limit;
                     
-                    if(num % limitSize == 0)opn--;
-                    maxSize += opn;
+                    if(val%limit==0)opn--;
+                    maxBalls+=opn;
                 }
             }
             
-            if(maxSize> maxOperations){
-                lms = limitSize + 1;
-            }else {
-                hms = limitSize;
+            if(maxBalls>maxOperations){
+                lms=limit+1;
+            }else{
+                hms=limit;
             }
         }
+        
         return lms;
     }
 }
