@@ -1,5 +1,5 @@
 class MinStack {
-     Stack<Long> data;
+    Stack<Long> data;
     Long min;
 
     public MinStack() {
