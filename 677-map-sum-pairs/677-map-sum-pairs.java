@@ -1,6 +1,5 @@
 class MapSum {
     class Node{
-        boolean end=false;
         int val=0;
         Node[] children=new Node[26];
     }
@@ -17,7 +16,6 @@ class MapSum {
             if(node.children[ch-'a']==null)node.children[ch-'a']=new Node();
             node=node.children[ch-'a'];
         }
-        node.end=true;
         node.val=val;
     }
     public void dfs(Node node){
@@ -38,7 +36,6 @@ class MapSum {
         }
         
         sum=0;
-        
         dfs(node);
         return sum;
     }
