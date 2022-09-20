@@ -22,8 +22,7 @@ class MapSum {
     }
     public void dfs(Node node){
         sum+=node.val;
-        for(int i=0;i<26;i++){
-            Node child=node.children[i];
+        for(Node child:node.children){
             if(child!=null){
                 dfs(child);
             }
