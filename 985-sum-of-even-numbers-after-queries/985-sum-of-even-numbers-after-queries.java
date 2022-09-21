@@ -11,22 +11,12 @@ class Solution {
             int val=query[0];
             int i=query[1];
             if(nums[i]%2==0){
-                //this has been included in the sum
-                int num=nums[i]+val;
-                if(num%2==0){
-                    sum+=val;
-                    
-                }else{
-                    sum-=nums[i];
-                    
-                }
-            }else{
-                int num=nums[i]+val;
-                if(num%2==0){
-                    sum+=num;
-                }
+                sum-=nums[i];
             }
             nums[i]+=val;
+            if(nums[i]%2==0){
+                sum+=nums[i];
+            }
             res[idx++]=sum;
         }
         return res;
