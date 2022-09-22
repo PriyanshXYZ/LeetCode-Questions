@@ -1,6 +1,6 @@
 class Solution {
     public int subarraysWithKDistinct(int[] nums, int k) {
-        return subArrayWithAtmostK(nums,k+1)-subArrayWithAtmostK(nums,k);
+        return subArrayWithAtmostK(nums,k)-subArrayWithAtmostK(nums,k-1);
     }
     
     public int subArrayWithAtmostK(int[] nums,int k){
@@ -12,7 +12,7 @@ class Solution {
         for(;ei<n;ei++){
             elemFreq.put(nums[ei],elemFreq.getOrDefault(nums[ei],0)+1);
             
-            while(elemFreq.size()==k){
+            while(elemFreq.size()==k+1){
                 elemFreq.put(nums[si],elemFreq.get(nums[si])-1);
                 if(elemFreq.get(nums[si])==0)elemFreq.remove(nums[si]);
                 si++;
