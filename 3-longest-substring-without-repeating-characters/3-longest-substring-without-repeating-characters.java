@@ -6,7 +6,9 @@ class Solution {
         
         for(;ei<s.length();ei++){
             if(idxMap.containsKey(s.charAt(ei))){
-                si=Math.max(si,idxMap.get(s.charAt(ei))+1);
+                if(si<idxMap.get(s.charAt(ei))+1){
+                    si=idxMap.get(s.charAt(ei))+1;
+                }
             }
             idxMap.put(s.charAt(ei),ei);
             maxLen=Math.max(maxLen,ei-si+1);
