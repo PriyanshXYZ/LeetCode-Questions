@@ -37,10 +37,7 @@ class Solution {
         path.add(root.val);
         curr+=root.val;
         dfs(root.left, target,curr,path);
-        if(path.size()>0)
-            path.remove(path.size()-1);
-        
-        path.add(root.val);
+
         dfs(root.right, target,curr,path);
         
         if(path.size()>0)
