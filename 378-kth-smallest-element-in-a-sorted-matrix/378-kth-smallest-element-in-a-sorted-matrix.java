@@ -1,35 +1,31 @@
 class Solution {
     public int kthSmallest(int[][] matrix, int k) {
-        int m=matrix.length;
-        int n=matrix[0].length;
-        
+        int n=matrix.length;
         int lo=matrix[0][0];
-        int hi=matrix[m-1][n-1];
+        int hi=matrix[n-1][n-1];
         
-        while(lo < hi){
-            int mid = lo + (hi-lo)/2;
+        while(lo<hi){
+            int mid=lo + (hi - lo)/2;
             
-            int lowerThanMid=0;
-            int j=n-1;
-            for(int i=0;i<m;i++){
-                while(j>=0 && matrix[i][j]>mid){
+            int count=0,j=n-1;
+            for(int i=0;i<n;i++){
+                while(j>=0 && mid<matrix[i][j]){
                     j--;
                 }
-                
-                lowerThanMid+=(j+1);
+                count+=j+1;
             }
             
-            if(lowerThanMid < k){
-                lo = mid + 1;
+            if(count<k){
+                lo=mid+1;
             }else{
-                hi = mid;
+                hi=mid;
             }
         }
         return lo;
     }
 }
 class Solution1 {
-    // time O(nlogn) space O(n)
+    // time O(n*n) space O(n)
     public int kthSmallest(int[][] matrix, int k) {
         int[] a=new int[matrix.length*matrix[0].length];
         int idx=0;
