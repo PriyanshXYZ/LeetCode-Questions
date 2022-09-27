@@ -18,51 +18,44 @@ class Solution {
             char ch=sb.charAt(i);
             if(ch=='L'){
                 if(prev.ch=='L'){
-                    //L-L
-                    int j=prev.idx+1;
-                    while(j<i){
-                        sb.setCharAt(j,'L');
-                        j++;
+                    // l l
+                    int idx=prev.idx+1;
+                    while(idx<i){
+                        sb.setCharAt(idx,'L');
+                        idx++;
                     }
                 }else{
-                    //R-L
                     int dist=i-prev.idx-1;
                     int j=prev.idx+1;
                     int idx=dist/2+j;
-                    
-                    if(dist%2!=0){
+                    if(dist%2==0){
                         while(j<i){
-                            if(j<idx){
+                            if(j<idx)
                                 sb.setCharAt(j,'R');
-                            }else if(j>idx){
+                            else
                                 sb.setCharAt(j,'L');
-                            }
                             j++;
                         }
                     }else{
-                        while(j < i){
-                            if(j<idx){
+                        while(j<i){
+                            if(j<idx)
                                 sb.setCharAt(j,'R');
-                            }else{
+                            else if(j>idx)
                                 sb.setCharAt(j,'L');
-                            }
                             j++;
                         }
                     }
                 }
-                prev=new Pair('L',i);
+                prev=new Pair(ch,i);
             }else if(ch=='R'){
-                if(prev.ch=='L'){
-                    //L-R
-                }else{
-                    // R-R
-                    int j=prev.idx+1;
-                    while(j < i){
-                        sb.setCharAt(j,'R');
-                        j++;
+                if(prev.ch=='R'){
+                    int idx=prev.idx;
+                    while(idx<i){
+                        sb.setCharAt(idx,'R');
+                        idx++;
                     }
                 }
-                prev=new Pair('R',i);
+                prev=new Pair(ch,i);
             }
         }
         sb.deleteCharAt(0);
