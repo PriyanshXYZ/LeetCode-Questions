@@ -26,7 +26,7 @@ class Solution {
                         continue;
                     }
                     bloom++;
-                    if(bloom==k){
+                    if(bloom>=k){
                         bouquets++;
                         bloom=0;
                     }
