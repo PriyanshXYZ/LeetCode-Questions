@@ -3,6 +3,7 @@ class Solution {
         String s=Integer.toString(n);
         char[] a=s.toCharArray();
         int i=a.length-1;
+        //to check smallest non increasing element from right
         while(i>0){
             if(a[i-1]>=a[i]){
                 i--;
@@ -12,9 +13,10 @@ class Solution {
         }
         if(i==0)return -1;
         
+        int idx=i-1;
         int j=a.length-1;
-        while(j>=i){
-            if(a[j]>a[i-1]){
+        while(j>idx){
+            if(a[j]>a[idx]){
                 break;
             }else{
                 j--;
