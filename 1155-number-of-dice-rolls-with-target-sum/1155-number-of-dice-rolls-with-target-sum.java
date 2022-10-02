@@ -1,8 +1,20 @@
 class Solution {
     public int numRollsToTarget(int n, int k, int target) {
         // return recursion(0,n,k,target);
-        Integer[][] dp=new Integer[n+1][target+1];
-        return memo(n,k,target,dp);
+        // Integer[][] dp=new Integer[n+1][target+1];
+        // return memo(n,k,target,dp);
+        int[] dp=new int[target+1];
+        dp[0]=1;
+        for(int i=0;i<n;i++){
+            int[] temp=new int[target+1];
+            for(int j=1;j<=k;j++){
+                for(int t=j;t<=target;t++){
+                    temp[t]=(temp[t]+dp[t-j])%mod;
+                }
+            }
+            dp=temp;
+        }
+        return dp[target];
     }
     // k^n tc
     public int recursion(int dice,int n,int k,int target){
