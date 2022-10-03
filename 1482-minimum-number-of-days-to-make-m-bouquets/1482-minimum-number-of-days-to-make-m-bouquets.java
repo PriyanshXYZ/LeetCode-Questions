@@ -38,7 +38,7 @@ class Solution {
                     hi=days;
                 }
             }
-            return hi;
+            return lo;
         }
     }
 }
