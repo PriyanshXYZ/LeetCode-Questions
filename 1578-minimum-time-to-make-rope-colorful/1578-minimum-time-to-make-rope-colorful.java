@@ -13,7 +13,6 @@ class Solution {
             if(colors.charAt(i)==colors.charAt(j)){
                 while(j<n && colors.charAt(i)==colors.charAt(j)){
                     sum+=neededTime[j];
-
                     if(currMax<neededTime[j]){
                         currMax=neededTime[j];
                         idx=j;
