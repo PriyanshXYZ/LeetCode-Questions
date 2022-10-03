@@ -8,7 +8,33 @@
  *     ListNode(int val, ListNode next) { this.val = val; this.next = next; }
  * }
  */
-class Solution {
+class Solution{
+    
+    public ListNode reverseList(ListNode head) {
+        l=head;
+        reverseDI(head);
+        return head;
+    }
+    ListNode l;
+    boolean work=true;
+    public void reverseDI(ListNode r){
+        if(r==null)return;
+        
+        reverseDI(r.next);
+        
+        if(work==true){
+            if(l==r || l.next==r){
+                work=false;
+            }
+            
+            int temp=l.val;
+            l.val=r.val;
+            r.val=temp;
+            l=l.next;
+        }
+    }
+}
+class Solution1{
     ListNode tail=null;
     public ListNode reverseList(ListNode head) {
         if(head==null || head.next==null) return head;
@@ -36,4 +62,5 @@ class Solution {
         head.next.next=head;
         return head;
     }
+    
 }
