@@ -21,11 +21,9 @@ class Solution {
                     j++;
                 }
                 sum-=neededTime[idx];
-                // System.out.println(sum);
                 minCount+=sum;
                 
             }else{
-                sum=0;
                 i=j;
             }
             
