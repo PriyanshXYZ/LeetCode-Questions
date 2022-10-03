@@ -57,7 +57,7 @@ class NumArray {
     int sumRange(Node node,int left,int right){
         if(node.end<left || node.strt>right){
             return 0;
-        }else if(node.strt>=left && right>=node.end){
+        }else if(left<=node.strt && right>=node.end){
             return node.val;
         }else{
             int leftSum=sumRange(node.left,left,right);
