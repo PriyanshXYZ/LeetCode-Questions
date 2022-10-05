@@ -20,6 +20,10 @@ class Solution {
             temp.left=root;
             return temp;
         }
+        dfs(root,val,1,depth);
+        return root;
+    }
+    public void bfs(TreeNode root,int val,int depth){
         Queue<TreeNode> q=new ArrayDeque();
         q.add(root);
         int curDepth=1;
@@ -44,21 +48,20 @@ class Solution {
             if(flag==1)break;
             curDepth++;
         }
-        return root;
     }
-//     public void dfs(TreeNode root,int val,int currDepth,int depth){
-//         if(root==null)return;
+    public void dfs(TreeNode root,int val,int currDepth,int depth){
+        if(root==null)return;
         
-//         if(currDepth+1==depth){
-//             TreeNode left=root.left;
-//             TreeNode right=root.right;
-//             root.left=new TreeNode(val);
-//             root.right=new TreeNode(val);
-//             root.left.left=left;
-//             root.right.right=right;
-//             return;
-//         }
-//         dfs(root.left,val,currDepth+1,depth);
-//         dfs(root.right,val,currDepth+1,depth);
-//     }
+        if(currDepth+1==depth){
+            TreeNode left=root.left;
+            TreeNode right=root.right;
+            root.left=new TreeNode(val);
+            root.right=new TreeNode(val);
+            root.left.left=left;
+            root.right.right=right;
+            return;
+        }
+        dfs(root.left,val,currDepth+1,depth);
+        dfs(root.right,val,currDepth+1,depth);
+    }
 }
