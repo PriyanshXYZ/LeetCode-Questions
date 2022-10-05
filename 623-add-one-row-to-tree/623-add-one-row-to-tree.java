@@ -60,8 +60,9 @@ class Solution {
             root.left.left=left;
             root.right.right=right;
             return;
+        }else{
+            dfs(root.left,val,currDepth+1,depth);
+            dfs(root.right,val,currDepth+1,depth);
         }
-        dfs(root.left,val,currDepth+1,depth);
-        dfs(root.right,val,currDepth+1,depth);
     }
 }
