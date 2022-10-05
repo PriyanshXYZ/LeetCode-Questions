@@ -26,7 +26,7 @@ class Solution {
         
         while(q.isEmpty()==false){
             int size=q.size();
-            // int flag=0;
+            int flag=0;
             while(size-->0){
                 TreeNode rNode=q.remove();
                 if(rNode.left!=null)q.add(rNode.left);
@@ -38,10 +38,10 @@ class Solution {
                     rNode.right=new TreeNode(val);
                     rNode.left.left=left;
                     rNode.right.right=right;
-                    // flag=1;
+                    flag=1;
                 }
             }
-            // if(flag==1)break;
+            if(flag==1)break;
             curDepth++;
         }
         return root;
