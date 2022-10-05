@@ -33,6 +33,7 @@ class Solution {
             root.right=new TreeNode(val);
             root.left.left=left;
             root.right.right=right;
+            return;
         }
         dfs(root.left,val,currDepth+1,depth);
         dfs(root.right,val,currDepth+1,depth);
