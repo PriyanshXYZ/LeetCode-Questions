@@ -16,6 +16,8 @@ class Solution {
         }
         int[][][] dp=new int[strs.length][m+1][n+1];
         return memo(oneZero,0,m,n,dp);
+        
+        
     }
     public int memo(int[][] oneZero,int idx,int m ,int n, int[][][] dp){
         if(idx==oneZero.length){
