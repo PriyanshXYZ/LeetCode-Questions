@@ -1,7 +1,6 @@
 # Count pairs in array divisible by K
-## Medium 
-<div class="problem-statement">
-                <p></p><p><span style="font-size:18px">Given an array&nbsp;<strong>A[]&nbsp;</strong>and positive integer&nbsp;<strong>K</strong>, the task is to count total number of pairs in the array whose sum is divisible by&nbsp;<strong>K</strong>.</span></p>
+## Medium
+<div class="problems_problem_content__Xm_eO"><p><span style="font-size:18px">Given an array&nbsp;<strong>A[]&nbsp;</strong>and positive integer&nbsp;<strong>K</strong>, the task is to count total number of pairs in the array whose sum is divisible by&nbsp;<strong>K</strong>.</span></p>
 
 <p><span style="font-size:18px"><strong>Example 1:</strong></span></p>
 
@@ -43,5 +42,4 @@ i.e, (9, 36), (9,42), </span><span style="font-size:18px">(74, 52), (36, 42), (7
 <div><span style="font-size:18px">1 &lt;= A[i] &lt;= 10^6</span></div>
 
 <div><span style="font-size:18px">1 &lt;= K &lt;= 100</span></div>
- <p></p>
-            </div>
+</div>
