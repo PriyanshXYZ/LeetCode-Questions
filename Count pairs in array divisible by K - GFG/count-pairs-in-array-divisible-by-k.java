@@ -73,6 +73,8 @@ class Solution
         int div0=map.getOrDefault(0,0);
         ans+=div0*(div0-1)/2;
         
+        
+        // if k is even then one of the pair of k/2 is skipped above so we add it here which is also nc2
         if(k%2==0){
             div0=map.getOrDefault(k/2,0);
             ans+=div0*(div0-1)/2;
