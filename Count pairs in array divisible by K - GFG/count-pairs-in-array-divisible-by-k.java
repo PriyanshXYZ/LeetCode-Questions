@@ -33,26 +33,50 @@ class Solution
     public static long countKdivPairs(int arr[], int n, int k)
     {
         //code here
-        long[] hash=new long[k];
-        //storing the freq of remainder obtained from each element
-        for(int i=0;i<n;i++){
-            hash[arr[i]%k]++;
+        // long[] hash=new long[k];
+        // //storing the freq of remainder obtained from each element
+        // for(int i=0;i<n;i++){
+        //     hash[arr[i]%k]++;
+        // }
+        // //case 1:if element is divisible by k
+        // //this will give remainder 0 so we add this using adddition of n numbers
+        // long sum=hash[0]*(hash[0]-1)/2;
+        
+        // //case 2:if element is not divisble by k
+        // //we go till half of the hash array to avoid duplicacy
+        // for(int i=1;i<=k/2 && i!=(k-i);i++){
+        
+        //     sum+=hash[i]*hash[k-i];
+        // }
+        
+        // //case 3 if k is even so k/2 th idx will lead to ambiguity
+        // if(k%2==0)
+        //     sum+=hash[k/2]*(hash[k/2]-1)/2;
+        
+        // return sum;
+        HashMap<Integer,Integer> map=new HashMap<>();
+        for(int val:arr){
+            map.put(val%k,map.getOrDefault(val%k,0)+1);
         }
-        //case 1:if element is divisible by k
-        //this will give remainder 0 so we add this using adddition of n numbers
-        long sum=hash[0]*(hash[0]-1)/2;
         
-        //case 2:if element is not divisble by k
-        //we go till half of the hash array to avoid duplicacy
-        for(int i=1;i<=k/2 && i!=(k-i);i++){
-        
-            sum+=hash[i]*hash[k-i];
+        long ans=0;
+        int i=1,j=k-1;
+        while(i<j){
+            int pair1=map.getOrDefault(i,0);
+            int pair2=map.getOrDefault(j,0);
+            ans+=pair1*pair2;
+            i++;
+            j--;
         }
         
-        //case 3 if k is even so k/2 th idx will lead to ambiguity
-        if(k%2==0)
-            sum+=hash[k/2]*(hash[k/2]-1)/2;
+        //for pairs divisible by k ans will be Nc2
+        int div0=map.getOrDefault(0,0);
+        ans+=div0*(div0-1)/2;
         
-        return sum;
+        if(k%2==0){
+            div0=map.getOrDefault(k/2,0);
+            ans+=div0*(div0-1)/2;
+        }
+        return ans;
     }
 }
