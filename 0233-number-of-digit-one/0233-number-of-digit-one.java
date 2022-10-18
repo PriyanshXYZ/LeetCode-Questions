@@ -25,8 +25,8 @@ class Solution {
         
         for(int val=0;val<=limit;val++){
             int newCnt=val==1?count+1:count;
-            //the digit at the ith position is smaller than the digit at the ith position of the number the number has already become smaller so we can set the flag as 1
-            boolean newTight=tight==1 && val==limit;
+        
+            boolean newTight=tight==1 && val==limit;//if state is 
             ans+=digitdp(pos+1,newCnt ,newTight?1:0);
         }
         return dp[pos][count][tight]=ans;
