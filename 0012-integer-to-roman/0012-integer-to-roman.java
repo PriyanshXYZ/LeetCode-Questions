@@ -8,6 +8,7 @@ class Solution {
         // System.out.println(map);
         StringBuilder sb=new StringBuilder();
         for(int key:map.keySet()){
+            if(num==0)break;
             while(num>=key){
                 sb.append(map.get(key));
                 num-=key;
