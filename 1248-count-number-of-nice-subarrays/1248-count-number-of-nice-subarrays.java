@@ -1,4 +1,4 @@
-class Solution {
+class Solution1 {
     //alternate way using hashmap of freq...
     public int numberOfSubarrays(int[] nums, int k) {
         HashMap<Integer,Integer> freqMap=new HashMap();
@@ -15,7 +15,7 @@ class Solution {
         return res;
     }
 }
-class Solution1 {
+class Solution {
     public int numberOfSubarrays(int[] nums, int k) {
         return atMostK(nums,k) - atMostK(nums,k-1);
     }
