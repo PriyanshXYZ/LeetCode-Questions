@@ -1,0 +1,27 @@
+class Solution {
+    public int subarraysWithKDistinct(int[] nums, int k) {
+        return subArrayWithAtmostK(nums,k)-subArrayWithAtmostK(nums,k-1);
+    }
+    
+    public int subArrayWithAtmostK(int[] nums,int k){
+        if(k==0)return 0;
+        
+        HashMap<Integer,Integer> elemFreq=new HashMap();
+        int si=0,ei=0;
+        int subArrSizeK=0;
+        for(;ei<nums.length;ei++){
+            elemFreq.put(nums[ei],elemFreq.getOrDefault(nums[ei],0)+1);
+            
+            while(elemFreq.size()==k+1){
+                elemFreq.put(nums[si],elemFreq.get(nums[si])-1);
+                if(elemFreq.get(nums[si])==0){
+                    elemFreq.remove(nums[si]);
+                }
+                si++;
+            }
+            
+            subArrSizeK+=ei-si+1;
+        }
+        return subArrSizeK;
+    }
+}
