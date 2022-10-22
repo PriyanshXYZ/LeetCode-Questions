@@ -12,9 +12,9 @@ class Solution {
                 si++;
             }
             
-            if(t>=target){
-                size=Math.min(ei-si+1,size);    
-            }
+            // if(t>=target){
+            //     size=Math.min(ei-si+1,size);    
+            // }
         }
         if(size==Integer.MAX_VALUE)return 0;
         return size;
