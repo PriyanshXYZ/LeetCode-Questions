@@ -6,15 +6,11 @@ class Solution {
         for(int ei=0;ei<nums.length;ei++){
             t+=nums[ei];
             
-            while(t>=target){
+            while(si<=ei && t>=target){
                 t-=nums[si];
                 size=Math.min(ei-si+1,size);
                 si++;
             }
-            
-            // if(t>=target){
-            //     size=Math.min(ei-si+1,size);    
-            // }
         }
         if(size==Integer.MAX_VALUE)return 0;
         return size;
