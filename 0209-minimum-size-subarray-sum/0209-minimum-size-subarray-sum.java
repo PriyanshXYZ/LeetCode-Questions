@@ -6,7 +6,7 @@ class Solution {
         for(int ei=0;ei<nums.length;ei++){
             t+=nums[ei];
             
-            while(si<=ei && t>=target){
+            while(t>=target){
                 t-=nums[si];
                 size=Math.min(ei-si+1,size);
                 si++;
