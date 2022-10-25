@@ -13,7 +13,7 @@ class Solution {
             for (int i = dp.size() - 1; i >= 0; --i) {
                 if ((dp.get(i) & a) > 0) continue;
                 dp.add(dp.get(i) | a);
-                res = Math.max(res, Integer.bitCount(dp.get(i) | a));
+                res = Math.max(res, Integer.bitCount(dp.get(dp.size()-1)));
             }
         }
         return res;
