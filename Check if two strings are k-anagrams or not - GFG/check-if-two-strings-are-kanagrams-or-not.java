@@ -29,25 +29,27 @@ class Solution {
     boolean areKAnagrams(String s1, String s2, int k) {
         // code here
         if(s1.length()!=s2.length())return false;
-        
-        int[] map1=new int[26];
-        
+        Map<Character,Integer> map=new HashMap<>();
         for(char ch:s1.toCharArray()){
-            map1[ch-'a']++;
+            map.put(ch,map.getOrDefault(ch,0)+1);
         }
         
-        int[] map2=new int[26];
         
         for(char ch:s2.toCharArray()){
-            map2[ch-'a']++;
+            if(map.containsKey(ch) ){
+                map.put(ch,map.get(ch)-1);    
+            }
+            
         }
-        
+        // System.out.println(map);
         int count=0;
-        for(int i=0;i<26;i++){
-            if(map1[i]>map2[i]){
-                count+=Math.abs(map1[i]-map2[i]);
+        
+        for(char key:map.keySet()){
+            if(map.get(key)>0){
+                count+=map.get(key);
             }
         }
+        // System.out.println(count);
         return count<=k;
     }
 }
