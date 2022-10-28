@@ -1,20 +1,29 @@
 class Solution {
     public List<List<String>> partition(String s) {
-        int len = s.length();
-        boolean[][] dp = new boolean[len][len];
-        List<List<String>> result = new ArrayList<>();
-        dfs(result, s, 0, new ArrayList<>(), dp);
-        return result;
+        List<List<String>> res = new ArrayList<>();
+        boolean[][] dp = new boolean[s.length()][s.length()];
+        for(int i = 0; i < s.length(); i++) {
+            for(int j = 0; j <= i; j++) {
+                if(s.charAt(i) == s.charAt(j) && (i - j <= 2 || dp[j+1][i-1])) {
+                    dp[j][i] = true;
+                }
+            }
+        }
+        helper(res, new ArrayList<>(), dp, s, 0);
+        return res;
     }
-
-    void dfs(List<List<String>> result, String s, int start, List<String> currentList, boolean[][] dp) {
-        if (start >= s.length()) result.add(new ArrayList<>(currentList));
-        for (int end = start; end < s.length(); end++) {
-            if (s.charAt(start) == s.charAt(end) && (end - start <= 2 || dp[start + 1][end - 1])) {
-                dp[start][end] = true;
-                currentList.add(s.substring(start, end + 1));
-                dfs(result, s, end + 1, currentList, dp);
-                currentList.remove(currentList.size() - 1);
+    
+    private void helper(List<List<String>> res, List<String> path, boolean[][] dp, String s, int pos) {
+        if(pos == s.length()) {
+            res.add(new ArrayList<>(path));
+            return;
+        }
+        
+        for(int i = pos; i < s.length(); i++) {
+            if(dp[pos][i]) {
+                path.add(s.substring(pos,i+1));
+                helper(res, path, dp, s, i+1);
+                path.remove(path.size()-1);
             }
         }
     }
