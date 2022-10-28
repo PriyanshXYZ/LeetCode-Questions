@@ -18,7 +18,6 @@ class Solution {
             for(char ch:a){
                 s+=ch;
             }
-            
             if(!map.containsKey(s)){
                 map.put(s,new ArrayList());
             }
