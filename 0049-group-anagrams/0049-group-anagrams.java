@@ -3,12 +3,12 @@ class Solution {
          if (strs == null || strs.length == 0) {
             return new ArrayList<>();
         }
-        if(strs.length==1){
-            List<List<String>> res=new ArrayList();
-            res.add(new ArrayList());
-            res.get(0).add(strs[0]);
-            return res;
-        }
+        // if(strs.length==1){
+        //     List<List<String>> res=new ArrayList();
+        //     res.add(new ArrayList());
+        //     res.get(0).add(strs[0]);
+        //     return res;
+        // }
         HashMap<String,List<String>> map=new HashMap();
         
         for(String str:strs){
