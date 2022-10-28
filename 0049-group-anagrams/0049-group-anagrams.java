@@ -1,4 +1,4 @@
-class Solution {
+class Solution1 {
     public List<List<String>> groupAnagrams(String[] strs) {
         if(strs == null || strs.length == 0) return Collections.emptyList();
         Map<String, List<String>> map = new HashMap<>();
@@ -16,7 +16,7 @@ class Solution {
         return new LinkedList<>(map.values());
     }
 }
-class Solution1 {
+class Solution {
     public List<List<String>> groupAnagrams(String[] strs) {
         HashMap<String,List<String>> map=new HashMap();
         
