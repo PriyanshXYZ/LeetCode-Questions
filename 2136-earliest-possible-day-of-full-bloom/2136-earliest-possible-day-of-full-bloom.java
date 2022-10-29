@@ -7,7 +7,6 @@ class Solution {
             this.plnt=plnt;
             this.grow=grow;
         }
-        
         @Override
         public int compareTo(Pair o){
             return this.grow-o.grow;
@@ -27,7 +26,8 @@ class Solution {
         Arrays.sort(time);
         int ans=0;
         for(int i=0;i<time.length;i++){
-            ans=Math.max(time[i].grow,ans)+time[i].plnt;
+            ans=Math.max(time[i].grow,ans);
+            ans+=time[i].plnt;
         }
         return ans;
     }
