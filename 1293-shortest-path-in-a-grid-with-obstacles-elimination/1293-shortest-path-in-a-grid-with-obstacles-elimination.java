@@ -18,7 +18,7 @@ class Solution {
         for(int i=0;i<vis.length;i++){
             Arrays.fill(vis[i],-1);
         }
-        q.add(new Pair(0,0,0,k));
+        q.add(new Pair(0,0,0,0));
         while(!q.isEmpty()){
             //get pair
             Pair rPair=q.remove();
@@ -29,8 +29,8 @@ class Solution {
             }
             
             if(grid[x][y]==1){
-                if(rPair.r>0){
-                    rPair.r-=1;
+                if(rPair.r<k){
+                    rPair.r+=1;
                 }else{
                     continue;
                 }
@@ -41,7 +41,7 @@ class Solution {
             }
             
             //more obstacles removed must be preferred
-            if(vis[rPair.x][rPair.y]!=-1 && vis[rPair.x][rPair.y]>=rPair.r){
+            if(vis[rPair.x][rPair.y]!=-1 && vis[rPair.x][rPair.y]<=rPair.r){
                 continue;
             }
             vis[rPair.x][rPair.y]=rPair.r;
