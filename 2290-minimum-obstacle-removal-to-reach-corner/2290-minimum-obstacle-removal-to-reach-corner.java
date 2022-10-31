@@ -18,7 +18,7 @@ class Solution {
         int[][] vis=new int[grid.length][grid[0].length];
         
         for(int i=0;i<vis.length;i++)Arrays.fill(vis[i],-1);
-        int minObs=Integer.MAX_VALUE;
+        // int minObs=Integer.MAX_VALUE;
         q.add(new Pair(0,0,0));
         while(q.size()!=0){
             // System.out.println(q);
@@ -35,7 +35,8 @@ class Solution {
             }
             //we found our cell
             if(x==grid.length-1 && y==grid[0].length-1){
-                minObs=Math.min(minObs,rem.obs);
+                // minObs=Math.min(minObs,rem.obs);
+                return rem.obs;
             }
             
             if(vis[x][y]!=-1 && vis[x][y]<=rem.obs){
@@ -53,6 +54,6 @@ class Solution {
             if(y>0)
                 q.add(new Pair(x,y-1,rem.obs));
         }
-        return minObs;
+        return -1;
     }
 }
