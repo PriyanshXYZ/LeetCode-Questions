@@ -27,7 +27,16 @@ class Solution{
         int[] dp=new int[n+1];
         // return recursion(price,n);
         Arrays.fill(dp,-1);
-        return memo(price,n,dp);
+        // return memo(price,n,dp);
+        dp[0]=0;
+        for(int i=1;i<=n;i++){
+            int ans=0;
+            for(int j=1;j<=i;j++){
+                ans=Math.max(ans,price[j-1]+dp[i-j]);
+            }
+            dp[i]=ans;
+        }
+        return dp[n];
     }
     public int recursion(int[] price,int n){
         if(n==0)return 0;
