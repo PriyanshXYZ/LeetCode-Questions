@@ -1,7 +1,6 @@
 # Minimum Swaps to Sort
-## Medium 
-<div class="problem-statement">
-                <p></p><p><span style="font-size:18px">Given an array of n distinct elements. Find the minimum number of swaps required to sort the array in strictly increasing&nbsp;order.</span></p>
+## Medium
+<div class="problems_problem_content__Xm_eO"><p><span style="font-size:18px">Given an array of n distinct elements. Find the minimum number of swaps required to sort the array in strictly increasing&nbsp;order.</span></p>
 
 <p><br>
 <span style="font-size:18px"><strong>Example 1:</strong></span></p>
@@ -34,5 +33,4 @@ You do not need to read input or print anything. Your task is to complete the fu
 <span style="font-size:18px"><strong>Constraints:</strong><br>
 1 ≤ n&nbsp;≤ 10<sup>5</sup><br>
 1 ≤ nums<sub>i</sub>&nbsp;≤ 10<sup>6</sup></span></p>
- <p></p>
-            </div>
+</div>
