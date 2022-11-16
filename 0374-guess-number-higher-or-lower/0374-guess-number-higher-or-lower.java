@@ -10,7 +10,7 @@
 public class Solution extends GuessGame {
     public int guessNumber(int n) {
         long lo=0,hi=n;
-        while(lo<=hi){
+        while(lo<hi){
             long mid=(lo+hi)/2;
             int num=guess((int)mid);
             // System.out.println(num+" "+mid);
