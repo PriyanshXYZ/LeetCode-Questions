@@ -31,7 +31,7 @@ class Solution {
         curr[1]=root.val;
         curr[0]=Math.max(left[0],left[1])+Math.max(right[0],right[1]);//not take curr val
         curr[1]+=left[0]+right[0];
-        System.out.println(curr[0]+" "+curr[1]);
+        // System.out.println(curr[0]+" "+curr[1]);
         return curr;
     }
     //Exponentail 4^n
