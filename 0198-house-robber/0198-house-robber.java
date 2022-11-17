@@ -1,11 +1,20 @@
 class Solution {
     public int rob(int[] nums) {
-        int[] dp=new int[nums.length+1];
-        Arrays.fill(dp,-1);
-        int ans=memo(0,nums.length,nums,dp);//rob current house
-        Arrays.fill(dp,-1);
-        ans=Math.max(memo(1,nums.length,nums,dp),ans);//dont rob
-        return ans;
+        // int[] dp=new int[nums.length+1];
+        // Arrays.fill(dp,-1);
+        // int ans=memo(0,nums.length,nums,dp);//rob current house
+        // Arrays.fill(dp,-1);
+        // ans=Math.max(memo(1,nums.length,nums,dp),ans);//dont rob
+        // return ans;
+        
+        int rob=0,notrob=0;
+        for(int i=0;i<nums.length;i++){
+            int currRob=nums[i]+notrob;
+            int currNotRob=Math.max(rob,notrob);
+            rob=currRob;
+            notrob=currNotRob;
+        }
+        return Math.max(rob,notrob);
     }
     private int memo(int idx, int n, int[] nums, int[] dp){
         if(idx>=n)return 0;
