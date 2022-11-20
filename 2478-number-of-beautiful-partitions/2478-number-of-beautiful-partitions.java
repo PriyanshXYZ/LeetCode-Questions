@@ -1,4 +1,4 @@
-class Solution{
+class Solution1 {
     public int beautifulPartitions(String s, int k, int minLength) {
         if (k * minLength > s.length() || !isPrime(s.charAt(0)) || isPrime(s.charAt(s.length() - 1))) {
             return 0;
@@ -27,7 +27,7 @@ class Solution{
         return false;
     }
 }
-class Solution1 {
+class Solution {
     
     public int beautifulPartitions(String s, int k, int minLen) {
         if(!isPrime(s.charAt(0)-'0') || k * minLen >s.length() || isPrime(s.charAt(s.length()-1)-'0')){
@@ -40,7 +40,8 @@ class Solution1 {
                 for(int j=i+minLen-1;j<s.length();j++){
                     if(!isPrime(s.charAt(j)-'0')){
                         for(int par=0;par<k;par++){
-                            cache[j+1][par+1]=(cache[j+1][par+1]%mod+cache[i][par]%mod)%mod;
+                            cache[j+1][par+1]+=cache[i][par]%mod;
+                            cache[j+1][par+1]%=mod;
                         }
                     }
                 }
