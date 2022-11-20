@@ -1,38 +1,75 @@
-class Solution {
+class Solution{
     public int beautifulPartitions(String s, int k, int minLength) {
-        // if last digit is prime then there is no possible solution return 0 then
-        if(isPrime(s.charAt(s.length()-1))) return 0;
-        dp=new long[k+1][s.length()];
-        for(int i=0;i<=k;i++) Arrays.fill(dp[i],-1);
-        return (int)bs(s,k,minLength,0);
-}
-    long[][] dp;
-
-    //will check if the char is prime or not
-    public boolean isPrime(char num){
-        if(num=='2'||num=='3'||num=='5'||num=='7') return true;
-        return false;
-    }
-
-    public long bs(String s,int k,int ml,int idx){
-        // base cases. if first digit is not prime than return 
-        if(k<0||idx>=s.length()||!isPrime(s.charAt(idx))) return 0;
-
-        // if there is only one partition left return 1 because we have already checked that last digit not is prime
-        if(k==1){
-            return 1;
+        if (k * minLength > s.length() || !isPrime(s.charAt(0)) || isPrime(s.charAt(s.length() - 1))) {
+            return 0;
         }
-
-        if(dp[k][idx]!=-1) return dp[k][idx];
-        long ans=0;
-
-        //will check for minLength and more if there is any substring which matches the case
-        // s.length()-(k-1)*ml this is written because we want to give rest elements appropriate digits
-        for(int i=idx+ml-1;i<s.length()-(k-1)*ml;i++){
-            if(!isPrime(s.charAt(i))){
-                ans=(ans+bs(s,k-1,ml,i+1))%1000000007;
+        int[][] dp = new int[s.length() + 1][k + 1];
+        dp[0][0] = 1;
+        for (int i = 0; i < s.length() - minLength + 1; i++) {
+            if (isPrime(s.charAt(i)) && (i == 0 || !isPrime(s.charAt(i - 1)))) {
+                for (int j = i + minLength - 1; j < s.length(); j++) {
+                    if (!isPrime(s.charAt(j))) {
+                        for (int p = 0; p < k; p++) {
+                            dp[j + 1][p + 1] += dp[i][p];
+                            dp[j + 1][p + 1] %= 1_000_000_007;
+                        }
+                    }
+                }
             }
         }
-        return dp[k][idx]=ans;
+        return dp[s.length()][k];
+    }
+
+    private boolean isPrime(char c) {
+        if (c == '2' || c == '3' || c == '5' || c == '7') {
+            return true;
+        }
+        return false;
+    }
+}
+class Solution1 {
+    
+    public int beautifulPartitions(String s, int k, int minLen) {
+        if(!isPrime(s.charAt(0)-'0') || k * minLen >s.length() || isPrime(s.charAt(s.length()-1)-'0')){
+            return 0;
+        }
+        int[][] cache=new int[s.length()+1][k+1];
+        cache[0][0]=1;
+        for(int i=0;i<s.length()-minLen+1;i++){
+            if(isPrime(s.charAt(i)-'0') && (i==0 || !isPrime(s.charAt(i-1)-'0'))){
+                for(int j=i+minLen-1;j<s.length();j++){
+                    if(!isPrime(s.charAt(j)-'0')){
+                        for(int par=0;par<k;par++){
+                            cache[j+1][par+1]=(cache[j+1][par+1]%mod+cache[i][par]%mod)%mod;
+                        }
+                    }
+                }
+            }
+        }
+        return (int)cache[s.length()][k];
+        // return (int)memo(0,s,k,minLen,cache);
+    }
+    int mod=(int)(1e9+7);
+    private long memo(int i,String s,int k,int mLen,Integer[][] dp){
+        if(k==0 && i==s.length())return 1;
+        if(k<0 || i>s.length())return 0;
+        if(k==0 || i==s.length())return 0;
+        if(!isPrime(s.charAt(i)-'0'))return 0;
+        
+        if(dp[i][k]!=null)return dp[i][k];
+        
+        long ans=0;
+        
+        for(int j=i+mLen-1;j<s.length();j++){
+            if(!isPrime(s.charAt(j)-'0')){
+                ans=(ans%mod+memo(j+1,s,k-1,mLen,dp)%mod)%mod;
+            }
+        }
+        return dp[i][k]=(int)ans%mod;
+    }
+    
+    private boolean isPrime(int num){
+        if(num==2 || num==3 || num==5 || num==7)return true;
+        return false;
     }
 }
