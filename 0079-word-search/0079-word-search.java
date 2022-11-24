@@ -29,8 +29,8 @@ class Solution {
         for(int[] dir:dirs){
             int x=r+dir[0];
             int y=c+dir[1];
-            ans|=dfs(x,y,idx+1,s,board,vis);
-            if(ans)return  true;
+            if(dfs(x,y,idx+1,s,board,vis))
+                return  true;
         }
         vis[r][c]=false;
         return false;
