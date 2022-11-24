@@ -8,10 +8,8 @@ class Solution {
         boolean flag=false;
         for(int r=0;r<m;r++){
             for(int c=0;c<n;c++){
-                flag=dfs(r,c,0,word,board,vis);
-                if(flag){
+                if(dfs(r,c,0,word,board,vis))
                     return true;
-                }
             }
         }
         return false;
