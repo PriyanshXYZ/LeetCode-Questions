@@ -2,6 +2,22 @@ class Solution {
     int[][] dirs={{0,-1},{0,1},{1,0},{-1,0}};
     
     public boolean exist(char[][] board, String word) {
+        if(word.length() > board[0].length * board.length)
+            return false;
+        
+        Set<Character> hs1 = new HashSet<Character>();
+        Set<Character> hs2 = new HashSet<Character>();
+        
+        for(int i=0;i<board.length;i++)
+            for(int j=0;j<board[0].length;j++)
+                    hs1.add(board[i][j]);
+        
+        for(int i=0;i<word.length();i++)
+                hs2.add(word.charAt(i));
+        
+        if(hs2.size()>hs1.size())
+            return false;
+        
         int m=board.length;
         int n=board[0].length;
         boolean[][] vis=new boolean[m][n];
