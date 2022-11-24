@@ -1,5 +1,6 @@
 class Solution {
     int[][] dirs={{0,-1},{0,1},{1,0},{-1,0}};
+    
     public boolean exist(char[][] board, String word) {
         int m=board.length;
         int n=board[0].length;
@@ -9,7 +10,6 @@ class Solution {
             for(int c=0;c<n;c++){
                 flag=dfs(r,c,0,word,board,vis);
                 if(flag){
-                    
                     return true;
                 }
             }
@@ -32,9 +32,10 @@ class Solution {
             int x=r+dir[0];
             int y=c+dir[1];
             ans|=dfs(x,y,idx+1,s,board,vis);
+            if(ans)return  true;
         }
         vis[r][c]=false;
-        return ans;
+        return false;
         
     }
 }
