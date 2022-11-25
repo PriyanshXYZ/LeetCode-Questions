@@ -10,7 +10,6 @@ class Solution {
             long temp=(long)((i-nsl[i])*(nsr[i]-i))%mod;
             ans=(ans%mod+(temp*arr[i])%mod)%mod;
         }
-        // System.out.println(ans);
         return (int)ans;
     }
     
@@ -29,10 +28,6 @@ class Solution {
             }
             stk.push(i);
         }
-        // for(int i=0;i<n;i++){
-        //     System.out.print(res[i]+" ");
-        // }
-        // System.out.println();
         return res;
     }
     
@@ -51,10 +46,6 @@ class Solution {
             }
             stk.push(i);
         }
-        // for(int i=0;i<n;i++){
-        //     System.out.print(res[i]+" ");
-        // }
-        // System.out.println();
         return res;
     }
 }
