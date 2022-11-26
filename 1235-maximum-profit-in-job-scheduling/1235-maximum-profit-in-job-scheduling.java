@@ -15,7 +15,7 @@ class Solution {
         TreeMap<Integer,Integer> dp=new TreeMap<>();
         dp.put(0,0);
         for(int[] job:jobs){
-            int curr=dp.floorEntry(job[0]).getValue()+job[2];
+            int curr=dp.floorEntry(job[0]).getValue()+job[2];//logn operation
             if(curr>dp.lastEntry().getValue()){
                 dp.put(job[1],curr);
             }
