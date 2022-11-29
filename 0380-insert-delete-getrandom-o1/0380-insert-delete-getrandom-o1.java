@@ -9,37 +9,30 @@ class RandomizedSet {
     }
     
     public boolean insert(int val) {
-        if(map.containsKey(val)){
-            return false;
-        }
+        if(map.containsKey(val))return false;
         map.put(val,l.size());
         l.add(val);
         return true;
     }
     private void swap(int i,int j){
-        int iVal=l.get(i);
-        int jVal=l.get(j);
+        int val1=l.get(i);
+        int val2=l.get(j);
+        l.set(i,val2);
+        l.set(j,val1);
         
-        l.set(i,jVal);
-        l.set(j,iVal);
-        
-        map.put(iVal,j);
-        map.put(jVal,i);
-        
+        map.put(val1,j);
+        map.put(val2,i);
     }
-    
     public boolean remove(int val) {
-        if(map.containsKey(val)==false){
-            return false;
-        }     
-        
-        int idx=map.get(val);
-        
-        swap(idx,l.size()-1);
-        
-        l.remove(l.size()-1);
-        map.remove(val);
-        return true;
+        if(map.containsKey(val)){
+            int idx=map.get(val);
+            
+            swap(idx,l.size()-1);
+            l.remove(l.size()-1);
+            map.remove(val);
+            return true;
+        }
+        return false;
     }
     
     public int getRandom() {
