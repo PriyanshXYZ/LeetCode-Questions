@@ -10,7 +10,7 @@ class Solution {
             if(!map.containsKey(loser)){
                 map.put(loser,new int[2]);
             }
-            map.get(winner)[0]++;
+            // map.get(winner)[0]++;
             map.get(loser)[1]++;
         }
         
