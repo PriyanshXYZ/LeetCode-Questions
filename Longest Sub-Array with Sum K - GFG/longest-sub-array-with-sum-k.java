@@ -55,18 +55,15 @@ class Solution{
         int lon=0;
 		HashMap<Integer,Integer> map=new HashMap();
 		int sum=0;
-		map.put(0,0);
+		map.put(0,-1);
 		for(int i=0;i<n;i++){
 			sum+=a[i];
 			if(!map.containsKey(sum)){
 			    map.put(sum,i);
 			}
 			if(map.containsKey(sum-k)){
-			    if(sum-k==0){
-			        lon=Math.max(i-map.get(sum-k)+1,lon);
-			    }else{
-			        lon=Math.max(i-map.get(sum-k),lon);    
-			    }
+		        lon=Math.max(i-map.get(sum-k),lon);    
+			    
 			}
 			
 		}
