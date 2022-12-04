@@ -1,4 +1,52 @@
 class Solution {
+    public int minScore(int n, int[][] roads) {
+        par=new int[n+1];
+        rank=new int[n+1];
+        minSz=new int[n+1];
+        Arrays.fill(minSz,Integer.MAX_VALUE);
+        for(int i=1;i<=n;i++)par[i]=i;
+        for(int[] road:roads){
+            int u=road[0];
+            int v=road[1];
+            int w=road[2];
+            
+            int s1Lead=find(u);
+            int s2Lead=find(v);
+            if(s1Lead==s2Lead){
+                minSz[s1Lead]=Math.min(minSz[s1Lead],w);
+            }else{
+                par[s2Lead]=s1Lead;
+                minSz[s1Lead]=Math.min(minSz[s1Lead],Math.min(minSz[s2Lead],w));
+            }
+        }
+        return minSz[find(n)];
+    }
+    int[] par;
+    int[] rank;
+    int[] minSz;
+
+    public int find(int x){
+        if(par[x]==x)return x;
+        par[x]=find(par[x]);
+        return par[x];
+    }
+    public void union(int s1Lead,int s2Lead,int w){
+        if(rank[s1Lead]<rank[s2Lead]){
+            par[s1Lead]=s2Lead;
+            
+        }else if(rank[s2Lead]<rank[s1Lead]){
+            par[s2Lead]=s1Lead;
+            
+        }else{  
+            par[s2Lead]=s1Lead;
+            rank[s1Lead]++;
+        
+        }
+        
+    }
+
+}
+class Solution1 {
     class Pair implements Comparable<Pair>{
         int node;
         int score;
@@ -45,24 +93,4 @@ class Solution {
         }
         return min;
     }
-//     int[] par;
-//     int[] rank;
-//     int[] minSz;
-    
-//     public int find(int x){
-//         if(par[x]==x)return x;
-//         par[x]=find(par[x]);
-//         return par[x];
-//     }
-//     public void union(int s1Lead,int s2Lead){
-//         if(rank[s1Lead]<rank[s2Lead]){
-//             par[s1Lead]=s2Lead;
-//         }else if(rank[s2Lead]<rank[s1Lead]){
-//             par[s2Lead]=s1Lead;
-//         }else{  
-//             par[s2Lead]=s1Lead;
-//             rank[s1Lead]++;
-     
-//         }
-//     }
 }
