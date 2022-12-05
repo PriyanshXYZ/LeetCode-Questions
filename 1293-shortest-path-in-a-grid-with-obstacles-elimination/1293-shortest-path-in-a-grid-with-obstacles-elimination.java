@@ -36,20 +36,20 @@ class Solution {
                 }
             }
             
-            if(rPair.x==grid.length-1 && rPair.y==grid[0].length-1){
+            if(x==grid.length-1 && y==grid[0].length-1){
                 return rPair.len;
             }
             
-            //more obstacles removed must be preferred
-            if(vis[rPair.x][rPair.y]!=-1 && vis[rPair.x][rPair.y]<=rPair.r){
+            //less obstacles removed must be preferred as in future we might need to those.
+            if(vis[x][y]!=-1 && vis[x][y]<=rPair.r){
                 continue;
             }
-            vis[rPair.x][rPair.y]=rPair.r;
+            vis[x][y]=rPair.r;
             
-            q.add(new Pair(rPair.x+1,rPair.y,rPair.len+1,rPair.r));
-            q.add(new Pair(rPair.x-1,rPair.y,rPair.len+1,rPair.r));
-            q.add(new Pair(rPair.x,rPair.y+1,rPair.len+1,rPair.r));
-            q.add(new Pair(rPair.x,rPair.y-1,rPair.len+1,rPair.r));
+            q.add(new Pair(x+1,y,rPair.len+1,rPair.r));
+            q.add(new Pair(x-1,y,rPair.len+1,rPair.r));
+            q.add(new Pair(x,y+1,rPair.len+1,rPair.r));
+            q.add(new Pair(x,y-1,rPair.len+1,rPair.r));
         }
         return -1;
     }
