@@ -1,7 +1,6 @@
 # k-th smallest element in BST
-## Medium 
-<div class="problem-statement">
-                <p></p><p><span style="font-size:18px">Given a BST and an integer K. Find the Kth Smallest element in the BST.&nbsp;</span></p>
+## Medium
+<div class="problems_problem_content__Xm_eO"><p><span style="font-size:18px">Given a BST and an integer K. Find the Kth Smallest element in the BST using O(1) extra space.&nbsp;</span></p>
 
 <p><span style="font-size:18px"><strong>Example 1:</strong></span></p>
 
@@ -10,7 +9,9 @@
 &nbsp;   /   \
 &nbsp;  1     3<strong>
 </strong>K = 2
-<strong>Output: </strong>2</span>
+<strong>Output: </strong>2
+<strong>Explanation:</strong> 2 is the 2nd smallest element in the BST</span>
+
 </pre>
 
 <p><span style="font-size:18px"><strong>Example 2:</strong></span></p>
@@ -20,7 +21,9 @@
 &nbsp;     /  \
 &nbsp;    1    3
 K = 5
-<strong>Output: </strong>-1</span></pre>
+<strong>Output: </strong>-1
+<strong>Explanation:</strong> There is no 5th smallest element in the BST as the size of BST is 3</span>
+</pre>
 
 <p>&nbsp;</p>
 
@@ -34,5 +37,4 @@ You don't need to read input or print anything. Your task is to complete the fun
 1&lt;=Number of nodes&lt;=100000</span></p>
 
 <p>&nbsp;</p>
- <p></p>
-            </div>
+</div>
