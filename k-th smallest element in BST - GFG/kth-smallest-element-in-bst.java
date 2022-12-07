@@ -1,4 +1,4 @@
-// { Driver Code Starts
+//{ Driver Code Starts
 // Initial Template for Java
 
 /*package whatever //do not write package name here */
@@ -84,6 +84,7 @@ class GFG {
         }
     }
 }
+
 // } Driver Code Ends
 
 
@@ -103,36 +104,24 @@ class GFG {
 
 class Solution {
     // Return the Kth smallest element in the given BST
-    public int KthSmallestElement(Node root, int k) {
+    int ans=-1;
+    public int KthSmallestElement(Node root, int K) {
         // Write your code here
-        Node curr=root;
-        int count=0;
-        //using inorder morris traversal
-        while(curr!=null){
-            if(curr.left==null){
-                count++;
-                if(count==k)return curr.data;
-                curr=curr.right;
-                
-            }else{
-                Node iop=curr.left;
-                while(iop.right!=null && iop.right!=curr){
-                    iop=iop.right;
-                }
-                
-                if(iop.right==null){
-                    //create link
-                    iop.right=curr;
-                    curr=curr.left;
-                }else if(iop.right==curr){
-                    count++;
-                    if(count==k)return curr.data;
-                    
-                    iop.right=null;
-                    curr=curr.right;
-                }
-            }
-        }
-        return -1;
+        if(root==null)return -1;
+        recur(root, K);
+        return ans;
     }
+    int curr=0;
+    private void recur(Node root, int k){
+        if(root==null)return;
+        
+        recur(root.left,k);
+        curr++;
+        if(curr==k){
+            ans=root.data;
+            return;
+        }
+        recur(root.right,k);
+    }
+    
 }
