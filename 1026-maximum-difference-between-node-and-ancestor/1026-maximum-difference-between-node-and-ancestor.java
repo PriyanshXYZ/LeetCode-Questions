@@ -14,6 +14,20 @@
  * }
  */
 class Solution {
+    public int maxAncestorDiff(TreeNode root) {
+        return dfs(root,root.val,root.val);
+    }
+    public int dfs(TreeNode root, int min, int max){
+        if(root==null)return 0;
+        max=Math.max(root.val, max);
+        min=Math.min(root.val, min);
+        int left=dfs(root.left, min, max);
+        int right=dfs(root.right, min, max);
+        return Math.max(left,Math.max(right,max-min));
+    }
+}
+class Solution1 {
+    //o(nlogn) solution
     int maxDiff;
     public int maxAncestorDiff(TreeNode root) {
         maxDiff=0;
