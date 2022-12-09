@@ -18,12 +18,12 @@ class Solution {
         return dfs(root,root.val,root.val);
     }
     public int dfs(TreeNode root, int min, int max){
-        if(root==null)return 0;
+        if(root==null)return max-min;
         max=Math.max(root.val, max);
         min=Math.min(root.val, min);
         int left=dfs(root.left, min, max);
         int right=dfs(root.right, min, max);
-        return Math.max(left,Math.max(right,max-min));
+        return Math.max(left, right);
     }
 }
 class Solution1 {
