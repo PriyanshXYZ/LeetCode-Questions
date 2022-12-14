@@ -1,5 +1,40 @@
 class Solution {
     public int rob(int[] nums) {
+        // return Math.max(f(0, nums, 0) /* rob */, f(0, nums, 1)/*dont rob*/);
+        Integer[][] dp = new Integer[nums.length][2];
+        return Math.max(f(0, nums, 0, dp) /* rob */, f(0, nums, 1, dp)/*dont rob*/);
+    }
+    
+    public int f(int idx, int[] nums, int flag, Integer[][] dp){
+        if(idx == nums.length)return 0;
+        
+        if(dp[idx][flag] != null )return dp[idx][flag];
+        int ans=0;
+        if(flag==1){//do not rob current house
+            ans=f(idx + 1, nums, 0, dp);
+        }else{
+            int rob =nums[idx] + f(idx + 1, nums , 1, dp);
+            int notRob = f(idx + 1, nums , 0, dp);
+            ans=Math.max(rob, notRob);
+        }
+        return dp[idx][flag] = ans;
+    }
+    private int f(int idx, int[] nums, int flag){
+        if(idx==nums.length)return 0;
+        
+        int ans=0;
+        if(flag==1){//do not rob current house
+            ans=f(idx + 1, nums, 0);
+        }else{
+            int rob =nums[idx] + f(idx + 1, nums , 1);
+            int notRob = f(idx + 1, nums , 0);
+            ans=Math.max(rob, notRob);
+        }
+        return ans;
+    }
+}
+class Solution1 {
+    public int rob(int[] nums) {
         // int[] dp=new int[nums.length+1];
         // Arrays.fill(dp,-1);
         // int ans=memo(0,nums.length,nums,dp);//rob current house
