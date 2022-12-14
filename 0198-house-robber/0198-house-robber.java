@@ -1,8 +1,18 @@
 class Solution {
     public int rob(int[] nums) {
         // return Math.max(f(0, nums, 0) /* rob */, f(0, nums, 1)/*dont rob*/);
-        Integer[][] dp = new Integer[nums.length][2];
-        return Math.max(f(0, nums, 0, dp) /* rob */, f(0, nums, 1, dp)/*dont rob*/);
+        // Integer[][] dp = new Integer[nums.length][2];
+        // return Math.max(f(0, nums, 0, dp) /* rob */, f(0, nums, 1, dp)/*dont rob*/);
+        
+        int rob = 0, notRob = 0;
+        for(int i=0; i < nums.length; i++){
+            int currRob = nums[i] + notRob;
+            int currNotRob = Math.max(rob, notRob);
+            
+            rob = currRob;
+            notRob = currNotRob;
+        }
+        return Math.max(rob, notRob);
     }
     
     public int f(int idx, int[] nums, int flag, Integer[][] dp){
