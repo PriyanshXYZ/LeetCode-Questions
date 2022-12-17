@@ -1,57 +1,3 @@
-// class Solution{
-//     String[] words;
-//     String result;
-//     public boolean isSolvable(String[] words, String result) {
-//         this.words = words;
-//         this.result = result;
-//         boolean[] used = new boolean[10];
-        
-//         int[] map = new int[128];
-//         Set<Character> starts = new HashSet<>();
-//         Set<Character> all = new HashSet<>();
-//         for(String word : words) {
-//             int index = 0;
-//             for(char c : word.toCharArray()) {
-//                 if(index == 0)
-//                     starts.add(c);
-//                 index++;
-//                 all.add(c);
-//             }
-//         }
-//         int index = 0;
-//         for(char c : result.toCharArray()) {
-//             if(index == 0 && words.length>1)
-//                 starts.add(c);
-//             index++;
-//             all.add(c);
-//         }
-//         char[] arr = new char[all.size()];
-//         index = 0;
-//         for(char c : all)
-//             arr[index++] = c;
-        
-//         return dfs(arr, starts, map, used, 0);
-//     }
-    
-    
-//     boolean dfs(char[] arr, Set<Character> starts, int[] map, boolean[] used, int startI) {
-//         if(startI == arr.length) {
-//             return calculate(map);
-//         }
-        
-//         for(int i = 0; i < 10; i++) {
-//             if(used[i])
-//                 continue;
-            
-//             if(i == 0 && starts.contains(arr[startI]))
-//                 continue;
-//             map[arr[startI]] = i;
-//             used[i] = true;
-//             if(dfs(arr, starts, map, used, startI+1))
-//                 return true;
-//             used[i] = false;
-//             map[arr[startI]] = 0;
-//         }
 class Solution {
     HashSet<Character> start;
     String[] words;
@@ -85,7 +31,9 @@ class Solution {
             if(i==0 && result.length() > 1)start.add(ch);
             set.add(ch);
         }
+        
         if(set.size()>10)return false;
+        
         char[] unique=new char[set.size()];
         int idx = 0;
         for(char ch : set){
