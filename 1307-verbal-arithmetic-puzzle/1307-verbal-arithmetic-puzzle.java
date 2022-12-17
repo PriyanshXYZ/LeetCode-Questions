@@ -56,9 +56,19 @@ class Solution {
     HashSet<Character> start;
     String[] words;
     String result;
+    public boolean isValid(String[] words, String result){
+        int maxLen = 0;
+        for(String word : words){
+            maxLen = Math.max(word.length(), maxLen);
+        }
+        if(maxLen + 1 < result.length() || maxLen > result.length())return false;
+        return true;
+    }
     public boolean isSolvable(String[] words, String result) {
         this.words = words;
         this.result = result;
+        if(!isValid(words , result))return false;
+        
         Integer[] map = new Integer[26];
         HashSet<Character> set = new HashSet();
         start= new HashSet();
@@ -75,6 +85,7 @@ class Solution {
             if(i==0 && result.length() > 1)start.add(ch);
             set.add(ch);
         }
+        if(set.size()>10)return false;
         char[] unique=new char[set.size()];
         int idx = 0;
         for(char ch : set){
@@ -84,15 +95,14 @@ class Solution {
         return recur(0, unique, map, new boolean[10]);
     }
     
-    public boolean f(Integer[] map){
+    public boolean isEqual(Integer[] map){
         int lSum = 0, rSum = 0;
-        // print(map);
+        
         for(String str : words){
             int num=0;
             for(char ch : str.toCharArray()){
                 num = 10*num +map[ch-'A'];
             }
-            // System.out.println(num);
             lSum += num;
         }
         int num=0;
@@ -104,7 +114,7 @@ class Solution {
     }
     public boolean recur(int idx, char[] unique, Integer[] map, boolean[] digits){
         if(idx == unique.length){
-            return f(map);
+            return isEqual(map);
         }
         
         boolean ans = false;
