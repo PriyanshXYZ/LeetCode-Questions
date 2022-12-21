@@ -1,4 +1,37 @@
 class Solution {
+    //using graph coloring i.e dfs
+    public boolean possibleBipartition(int n, int[][] dislikes) {
+        List<List<Integer>> graph = new ArrayList();
+        for(int i=0;i<=n;i++)graph.add(new ArrayList());
+        
+        for(int[] edge : dislikes){
+            int u = edge[0];
+            int v = edge[1];
+            
+            graph.get(u).add(v);
+            graph.get(v).add(u);
+        }
+        int[] color = new int[n+1];
+        for(int vtc = 1; vtc <=n; vtc++){
+            if(color[vtc] == 0){
+                if(!sameColor(vtc, graph,1, color))return false;
+            }
+        }
+        return true;
+    }
+    public boolean sameColor(int src, List<List<Integer>> graph,int color, int[] assignedColor){
+        if(assignedColor[src] != 0){
+            return assignedColor[src] == color;
+        }
+        
+        assignedColor[src] = color;
+        for(int nbr : graph.get(src)){
+            if(sameColor(nbr, graph,-color,assignedColor) == false)return false;
+        }
+        return true;
+    }
+}
+class Solution1 {
     public boolean possibleBipartition(int n, int[][] dislikes) {
         //bipartite is only possible when 
         //1. when there is no cycle present
