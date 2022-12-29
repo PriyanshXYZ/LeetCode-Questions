@@ -31,28 +31,36 @@ class GFG {
 // User function Template for Java
 
 class Solution {
-    
+    public static boolean collision(int a, int b){
+        if(a>0 && b<0){
+            if(a<Math.abs(b))return true;
+            return false;
+        }else return false;
+                
+    }
     public static int[] asteroidCollision(int N, int[] asteroids) {
         // code here
         Stack<Integer> stk = new Stack<>();
         for(int asteroid : asteroids){
-            if(stk.size()==0){
+            if(stk.isEmpty()){
                 stk.push(asteroid);
-            }else if(asteroid<0){
-                while(stk.size() >0 && stk.peek()>0 && stk.peek()<Math.abs(asteroid)){
-                    stk.pop();
-                }
-                if(stk.size()==0){
+            }else{
+                if(asteroid<0){
+                    while(stk.size()>0 && collision(stk.peek(),asteroid)){
+                        stk.pop();
+                    }
+                    if(stk.size()==0){
+                        stk.push(asteroid);
+                    }else if(stk.peek() < 0){
+                        stk.push(asteroid);
+                    }else if(stk.peek() > Math.abs(asteroid)){
+                        //do nothing
+                    }else if(stk.peek()== Math.abs(asteroid)){
+                        stk.pop();
+                    }
+                }else{
                     stk.push(asteroid);
-                }else if(stk.peek()<0){
-                    stk.push(asteroid);
-                }else if(stk.peek()>Math.abs(asteroid)){
-                    //do nothing
-                }else if(stk.peek()==Math.abs(asteroid)){
-                    stk.pop();
                 }
-            }else if(asteroid>0){
-                stk.push(asteroid);
             }
         }
         int[] res = new int[stk.size()];
