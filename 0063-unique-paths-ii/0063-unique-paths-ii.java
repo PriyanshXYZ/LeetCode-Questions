@@ -4,9 +4,25 @@ class Solution {
         int m=grid[0].length;
         // return recursion(n - 1, m - 1, grid);
         int[][] dp=new int[n][m];
-        return memo(n - 1, m - 1, grid, dp);
+        // return memo(n - 1, m - 1, grid, dp);
         //tabulation
+        if(grid[n-1][m-1]==1)return 0;
         
+        for(int i = n - 1; i >= 0; i--){
+            for(int j = m - 1; j >= 0; j--){
+                if(i == n - 1 && j == m - 1){  
+                    dp[i][j] = 1;
+                    continue;
+                }
+                if(grid[i][j] != 1){
+                    dp[i][j] += (i + 1) < n ? dp[i + 1][j] : 0;
+                    dp[i][j] += (j + 1) < m ? dp[i][j + 1] : 0;    
+                    
+                }
+                
+            }
+        }
+        return dp[0][0];
     }
     public int recursion(int n, int m, int[][] grid){
         //base case
