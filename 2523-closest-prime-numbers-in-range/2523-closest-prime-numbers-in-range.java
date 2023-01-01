@@ -1,10 +1,10 @@
 class Solution {
     boolean[] isPrime = new boolean[1000001];
-    
+    List<Integer> primes;
     public void sieve(){
         Arrays.fill(isPrime,true);
         isPrime[0] = isPrime[1] = false;
-        
+        primes = new ArrayList();
         for(int i = 2; i*i<isPrime.length; i++){
             if (isPrime[i]) {
                 for (int j = i * i; j < isPrime.length; j += i)
@@ -14,26 +14,23 @@ class Solution {
     }
     public int[] closestPrimes(int left, int right) {
         sieve();
-        int a2=-1;
-        int[] ans = new int[2];
-        Arrays.fill(ans,-1);
-        for(int i= right;i>=left;i--){
-            if(isPrime[i]){
-                if(a2==-1)a2=i;
-                else{
-                    if(ans[0]==-1){
-                        ans[0]=i;
-                        ans[1]=a2;
-                    }else{
-                        if(ans[1]-ans[0]>=a2-i){
-                            ans[0]=i;
-                            ans[1]=a2;
-                        }
-                    }
-                    a2=i;
-                }
+        for(int i=left;i<=right;i++){
+            if(isPrime[i])primes.add(i);
+        }
+        if(primes.size()<2)return new int[]{-1,-1};
+        
+        int minDiff= primes.get(1)-primes.get(0);
+        int n2=primes.get(1);
+        int n1=primes.get(0);
+        
+        for(int i=2;i<primes.size();i++){
+            int diff = primes.get(i) - primes.get(i-1);
+            if(diff<minDiff){
+                n1=primes.get(i-1);
+                n2=primes.get(i);
+                minDiff = diff;
             }
         }
-        return ans;
+        return new int[]{n1,n2};
     }
 }
