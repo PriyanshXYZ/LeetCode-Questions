@@ -1,27 +1,32 @@
 class Solution {
     public boolean isValidSudoku(char[][] board) {
-        for(int i=0;i<9;i++){
-            HashSet<Character> row=new HashSet();
-            HashSet<Character> col=new HashSet();
-            HashSet<Character> cube=new HashSet();
-            for(int j=0;j<9;j++){
-                char ch=board[i][j];
-                char ch1=board[j][i];
-                if(ch!='.'){
-                    if(!row.add(ch)){
-                        return false;
-                    }
-                }
-                if(ch1!='.'){
-                    if(!col.add(ch1)){
-                        return false;
-                    }
-                }
-                int RowIndex = 3*(i/3);
-                int ColIndex = 3*(i%3);
-                if(board[RowIndex + j/3][ColIndex + j%3]!='.' && !cube.add(board[RowIndex + j/3][ColIndex + j%3]))
-                    return false;
+        if (board.length != 9)
+            return false;
+        boolean[][] row_seen = new boolean[9][9], col_seen = new boolean[9][9];
+        boolean[][][] small_seen = new boolean[3][3][9];
+        for (int i = 0; i < 9; i++) {
+            
+            if (board[i].length != 9) return false;
+            
+            for (int j = 0; j < 9; j++) {
+                char digit = board[i][j];
+                if (digit == '.') continue;
                 
+                int index = digit - '0' - 1;
+                
+                if (row_seen[i][index]) return false;
+                
+                row_seen[i][index] = true;
+                
+                if (col_seen[j][index]) return false;
+                
+                col_seen[j][index] = true;
+                
+                int x = i / 3, y = j / 3;
+                
+                if (small_seen[x][y][index]) return false;
+                
+                small_seen[x][y][index] = true;
             }
         }
         return true;
