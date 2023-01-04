@@ -1,4 +1,5 @@
-class Solution {
+class Solution1 {
+    //nlogn time 1 space
     public int minimumRounds(int[] tasks) {
         Arrays.sort(tasks);
         
@@ -21,7 +22,7 @@ class Solution {
         return minRounds;
     }
 }
-class Solution1 {
+class Solution {
     //O{n} time and space
     public int minimumRounds(int[] tasks) {
         Map<Integer,Integer> map = new HashMap();
