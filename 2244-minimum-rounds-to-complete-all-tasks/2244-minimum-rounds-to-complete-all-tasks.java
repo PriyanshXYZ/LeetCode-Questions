@@ -5,7 +5,7 @@ class Solution {
         for(int i=0;i<tasks.length;i++){
             map.put(tasks[i], map.getOrDefault(tasks[i],0)+1);
         }
-        System.out.println(map);
+
         int minRounds = 0;
         for(int value : map.values()){
             if(value==1)return -1;
