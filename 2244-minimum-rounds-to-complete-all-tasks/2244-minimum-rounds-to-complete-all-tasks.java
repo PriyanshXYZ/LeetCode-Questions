@@ -12,10 +12,14 @@ class Solution {
             if(value %3 == 0){
                 minRounds += value/3;
                 
-            }else{
+            }else if(value%3 == 2){
                 minRounds += value/3 + 1; //remainder can be 1 or 2
-                //for 1 take example 7 so we made group of 3 3 1 (invalid) which can be done as 3 2 2 
+                
                 //for 2 take example 8 we can directly add 1 of 2 task.
+            }else{
+                //for 1 take example 7 so we made group of 3 3 1 (invalid) which can be done as 3 2 2 
+                // so value/3 -1 => reducing last 3 task group into  2 task group twice (3 2 2)
+                minRounds += (value/3-1)+2;
             }
             
            
