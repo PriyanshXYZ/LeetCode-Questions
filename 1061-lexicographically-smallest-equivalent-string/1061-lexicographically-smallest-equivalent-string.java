@@ -40,11 +40,11 @@ class Solution {
             uf.union(s1.charAt(i)-'a',s2.charAt(i)-'a');
         }
         
-        String res = "";
+        StringBuilder res = new StringBuilder();
         for(int i = 0; i<baseStr.length();i++){
             int ch = baseStr.charAt(i)-'a';
-            res+=(char)(uf.find(ch)+'a');
+            res.append((char)(uf.find(ch)+'a'));
         }
-        return res;
+        return res.toString();
     }
 }
