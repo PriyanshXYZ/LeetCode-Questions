@@ -22,19 +22,14 @@ class Solution {
             
             
             if(xlead!=ylead){
-                // if(rank[xlead]>rank[ylead]){
-                //     parent[ylead]=xlead;
-                // }else if(rank[xlead]<rank[ylead]){
-                //     parent[xlead]=ylead;
-                // }else{
-                    if(xlead<ylead){
-                        parent[ylead]=xlead;
-                        rank[xlead]++;
-                    }else{
-                        parent[xlead]=ylead;
-                        rank[ylead]++;
-                    }
-                // }
+                //rank given based on lexicographically smaller occurance
+                if(xlead<ylead){
+                    parent[ylead]=xlead;
+                    rank[xlead]++;
+                }else{
+                    parent[xlead]=ylead;
+                    rank[ylead]++;
+                }
             }
         }
     }
