@@ -49,8 +49,10 @@ class Solution {
         for(int[] edge : edges){
             int u = edge[0];
             int v = edge[1];
-            graph.get(u).add(v);
-            graph.get(v).add(u);
+            if(vals[u]>=vals[v])
+                graph.get(u).add(v);
+            else
+                graph.get(v).add(u);
         }
         
         UF uf = new UF(n);
