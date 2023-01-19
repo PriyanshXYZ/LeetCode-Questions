@@ -54,11 +54,11 @@ class Solution {
             
             if(aggresiveCows >= k){
                 //more agressive cows we need to increse distance
-                ans = minDist;
+                
                 lo = minDist + 1;
             }else{
                 //less agressive cows we need to check if for more min distance can we get the lesser cows
-                
+                ans = minDist - 1;
                 hi = minDist - 1;
             }
         }
