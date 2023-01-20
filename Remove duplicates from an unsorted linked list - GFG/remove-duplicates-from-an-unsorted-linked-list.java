@@ -93,17 +93,30 @@ class Solution
     public Node removeDuplicates(Node head) 
     {
          // Your code here
-         Node dummy = new Node(-1);
-         Node tail = dummy;
-         HashSet<Integer> set = new HashSet();
-         
-         for(Node temp = head; temp != null; temp = temp.next){
-             if(!set.contains(temp.data)){
-                 tail.next = new Node(temp.data);
-                 set.add(temp.data);
-                 tail = tail.next;
-             }
-         }
-         return dummy.next;
+        Node dummy = new Node(-1);
+        Node tail = dummy;
+        
+        Node curr=head;
+        
+        Set<Integer> isPresent = new HashSet<>();
+        
+        while(curr != null){
+            if(curr==head){
+                tail.next = new Node(curr.data);
+            }else{
+                while(curr!=null && isPresent.contains(curr.data)){
+                    curr=curr.next;
+                }
+                if(curr!=null)
+                    tail.next = new Node(curr.data);
+            }
+            tail=tail.next;
+            if(curr!=null){
+                isPresent.add(curr.data);
+                curr=curr.next;
+            }
+                
+        }
+        return dummy.next;
     }
 }
