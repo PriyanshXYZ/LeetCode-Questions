@@ -28,9 +28,7 @@ class Solution {
             }
             flag=!flag;
         }
-        // for(int i=0;i<n*n+1;i++){
-        //     System.out.print(cell[i]+" ");
-        // }
+        
         int moves=0;
         Queue<Integer> q = new ArrayDeque<>();
         boolean[] vis = new boolean[n*n+1];
