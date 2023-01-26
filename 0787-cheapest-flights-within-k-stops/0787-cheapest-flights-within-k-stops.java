@@ -57,7 +57,7 @@ class Solution {
             
             graph.get(u).add(new Pair(v,cost));
         }
-        Integer[][] dp = new Integer[n][k+2];
+        Integer[][] dp = new Integer[n][k+1];
         int ans = memo(src,dst,k,graph,dp);
         
         if(ans == Integer.MAX_VALUE)return -1;
