@@ -8,26 +8,6 @@ class Solution {
             this.wt = wt;
         }
     }
-    int res=Integer.MAX_VALUE;
-    public int findCheapestPrice(int n, int[][] flights, int src, int dst, int k) {
-        return bellmanFord(n,flights,src,dst,k);
-//         List<List<Pair>> graph = new ArrayList();
-        
-//         for(int i = 0;i<n;i++)graph.add(new ArrayList());
-        
-//         for(int[] flight : flights){
-//             int u = flight[0];
-//             int v = flight[1];
-//             int cost = flight[2];
-            
-//             graph.get(u).add(new Pair(v,cost));
-//         }
-//         boolean[] vis = new boolean[n];
-//         memo(src,dst,k+1,0,graph,vis);
-        
-//         if(res == Integer.MAX_VALUE)return -1;
-//         return res;
-    }
     public int bellmanFord(int n, int[][] flights, int src, int dst, int k){
        int[][] dp = new int[n][k+2];
         for(int i =0;i<n;i++){
@@ -63,23 +43,44 @@ class Solution {
         }
         return ans;
     }
-    public void memo(int src,int dst, int k, int path,List<List<Pair>> graph,boolean[] vis){
-        if(k<0)return;
-        if(src==dst && k>=0){
-            res = Math.min(res,path);
-            return;
+    
+    public int findCheapestPrice(int n, int[][] flights, int src, int dst, int k) {
+        // return bellmanFord(n,flights,src,dst,k);
+        List<List<Pair>> graph = new ArrayList();
+        
+        for(int i = 0;i<n;i++)graph.add(new ArrayList());
+        
+        for(int[] flight : flights){
+            int u = flight[0];
+            int v = flight[1];
+            int cost = flight[2];
+            
+            graph.get(u).add(new Pair(v,cost));
         }
+        Integer[][] dp = new Integer[n][k+2];
+        int ans = memo(src,dst,k,graph,dp);
         
-        vis[src]=true;
+        if(ans == Integer.MAX_VALUE)return -1;
+        return ans;
+    }
+    
+    public int memo(int src,int dst, int k,List<List<Pair>> graph ,Integer[][] dp){
+        if(src==dst)return 0;
         
+        if(k<0)return Integer.MAX_VALUE;
+        
+        if(dp[src][k]!=null)return dp[src][k];
+        
+        int ans = Integer.MAX_VALUE;
         for(Pair nbr : graph.get(src)){
             int node = nbr.node;
             int wt = nbr.wt;
-            if(wt+path>res)continue;
-            if(vis[node]==false)
-                memo(node,dst,k-1,path+wt,graph,vis);
+            int curr =memo(node,dst,k-1,graph,dp);
+            
+            if(curr!=Integer.MAX_VALUE)ans = Math.min(ans,curr+wt);    
             
         }
-        vis[src]=false;
+    
+        return dp[src][k]=ans;
     }
 }
