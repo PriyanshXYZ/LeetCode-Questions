@@ -1,51 +1,57 @@
 class Solution {
     class Trie{
-        boolean isEnd=false;
-        Trie[] children=new Trie[26];
+        boolean isEnd = false;
+        Trie[] child = new Trie[26];
     }
     Trie root;
     public List<String> findAllConcatenatedWordsInADict(String[] words) {
-        root=new Trie();
+        root = new Trie();
         
-        //create a trie node
-        for(String str:words){
-            Trie curr=root;
-            for(char ch:str.toCharArray()){
-                if(curr.children[ch-'a']==null){
-                    curr.children[ch-'a']=new Trie();
+        for(String word : words){
+            Trie node = root;
+            for(char ch : word.toCharArray()){
+                if(node.child[ch - 'a'] == null){
+                    node.child[ch - 'a'] = new Trie();
                 }
-                curr=curr.children[ch-'a'];
+                node = node.child[ch-'a'];
             }
-            curr.isEnd=true;
+            node.isEnd=true;
         }
-        List<String> res=new ArrayList();
-        for(String word:words){
-            flag=false;
-            wordCount(word,0,0);
-            if(flag)res.add(word);
+        
+        List<String> res = new ArrayList();
+        
+        for(String word : words){
+            if(dfs(0,word,0)){
+                res.add(word);
+            }
         }
         return res;
     }
-    boolean flag;
-    private void wordCount(String word,int idx,int count){
-        if(idx==word.length()){
-            if(count>=2){
-                flag=true;
-            }
-            return;
+    public boolean dfs(int idx, String word,int count){
+        if(idx == word.length()){
+            return count>=2;
         }
-        Trie curr=root;
-        for(int i=idx;i<word.length();i++){
-            char ch=word.charAt(i);
-            if(curr.children[ch-'a']!=null){
-                curr=curr.children[ch-'a'];
-                if(curr.isEnd){
-                    wordCount(word,i+1,count+1);
+        
+        //if we move at end 
+        //option 1 -> explore in the node
+        //option 2 -> explore at other node from start
+        Trie temp = root;
+        
+        
+        
+        for(int i = idx; i < word.length(); i++){
+            char ch = word.charAt(i);
+            if(temp.child[ch - 'a']!=null){
+                temp = temp.child[ch - 'a'];
+                if(temp.isEnd){
+                    if(dfs(i + 1, word, count + 1)){
+                        return true;
+                    }
                 }
-            }else{
-                return;
-            }
-            
+            }else break;
         }
+        
+        
+        return false;
     }
 }
