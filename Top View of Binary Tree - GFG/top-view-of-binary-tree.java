@@ -1,4 +1,4 @@
-// { Driver Code Starts
+//{ Driver Code Starts
 //Initial Template for JAVA
 
 import java.util.LinkedList; 
@@ -105,7 +105,8 @@ public class Tree {
                 t--;   
         }
     }
-}// } Driver Code Ends
+}
+// } Driver Code Ends
 
 
 //User function Template for Java
@@ -125,47 +126,40 @@ class Node{
 
 class Solution
 {
-    //Function to return a list of nodes visible from the top view 
-    //from left to right in Binary Tree.
     static class Pair{
         Node node;
-        int hr;
-        Pair(Node node,int hr){
-            this.node=node;
-            this.hr=hr;
+        int hori;
+        Pair(Node node,int hori){
+            this.node = node;
+            this.hori = hori;
         }
     }
+    //Function to return a list of nodes visible from the top view 
+    //from left to right in Binary Tree.
     static ArrayList<Integer> topView(Node root)
     {
         // add your code
-        Queue<Pair> q=new ArrayDeque<Pair>();
+        Queue<Pair> q = new ArrayDeque();
         q.add(new Pair(root,0));
-        ArrayList<Integer> list=new ArrayList();
-        HashMap<Integer,Integer> hmap=new HashMap<Integer,Integer>(); 
+        ArrayList<Integer> ans = new ArrayList<>();
+        int leftMost = 0;
+        int rightMost = 0;
+        ans.add(root.data);
         while(q.size()>0){
-            int size=q.size();
-            while(size-- >0){
-                Pair p=q.remove();
-                if(!hmap.containsKey(p.hr)){
-                    hmap.put(p.hr,p.node.data);
+            int size = q.size();
+            while(size-- > 0){
+                Pair rem = q.remove();
+                if(rem.hori<leftMost){
+                    ans.add(0,rem.node.data);
+                    leftMost=rem.hori;
+                }else if(rem.hori>rightMost){
+                    ans.add(rem.node.data);
+                    rightMost=rem.hori;
                 }
-                if(p.node.left!=null)q.add(new Pair(p.node.left,p.hr-1));
-                if(p.node.right!=null)q.add(new Pair(p.node.right,p.hr+1));
+                if(rem.node.left!=null)q.add(new Pair(rem.node.left,rem.hori-1));
+                if(rem.node.right!=null)q.add(new Pair(rem.node.right,rem.hori+1));
             }
         }
-        int rightMost=Integer.MIN_VALUE;
-        int leftMost=Integer.MAX_VALUE;
-        for(int key:hmap.keySet()){
-            if(key<leftMost){
-                leftMost=key;
-            }
-            if(key>rightMost){
-                rightMost=key;
-            }
-        }
-        for(int i=leftMost;i<rightMost+1;i++){
-            list.add(hmap.get(i));
-        }
-        return list;
+        return ans;
     }
 }
