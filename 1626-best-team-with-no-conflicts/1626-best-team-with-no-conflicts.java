@@ -22,9 +22,10 @@ class Solution {
         if(prev==-1){
             inc = a[idx][1] + memo(idx+1, a, idx, dp);
         }
-        //conflict between players of different age so we need to keep prev se bada
+        //conflict between players of different age so we need to keep prev choosen se bada score
         else if(a[idx][0]>a[prev][0] && a[idx][1]>=a[prev][1]){
             inc = a[idx][1] + memo(idx+1, a, idx, dp);
+        //conflict wil not happend in casee of same age
         }else if(a[idx][0]==a[prev][0]){
             inc = a[idx][1] + memo(idx+1, a, idx, dp);
         }
