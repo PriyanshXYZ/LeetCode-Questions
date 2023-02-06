@@ -15,14 +15,12 @@ class Solution {
                 if(i-p.length()>=0){
                     char ch1 = s.charAt(i-p.length());    
                     freq2[ch1-'a']--;
-                }        
-                // System.out.print(ch+" ");
+                }
                 
                 boolean flag = true;
                 for(int j=0;j<26;j++){
                     if(freq1[j]!=freq2[j]){
                         flag=false;
-                        // System.out.println((char)(j+'a'));
                         break;
                     }
                 }  
