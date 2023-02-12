@@ -3,15 +3,15 @@ class Solution {
         Arrays.sort(nums);
         int n = nums.length;
         long ct = 0;
+        int lo=n-1,hi=n-1;
         for (int i = 0; i < n; i++) {
-            int j = lower(nums,lower-nums[i],i);
-            
-            int k = upper(nums,upper-nums[i],i);
-            
-            ct += k - j;
+            while(hi>=0 && (nums[i]+nums[hi])>upper)--hi;
+            while(lo>=0 && (nums[i]+nums[lo])>=lower)--lo;
+            ct += hi - lo;
+            if(lo<i && hi>=i)--ct;
             
         }
-        return ct;
+        return ct/2;
     }
     public  int lower(int arr[],int key, int idx){
         int low = idx + 1;
