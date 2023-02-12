@@ -1,4 +1,20 @@
 class Solution {
+   public long countFairPairs(int[] nums, int lower, int upper) {
+       Arrays.sort(nums);
+       return countLess(nums, upper + 1) - countLess(nums, lower);        
+    }
+    public long countLess(int[] nums, int val) {
+        long res = 0;
+        
+        for (int i = 0, j = nums.length - 1;i < j;i++) {
+            while (i < j && nums[i] + nums[j] >= val)
+                j--;
+            res += j - i;
+        }
+        return res;
+    }
+}
+class Solution1{
     public long countFairPairs(int[] nums, int lower, int upper) {
         Arrays.sort(nums);
         int n = nums.length;
@@ -13,6 +29,22 @@ class Solution {
             
         }
         return ct/2;//we have duplicate pairs i.e i,j & j,i so we remove them
+    }
+}
+class Solution2{
+    public long countFairPairs(int[] nums, int lower, int upper) {
+        Arrays.sort(nums);
+        int n = nums.length;
+        long ct = 0;
+        for (int i = 0; i < n; i++) {
+            int j = lower(nums,lower-nums[i],i);
+            
+            int k = upper(nums,upper-nums[i],i);
+            
+            ct += k - j;
+            
+        }
+        return ct;
     }
     public  int lower(int arr[],int key, int idx){
         int low = idx + 1;
