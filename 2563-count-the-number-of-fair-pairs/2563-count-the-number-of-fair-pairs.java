@@ -7,11 +7,12 @@ class Solution {
         for (int i = 0; i < n; i++) {
             while(hi>=0 && (nums[i]+nums[hi])>upper)--hi;
             while(lo>=0 && (nums[i]+nums[lo])>=lower)--lo;
+            System.out.println(hi-lo);
             ct += hi - lo;
-            if(lo<i && hi>=i)--ct;
+            if(lo<i && hi>=i)--ct;//self pair must be excluded
             
         }
-        return ct/2;
+        return ct/2;//we have duplicate pairs i.e i,j & j,i so we remove them
     }
     public  int lower(int arr[],int key, int idx){
         int low = idx + 1;
