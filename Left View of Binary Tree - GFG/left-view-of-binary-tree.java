@@ -122,28 +122,23 @@ class Node
 }*/
 class Tree
 {
+    ArrayList<Integer> list;
     //Function to return list containing elements of left view of binary tree.
     ArrayList<Integer> leftView(Node root)
     {
+        list = new ArrayList<>();
+        boolean[] vis = new boolean[101];
+        dfs(root,0,vis);
+        return list;
+    }
+    void dfs(Node root, int level,boolean [] vis){
+        if(root==null)return;
         
-      ArrayList<Integer> list = new ArrayList<>();
-      Queue<Node> q = new ArrayDeque<>();
-      if(root==null){
-          return list;
-      }
-      q.add(root);
-      
-      while(q.size()>0){
-          int size = q.size();
-          for(int i=0;i<size;i++){
-              Node rem = q.remove();
-              if(i==0){
-                  list.add(rem.data);
-              }
-              if(rem.left!=null)q.add(rem.left);
-              if(rem.right!=null)q.add(rem.right);
-          }
-      }
-      return list;
+        if(vis[level]==false){
+            list.add(root.data);
+        }
+        vis[level]=true;
+        dfs(root.left,level+1,vis);
+        dfs(root.right,level+1,vis);
     }
 }
