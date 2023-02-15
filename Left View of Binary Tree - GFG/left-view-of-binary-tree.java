@@ -1,4 +1,4 @@
-// { Driver Code Starts
+//{ Driver Code Starts
 import java.util.LinkedList; 
 import java.util.Queue; 
 import java.io.*;
@@ -102,6 +102,7 @@ class GfG {
         }
     }
 }
+
 // } Driver Code Ends
 
 
@@ -124,20 +125,25 @@ class Tree
     //Function to return list containing elements of left view of binary tree.
     ArrayList<Integer> leftView(Node root)
     {
-      // Your code here
-      ArrayList<Integer> ans=new ArrayList<Integer>();
-      if(root==null)return new ArrayList();  
-      Queue<Node> q=new ArrayDeque<Node>();
+        
+      ArrayList<Integer> list = new ArrayList<>();
+      Queue<Node> q = new ArrayDeque<>();
+      if(root==null){
+          return list;
+      }
       q.add(root);
+      
       while(q.size()>0){
-          int size=q.size();
-          ans.add(q.peek().data);
-          while(size-->0){
-              Node rnode=q.remove();
-              if(rnode.left!=null) q.add(rnode.left);
-              if(rnode.right!=null) q.add(rnode.right);
+          int size = q.size();
+          for(int i=0;i<size;i++){
+              Node rem = q.remove();
+              if(i==0){
+                  list.add(rem.data);
+              }
+              if(rem.left!=null)q.add(rem.left);
+              if(rem.right!=null)q.add(rem.right);
           }
       }
-      return ans;
+      return list;
     }
 }
