@@ -20,7 +20,8 @@ class Solution {
         }
         number = number.reverse();
         List<Integer> res = new ArrayList<>();
-        for(char ch : number.toString().toCharArray()){
+        for(int i =0;i<number.length();i++){
+            char ch = number.charAt(i);
             res.add(ch-'0');
         }
         return res;
