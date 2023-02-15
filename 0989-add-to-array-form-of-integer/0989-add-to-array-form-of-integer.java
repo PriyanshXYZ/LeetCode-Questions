@@ -1,11 +1,24 @@
 class Solution {
     public List<Integer> addToArrayForm(int[] num, int k) {
-        
         StringBuilder number = new StringBuilder();
-        for(int i=0;i<num.length;i++){
-            number.append(num[i]);
+        int i1=num.length-1;
+        int carry =0;
+        while(i1>=0 || k>0 || carry>0){
+            int dig1 = i1>=0?num[i1]:0;
+            int dig2 = k%10;
+            
+            int sum = dig1 + dig2 + carry;
+            int rem = sum % 10;
+            number.append(rem);
+            if(sum/10>0){
+                carry=1;
+            }else{
+                carry=0;
+            }
+            k=k/10;
+            i1--;
         }
-        number = add(number,k+"");
+        number = number.reverse();
         List<Integer> res = new ArrayList<>();
         for(char ch : number.toString().toCharArray()){
             res.add(ch-'0');
