@@ -1,6 +1,6 @@
 class Solution {
     public List<Integer> addToArrayForm(int[] num, int k) {
-        StringBuilder number = new StringBuilder();
+        List<Integer> res = new ArrayList<>();
         int i1=num.length-1;
         int carry =0;
         while(i1>=0 || k>0 || carry>0){
@@ -9,7 +9,7 @@ class Solution {
             
             int sum = dig1 + dig2 + carry;
             int rem = sum % 10;
-            number.append(rem);
+            res.add(0,rem);
             if(sum/10>0){
                 carry=1;
             }else{
@@ -18,12 +18,7 @@ class Solution {
             k=k/10;
             i1--;
         }
-        number = number.reverse();
-        List<Integer> res = new ArrayList<>();
-        for(int i =0;i<number.length();i++){
-            char ch = number.charAt(i);
-            res.add(ch-'0');
-        }
+        
         return res;
     }
     public StringBuilder add(StringBuilder a, String b){
