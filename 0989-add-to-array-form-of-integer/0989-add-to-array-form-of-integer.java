@@ -1,18 +1,18 @@
 class Solution {
     public List<Integer> addToArrayForm(int[] num, int k) {
         
-        String number = "";
+        StringBuilder number = new StringBuilder();
         for(int i=0;i<num.length;i++){
-            number += num[i];
+            number.append(num[i]);
         }
         number = add(number,k+"");
         List<Integer> res = new ArrayList<>();
-        for(char ch : number.toCharArray()){
+        for(char ch : number.toString().toCharArray()){
             res.add(ch-'0');
         }
         return res;
     }
-    public String add(String a, String b){
+    public StringBuilder add(StringBuilder a, String b){
         int carry = 0;
         int i1 = a.length() - 1, i2 = b.length() - 1;
         StringBuilder res = new StringBuilder();
@@ -32,6 +32,6 @@ class Solution {
             i1--;
             i2--;
         }
-        return res.reverse().toString();
+        return res.reverse();
     }
 }
