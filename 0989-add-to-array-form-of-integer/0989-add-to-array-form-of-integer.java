@@ -9,7 +9,7 @@ class Solution {
             
             int sum = dig1 + dig2 + carry;
             int rem = sum % 10;
-            res.add(0,rem);
+            res.add(rem);
             if(sum/10>0){
                 carry=1;
             }else{
@@ -18,7 +18,7 @@ class Solution {
             k=k/10;
             i1--;
         }
-        
+        Collections.reverse(res);
         return res;
     }
     public StringBuilder add(StringBuilder a, String b){
