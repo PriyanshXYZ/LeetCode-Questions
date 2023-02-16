@@ -63,7 +63,7 @@ class Solution {
         int[] vis = new int[n];
         int ans = 0;
         for(int i=0;i<n;i++){
-            if(possible(i,arr,dp,vis)==1){
+            if(arr[i]!=0 && possible(i,arr,dp,vis)==1){
                 ans++;
             }
         }
