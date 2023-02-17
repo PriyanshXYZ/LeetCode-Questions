@@ -14,7 +14,7 @@
  * }
  */
 class Solution {
-    int prev = Integer.MIN_VALUE-1;//abs to min value get out of range for int
+    TreeNode prev = null;
     int ans = Integer.MAX_VALUE;
     public int minDiffInBST(TreeNode root) {
         dfs(root);
@@ -24,9 +24,9 @@ class Solution {
         if(root==null)return;
         
         dfs(root.left);
-        // System.out.println(Math.abs(root.val - prev)+" "+ans+" "+ prev);
-        ans = Math.min(ans, Math.abs(root.val - prev));
-        prev = root.val;
+        if(prev!=null)
+            ans = Math.min(ans, Math.abs(root.val - prev.val));
+        prev = root;
         dfs(root.right);
     }
 }
