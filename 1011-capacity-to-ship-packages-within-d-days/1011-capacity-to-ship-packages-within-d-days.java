@@ -1,38 +1,37 @@
 class Solution {
     public int shipWithinDays(int[] weights, int days) {
-        int hac=0;
-        int lac=Integer.MIN_VALUE;
-        
-        for(int i=0;i<weights.length;i++){
-            hac+=weights[i];
-            lac=Math.max(lac,weights[i]);
+        int n = weights.length;
+        int lo = 0, hi = 0;
+        for(int val : weights){
+            hi += val;
+            lo = Math.max(val, lo);
         }
         
-        while(lac<hac){
-            int limit=(hac+lac)/2;
+        if(days >= n)return lo;
+        
+        int ans = -1;
+        while(lo <= hi){
+            int limit = lo + (hi - lo) / 2;
             
-            int partitions=getPartitions(weights,limit);
-            
-            
-            if(partitions>days){
-                lac=limit+1;
-            }else {
-                hac=limit;
+            int partitions=1;
+            int sum=0;
+            for(int wt : weights){
+                if(sum+wt<=limit){
+                    sum+=wt;
+                }else{
+                    partitions++;
+                    sum=wt;
+                }
             }
-        }
-        return lac;
-    }
-    private int getPartitions(int[] weights,int limit){
-        int partition = 1;
-        int currPartWt = 0;
-        for(int wt:weights){
-            if(currPartWt + wt <= limit ){
-                currPartWt+=wt;
+            
+            if(partitions <= days){
+                hi = limit - 1;
+                ans = limit;
             }else{
-                currPartWt=wt;
-                partition++;
+                lo = limit + 1;
+                
             }
         }
-        return partition;
+        return ans;
     }
 }
