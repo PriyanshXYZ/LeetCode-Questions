@@ -9,7 +9,8 @@ class Solution {
         }
         
         public int compareTo(Pair o){
-            return this.capital-o.capital;
+            if(this.capital!=o.capital)return this.capital-o.capital;
+            return o.profit-this.profit;
         }
         
         public String toString(){
@@ -18,12 +19,12 @@ class Solution {
     }
     public int findMaximizedCapital(int k, int w, int[] profits, int[] capital) {
         Pair[] projects = new Pair[profits.length];
-        int n = projects.length;
-        for(int i=0;i<n;i++){
+        
+        for(int i=0;i<projects.length;i++){
             Pair p = new Pair(profits[i],capital[i]);
             projects[i] = p;
         }
-        
+        int n = projects.length;
         Arrays.sort(projects);
         
         PriorityQueue<Integer> pq = new PriorityQueue<>(Collections.reverseOrder());//here pair wont work as we want to get maxprofit
