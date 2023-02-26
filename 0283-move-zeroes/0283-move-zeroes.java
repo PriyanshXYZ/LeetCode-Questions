@@ -5,21 +5,21 @@ class Solution {
         a[j]=temp;
     }
     public void moveZeroes(int[] nums) {
-        int i=0,j=1;
-        while(j<nums.length){
+        int i=0,j=0;
+        int n = nums.length;
+        while(j<n){
+            
+            while(j<n && nums[j]==0){
+                j++;
+            }
+            if(j==n)break;
             if(nums[i]==0){
-                if(nums[j]!=0){
-                    swap(nums,i,j);
-                    i++;
-                    j++;
-                }else{
-                     j++;
-                }
+                swap(nums,i,j);
+                i++;
             }else{
                 i++;
                 j++;
             }
-            
         }
     }
 }
