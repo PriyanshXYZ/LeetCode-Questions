@@ -1,8 +1,48 @@
 class Solution {
     public int minDistance(String word1, String word2) {
+        
         // return recursion(0, 0, word1.toCharArray(), word2.toCharArray());
-        Integer[][] dp = new Integer[word1.length()][word2.length()];
-        return memo(0, 0, word1.toCharArray(), word2.toCharArray(), dp);
+        
+        Integer[][] dp = new Integer[word1.length()+1][word2.length()+1];
+        
+        // return memo(0, 0, word1.toCharArray(), word2.toCharArray(), dp);
+        
+        for(int i = 0; i < dp.length; i++){
+            
+            dp[i][0] = i>0?1+dp[i-1][0]:0;
+            
+        }
+        
+        for(int j = 0;j < dp[0].length; j++){
+            
+            dp[0][j] = j>0?1+dp[0][j-1]:0;
+            
+        }
+        
+        for(int i = 1; i < dp.length; i++){
+            
+            for(int j = 1; j < dp[0].length; j++){
+                
+                int ans = Integer.MAX_VALUE;
+                
+                if(word1.charAt(i-1) == word2.charAt(j-1)){
+                    
+                    ans = dp[i - 1][j - 1];
+                    
+                }else{
+                    int insert = 1 + dp[i][j - 1];
+
+                    int replace = 1 + dp[i - 1][j - 1];
+
+                    int delete = 1 + dp[i - 1][j];
+
+                    ans = Math.min(insert, Math.min(replace, delete));    
+                }
+                
+                dp[i][j] = ans;
+            }
+        }
+        return dp[word1.length()][word2.length()];
     }
     
     public int recursion(int i, int j, char[] word1, char[] word2){
