@@ -3,9 +3,61 @@ class Solution {
         
         // return recursion(0, 0, word1.toCharArray(), word2.toCharArray());
         
-        Integer[][] dp = new Integer[word1.length()+1][word2.length()+1];
+        // Integer[][] dp = new Integer[word1.length()+1][word2.length()+1];
         
         // return memo(0, 0, word1.toCharArray(), word2.toCharArray(), dp);
+        
+        // return tabulation(word1, word2);
+        
+        Integer[] prev = new Integer[word2.length()+1];
+        
+        for(int j = 0;j < prev.length; j++){
+            
+            prev[j] = j>0?1+prev[j-1]:0;
+            
+        }
+        
+        for(int i = 1; i < word1.length() + 1; i++){
+            
+            Integer[] curr = new Integer[word2.length()+1];
+            
+            for(int j = 0; j < prev.length; j++){
+                
+                if(j==0){
+                    curr[j] = 1 + prev[j];
+                    continue;
+                }
+                
+                int ans = Integer.MAX_VALUE;
+                
+                if(word1.charAt(i-1) == word2.charAt(j-1)){
+                    
+                    ans = prev[j - 1];
+                    
+                }else{
+                    int insert = 1 + curr[j - 1];
+
+                    int replace = 1 + prev[j - 1];
+
+                    int delete = 1 + prev[j];
+
+                    ans = Math.min(insert, Math.min(replace, delete));    
+                }
+                
+                curr[j] = ans;
+                
+            }
+            
+            prev = curr;
+            
+        }
+        
+        return prev[word2.length()];
+        
+    }
+    public int tabulation(String word1, String word2){
+        
+        Integer[][] dp = new Integer[word1.length()+1][word2.length()+1];
         
         for(int i = 0; i < dp.length; i++){
             
