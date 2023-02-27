@@ -3,12 +3,16 @@ class Solution {
         
         // return recursion(0, 0, word1.toCharArray(), word2.toCharArray());
         
-        // Integer[][] dp = new Integer[word1.length()+1][word2.length()+1];
+        Integer[][] dp = new Integer[word1.length()+1][word2.length()+1];
         
-        // return memo(0, 0, word1.toCharArray(), word2.toCharArray(), dp);
+        return memo(0, 0, word1.toCharArray(), word2.toCharArray(), dp);
         
         // return tabulation(word1, word2);
         
+        // return spaceOptimized(word1, word2);
+    }
+    
+    public int spaceOptimized(String word1, String word2){
         Integer[] prev = new Integer[word2.length()+1];
         
         for(int j = 0;j < prev.length; j++){
@@ -53,8 +57,8 @@ class Solution {
         }
         
         return prev[word2.length()];
-        
     }
+    
     public int tabulation(String word1, String word2){
         
         Integer[][] dp = new Integer[word1.length()+1][word2.length()+1];
