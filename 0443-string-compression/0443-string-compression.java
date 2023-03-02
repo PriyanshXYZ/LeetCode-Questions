@@ -1,7 +1,7 @@
 class Solution {
     public int compress(char[] chars) {
         if(chars.length==1)return 1;
-        List<String> list = new ArrayList<>();
+        List<StringBuilder> list = new ArrayList<>();
         int i=0;
         for(;i<chars.length-1;i++){
             int len = 1;
@@ -10,20 +10,20 @@ class Solution {
                 len++;
             }
             if(len>1)
-                list.add(chars[i]+""+len);
+                list.add(new StringBuilder(chars[i]+""+len));
             else
-                list.add(chars[i]+"");
+                list.add(new StringBuilder(chars[i]+""));
         }
         
         if(i<chars.length && chars[i]!=chars[i-1]){
-            list.add(chars[i]+"");
+            list.add(new StringBuilder(chars[i]+""));
         }
         
         int len = 0;
         int idx=0;
-        for(String s : list){
+        for(StringBuilder s : list){
             len += s.length();
-            for(char ch : s.toCharArray()){
+            for(char ch : s.toString().toCharArray()){
                 chars[idx]=ch;
                 idx++;    
             }
