@@ -1,5 +1,5 @@
 class Solution {
-    public int[] xorQueries(int[] A, int[][] queries) {
+    public int[] xorQueries(int[] A, int[][] q) {
         int[] prefixXor = new int[A.length+1];
 		 int ans =0;
 		 for(int i=0;i<A.length;i++){
@@ -7,11 +7,15 @@ class Solution {
 			 prefixXor[i+1]=ans;
 		 }
 		 
-		 int[] res = new int[queries.length];
+		 int[] res = new int[q.length];
 		 int idx=0;
-		 for(int[] q : queries){
-			 res[idx]=prefixXor[q[0]]^prefixXor[q[1]+1];
-			 idx++;
+		 for(;idx<q.length;idx++){
+             int left = q[idx][0];
+             int right = q[idx][1];
+             if(left == 0)res[idx]=prefixXor[right+1];
+             else
+                 res[idx]=prefixXor[left]^prefixXor[right+1];
+			 
 		 }
 		 return res;
     }
