@@ -3,11 +3,11 @@ class Solution {
         
         // return recursion(0, 0, word1.toCharArray(), word2.toCharArray());
         
-        Integer[][] dp = new Integer[word1.length()+1][word2.length()+1];
+        // Integer[][] dp = new Integer[word1.length()+1][word2.length()+1];
         
-        return memo(0, 0, word1.toCharArray(), word2.toCharArray(), dp);
+        // return memo(0, 0, word1.toCharArray(), word2.toCharArray(), dp);
         
-        // return tabulation(word1, word2);
+        return tabulation(word1, word2);
         
         // return spaceOptimized(word1, word2);
     }
@@ -97,6 +97,20 @@ class Solution {
                 
                 dp[i][j] = ans;
             }
+            
+        }
+        
+        
+        for(int i = 0; i < dp.length; i++){
+            
+            for(int j = 0; j < dp[0].length; j++){
+                
+                System.out.print(dp[i][j]+" ");
+                
+            }
+            
+            System.out.println();
+            
         }
         return dp[word1.length()][word2.length()];
     }
