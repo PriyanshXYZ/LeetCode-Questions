@@ -7,9 +7,9 @@ class Solution {
         
         // return memo(0, 0, word1.toCharArray(), word2.toCharArray(), dp);
         
-        return tabulation(word1, word2);
+        // return tabulation(word1, word2);
         
-        // return spaceOptimized(word1, word2);
+        return spaceOptimized(word1, word2);
     }
     
     public int spaceOptimized(String word1, String word2){
