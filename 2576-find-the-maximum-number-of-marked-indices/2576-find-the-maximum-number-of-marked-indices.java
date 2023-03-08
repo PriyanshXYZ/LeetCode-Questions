@@ -1,4 +1,4 @@
-class Solution {
+class Solution1 {
     public int maxNumOfMarkedIndices(int[] nums) {
         int cnt = 0, n = nums.length;
         
@@ -37,7 +37,7 @@ class Solution {
         return found;
     }
 }
-class Solution1 {
+class Solution {
     public int maxNumOfMarkedIndices(int[] nums) {
         int cnt = 0,n=nums.length;
         // boolean[] vis = new boolean[n];
