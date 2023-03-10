@@ -20,7 +20,7 @@ class Solution {
     
     public int getRandom() {
         Random r = new Random();
-        return list.size()>1?list.get(r.nextInt(list.size())):list.get(0);
+        return list.get(r.nextInt(list.size()));
     }
 }
 
