@@ -26,7 +26,7 @@ class Solution {
     }
     
     public ListNode merge2List(ListNode l1, ListNode l2){
-        ListNode res = new ListNode(-10001);
+        ListNode res = new ListNode(-1);
         ListNode tail = res; 
         
         while(l1!=null && l2!=null){
