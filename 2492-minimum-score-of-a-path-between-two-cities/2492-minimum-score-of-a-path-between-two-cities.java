@@ -4,7 +4,9 @@ class Solution {
         rank=new int[n+1];
         minSz=new int[n+1];
         Arrays.fill(minSz,Integer.MAX_VALUE);
+        
         for(int i=1;i<=n;i++)par[i]=i;
+        
         for(int[] road:roads){
             int u=road[0];
             int v=road[1];
