@@ -12,10 +12,11 @@ class Solution {
         if(dp[idx] != null)return dp[idx];
         
         long ans = 0;
-        for(int i=idx+1;i<=s.length();i++){
-            long num = Long.parseLong(s.substring(idx,i));
+        long num = 0;
+        for(int i=idx;i<s.length();i++){
+            num = num * 10 + s.charAt(i) - '0';
             if(num<=k){
-                ans = ans % MOD  + recursion(i,s,k) % MOD;
+                ans = ans % MOD  + recursion(i + 1,s,k) % MOD;
             }else break;
         }
         return dp[idx] = ans % MOD;
