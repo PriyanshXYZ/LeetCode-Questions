@@ -2,9 +2,9 @@ class Solution {
     static final int MOD = (int)(1e9+7);
     Long[] dp = new Long[(int)1e5+1];
     public int numberOfArrays(String s, int k) {
-        return (int)(recursion(0,s,k) % MOD);
+        return (int)(recursion(0,new StringBuilder(s),k) % MOD);
     }
-    public long recursion(int idx, String s, int k){
+    public long recursion(int idx, StringBuilder s, int k){
         //base case
         if(idx >= s.length())return 1;
         if(s.charAt(idx)=='0')return 0;
