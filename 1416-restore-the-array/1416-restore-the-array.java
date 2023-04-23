@@ -1,7 +1,8 @@
 class Solution {
     static final int MOD = (int)(1e9+7);
-    Long[] dp = new Long[(int)1e5+1];
+    Long[] dp;
     public int numberOfArrays(String s, int k) {
+        dp = new Long[s.length()+1];
         return (int)(recursion(0,new StringBuilder(s),k) % MOD);
     }
     public long recursion(int idx, StringBuilder s, int k){
