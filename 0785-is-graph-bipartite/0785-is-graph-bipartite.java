@@ -1,4 +1,4 @@
-class Solution {
+class Solution2 {
     public boolean isBipartite(int[][] graph) {
         int[] vis = new int[graph.length];
         
@@ -75,7 +75,7 @@ class Solution1 {
         return true;
     }
 }
-class Solution2 {
+class Solution {
     class UF{
         int[] parent;
         int[] rank;
@@ -116,7 +116,7 @@ class Solution2 {
         for(int i=0;i<n;i++){
             for(int nbr : graph[i]){
                 if(uf.find(i)==uf.find(nbr))return false;
-                uf.union(i,nbr);
+                uf.union(graph[i][0],nbr);//there should be no link between nbrs in order to be bipartite
             }
         }
         return true;
