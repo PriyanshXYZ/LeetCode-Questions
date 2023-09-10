@@ -2,11 +2,15 @@ class Solution {
     long[][] dp;
     int mod = (int)(1e9+7);
     public int countOrders(int n) {
-        dp = new long[n+1][n+1];
-        for(int i=0;i<=n;i++){
-            Arrays.fill(dp[i],-1);
+        long ans = 1;
+        int ways = 3;
+        for(int i=2;i<=n;i++){
+            long sum = ways*(ways + 1)/2;
+            ans = ans*sum;
+            ans %= mod;
+            ways += 2;
         }
-        return (int)recursion(n,n)%mod;
+        return (int)ans%mod;
     }
     
     public long recursion(int pick, int drop){
