@@ -14,6 +14,6 @@ class Solution {
                 bobMoves++;
             }
         }
-        return aliceMoves - bobMoves >0;
+        return aliceMoves > bobMoves;
     }
 }
