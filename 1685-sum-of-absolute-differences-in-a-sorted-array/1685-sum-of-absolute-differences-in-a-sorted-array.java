@@ -10,16 +10,6 @@ class Solution {
         for(int i = nums.length - 1; i >= 0; i--){
             suffix[i] = suffix[i + 1] + nums[i];
         }
-        
-        for(int i = 0; i <= nums.length; i++){
-            System.out.print(prefix[i]+" ");
-        }
-        System.out.println();
-        for(int i = 0; i <= nums.length; i++){
-            System.out.print(suffix[i]+" ");
-        }
-        System.out.println();
-        
         int[] res = new int[nums.length];
         for(int i=0; i<nums.length; i++){
             res[i] = (nums[i] * i) - prefix[i+1] + suffix[i] - (nums[i] * (nums.length - i - 1));
