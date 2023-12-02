@@ -5,8 +5,6 @@ class Solution {
         
         int ans = 0;
         for(String word : words){
-            freq1 = new int[26];
-            freq2 = new int[26];
             for(char ch : word.toCharArray()){
                 freq1[ch-'a']++;
             }
@@ -24,16 +22,10 @@ class Solution {
                 }
             }
             ans += cnt;
+            
+            freq1 = new int[26];
+            freq2 = new int[26];
         }
         return ans;
-        // for(char ch : chars.toCharArray()){
-        //     freq2[ch-'a']++;
-        // }
-        // for(int i=0;i<26;i++){
-        //     if(freq2[i]>=freq1[i]){
-        //         ans += freq2[i];
-        //     }
-        // }
-        // return ans;
     }
 }
