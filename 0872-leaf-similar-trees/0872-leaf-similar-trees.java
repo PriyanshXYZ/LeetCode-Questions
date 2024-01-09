@@ -14,36 +14,20 @@
  * }
  */
 class Solution {
-    List<Integer> l1;
     public boolean leafSimilar(TreeNode root1, TreeNode root2) {
-        l1=new ArrayList();
-        dfs1(root1);
-        // System.out.println(l1);
-        idx=0;
-        if(dfs2(root2) && idx==l1.size())return true;
-        return false;
+        List<Integer> res1 = new ArrayList<>();
+        List<Integer> res2 = new ArrayList<>();
+        dfs(root1, res1);
+        dfs(root2, res2);
+        return res1.equals(res2);
     }
-    public void dfs1(TreeNode root){
+    public void dfs(TreeNode root, List<Integer> list){
         if(root==null)return;
         if(root.left==null && root.right==null){
-            l1.add(root.val);
+            list.add(root.val);
+            return;
         }
-        dfs1(root.left);
-        dfs1(root.right);
-    }
-    int idx;
-    public boolean dfs2(TreeNode root){
-        if(root==null)return true;
-        if(idx>=l1.size())return false;
-        if(root.left==null && root.right==null){
-            if(l1.get(idx)!=root.val){
-                idx++;
-                return false;
-            }else{
-                idx++;
-                return true;
-            }
-        }
-        return dfs2(root.left) && dfs2(root.right);
+        dfs(root.left,list);
+        dfs(root.right,list);
     }
 }
