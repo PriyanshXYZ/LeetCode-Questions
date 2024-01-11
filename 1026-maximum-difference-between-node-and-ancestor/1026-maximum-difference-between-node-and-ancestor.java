@@ -14,39 +14,20 @@
  * }
  */
 class Solution {
+    
+    int diff = 0;
     public int maxAncestorDiff(TreeNode root) {
-        return dfs(root,root.val,root.val);
+        return dfs(root,50001,0);
+        
     }
-    public int dfs(TreeNode root, int min, int max){
+    public int dfs(TreeNode root,int min, int max){
         if(root==null)return max-min;
-        max=Math.max(root.val, max);
-        min=Math.min(root.val, min);
-        int left=dfs(root.left, min, max);
-        int right=dfs(root.right, min, max);
+        int currMax = Math.max(max, root.val);
+        int currMin = Math.min(min, root.val);
+        int left = dfs(root.left, currMin, currMax);
+        
+        int right = dfs(root.right, currMin, currMax);
+        
         return Math.max(left, right);
-    }
-}
-class Solution1 {
-    //o(nlogn) solution
-    int maxDiff;
-    public int maxAncestorDiff(TreeNode root) {
-        maxDiff=0;
-        dfs(root,new ArrayList());
-        return maxDiff;
-    }
-    public void dfs(TreeNode root, List<Integer> list){
-        if(root==null)return;
-        int maxNum=root.val;
-        int minNum=root.val;
-        for(int i=0;i<list.size();i++){
-            maxNum=Math.max(maxNum, list.get(i));
-            minNum=Math.min(minNum,list.get(i));
-        }
-        maxDiff=Math.max(Math.abs(maxNum-root.val),maxDiff);
-        maxDiff=Math.max(Math.abs(minNum-root.val),maxDiff);
-        list.add(root.val);
-        dfs(root.left,list);
-        dfs(root.right,list);
-        list.remove(list.size()-1);
     }
 }
