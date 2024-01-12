@@ -3,15 +3,13 @@ class Solution {
         s = s.toLowerCase();
         
         int cnt = 0;
-        for(int i=0;i<s.length()/2;i++){
+        for(int i=0, j=s.length()/2;i<s.length()/2;i++,j++){
             char ch = s.charAt(i);
+            char chh = s.charAt(j);
             if(ch=='a' || ch=='e' || ch=='i' || ch=='o' || ch=='u'){
                 cnt++;
             }
-        }
-        for(int i=s.length()/2;i<s.length();i++){
-            char ch = s.charAt(i);
-            if(ch=='a' || ch=='e' || ch=='i' || ch=='o' || ch=='u'){
+            if(chh=='a' || chh=='e' || chh=='i' || chh=='o' || chh=='u'){
                 cnt--;
             }
         }
