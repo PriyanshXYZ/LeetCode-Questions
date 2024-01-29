@@ -1,33 +1,30 @@
 class MyQueue {
-    Stack<Integer> mainstk=new Stack();
-    Stack<Integer> stk=new Stack();
+    List<Integer> stack1, stack2;
     public MyQueue() {
-        
+        stack1 = new ArrayList<>();
+        stack2 = new ArrayList<>();
     }
     
     public void push(int x) {
-        if(mainstk.size()==0) mainstk.push(x);
-        else{
-            while(mainstk.size()>0){
-                stk.push(mainstk.pop());
-            }
-            mainstk.push(x);
-            while(stk.size()>0){
-                mainstk.push(stk.pop());
-            }
+        while(stack1.size()>0){
+            stack2.add(stack1.removeLast());
+        }
+        stack1.add(x);
+        while(stack2.size()>0){
+            stack1.add(stack2.removeLast());
         }
     }
     
     public int pop() {
-        return mainstk.pop();
+        return stack1.removeLast();
     }
     
     public int peek() {
-        return mainstk.peek();
+        return stack1.get(stack1.size()-1);
     }
     
     public boolean empty() {
-        return mainstk.isEmpty();
+        return stack1.isEmpty();
     }
 }
 
