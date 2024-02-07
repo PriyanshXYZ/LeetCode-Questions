@@ -1,36 +1,30 @@
 class Solution {
-    public String frequencySort(String s) {
-        HashMap<Character,Integer> map=new HashMap();
-        HashMap<Integer,String> freq=new HashMap();
-        int maxFreq=0;
-        for(char ch:s.toCharArray()){
-            map.put(ch,map.getOrDefault(ch,0)+1);
-            maxFreq=Math.max(map.get(ch),maxFreq);
+    public String frequencySort(String str) {
+        Map<Character, Integer> map = new HashMap<>();
+        Map<Integer, String> freq = new HashMap<>();
+        
+        int maxFreq = 0;
+        for(char ch : str.toCharArray()){
+            map.put(ch, map.getOrDefault(ch,0)+1);
+            maxFreq = Math.max(maxFreq, map.get(ch));
         }
         
-        for(char ch:map.keySet()){
-            int f=map.get(ch);
-            if(!freq.containsKey(f)){
-                freq.put(f,"");
-            }
-            freq.put(f,freq.get(f)+ch);
+        for(var key : map.keySet()){
+            int f = map.get(key);
+            if(!freq.containsKey(f))freq.put(f,"");
+            String s = freq.get(f);
+            if(s.length()>0 && (s.charAt(s.length()-1)>key))freq.put(f,key + freq.get(f));
+            else freq.put(f,freq.get(f)+key);
         }
-        // System.out.println(map);
-        // System.out.println(freq);
-        // System.out.println(maxFreq);
-        StringBuilder sb=new StringBuilder();
-        while(maxFreq >0){
+        String res = "";
+        while(maxFreq>0){
             if(freq.containsKey(maxFreq)){
-                for(int i=0;i<freq.get(maxFreq).length();i++){
-                    char ch=freq.get(maxFreq).charAt(i);
-                    int count=maxFreq;
-                    while(count-- >0){
-                        sb.append(ch);
-                    }
+                for(char ch : freq.get(maxFreq).toCharArray()){
+                    res +=  IntStream.range(0, maxFreq).mapToObj(i -> String.valueOf(ch)).collect(Collectors.joining());
                 }
             }
             maxFreq--;
         }
-        return sb.toString();
+        return res;
     }
 }
