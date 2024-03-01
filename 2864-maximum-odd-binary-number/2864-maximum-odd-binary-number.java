@@ -2,18 +2,19 @@ class Solution {
     public String maximumOddBinaryNumber(String s) {
         int cnt = bitCount(s);
         int size = s.length();
-        String res = "";
+        StringBuilder res = new StringBuilder();
         // System.out.println(cnt);
         while(cnt>1){
-            res += '1';
+            res.append('1');
             size--;
             cnt--;
         }
         while(size>1){
-            res+='0';
+            res.append('0');
             size--;
         }
-        return res + '1';
+        res.append('1');
+        return res.toString();
     }
     public int bitCount(String s){
         int cnt = 0;
