@@ -7,7 +7,6 @@ class Solution {
                 list.add(num);
             }
             set.add(num);
-            
         }
         return list;
     }
