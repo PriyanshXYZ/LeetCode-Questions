@@ -2,6 +2,8 @@ class Solution {
     int[][] dirs={{0,-1},{0,1},{1,0},{-1,0}};
     
     public boolean exist(char[][] board, String word) {
+        
+        //pruning
         if(word.length() > board[0].length * board.length)
             return false;
         
