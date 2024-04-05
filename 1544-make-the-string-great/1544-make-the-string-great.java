@@ -3,12 +3,10 @@ class Solution {
         Stack<Character> stk=new Stack();
         int n=s.length();
         for(int i=0;i<n;i++){
-            // System.out.println(stk);
             if(stk.size()==0)
                 stk.push(s.charAt(i));
-            else if(stk.size()>0 && ((int)stk.peek()==(int)s.charAt(i)+32||  (int)stk.peek()==(int)s.charAt(i)-32)){
+            else if(stk.size()>0 && Math.abs(stk.peek() - s.charAt(i))==32){
                     stk.pop();
-                    // i++;
             }else{
                 stk.push(s.charAt(i));
             }
