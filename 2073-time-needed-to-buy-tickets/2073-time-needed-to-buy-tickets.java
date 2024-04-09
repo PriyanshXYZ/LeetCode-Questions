@@ -1,14 +1,5 @@
 class Solution {
-    public int timeRequiredToBuy(int[] tickets, int k) {
-        int ans = 0;
-        int idx = 0;
-        while(tickets[k]>0){
-            if(tickets[idx]>0){
-                tickets[idx]--;
-                ans++;
-            }
-            idx=(idx+1)%tickets.length;
-        }
-        return ans;
+    public int timeRequiredToBuy(int[] t, int k) {
+        return IntStream.range(0, t.length).map(i -> Math.min(t[i], i > k ? t[k] - 1 : t[k])).sum();
     }
 }
