@@ -14,24 +14,22 @@
  * }
  */
 class Solution {
-    TreeSet<String> set;
+    String res = null;
     public String smallestFromLeaf(TreeNode root) {
-        set = new TreeSet<>();
         dfs(root, "");
-        return set.first();
+        return res;
     }
-    public void dfs(TreeNode root, String res) {
-        if(root == null){
+    public void dfs(TreeNode root, String str) {
+        if(root == null)return;
+        
+        str = (char)(root.val + 'a') + str;
+        if(root.left==null && root.right == null){
+            if(res==null || res.compareTo(str) > 0) {
+                res = str;
+            }
             return;
         }
-        res = (char)(root.val + 'a') + res;
-        if(root.left == null && root.right == null) {
-            set.add(res);
-            return;
-        }
-        
-        dfs(root.left, res);
-        dfs(root.right, res);
-        
+        dfs(root.left, str);
+        dfs(root.right, str);
     }
 }
