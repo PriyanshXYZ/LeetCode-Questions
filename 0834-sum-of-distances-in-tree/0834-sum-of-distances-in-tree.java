@@ -35,7 +35,7 @@ class Solution {
     private void helper2(ArrayList<Integer>[] graph,int[] nodes,int[] res,int src,int parent){
         for(int nbr:graph[src]){
             if(nbr!=parent){
-                res[nbr]=res[src]+(nodes.length-nodes[nbr])-(nodes[nbr]);
+                res[nbr]=res[src]+(nodes.length-nodes[nbr])-(nodes[nbr]); //making parent as a child as we go towards child , we move away from parent nodes
                 helper2(graph,nodes,res,nbr,src);
             }
         }
