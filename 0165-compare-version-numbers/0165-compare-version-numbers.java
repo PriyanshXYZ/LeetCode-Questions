@@ -1,18 +1,21 @@
 class Solution {
     public int compareVersion(String version1, String version2) {
-        String[] levels1 = version1.split("\\.");
-        String[] levels2 = version2.split("\\.");
-
-        int length = Math.max(levels1.length, levels2.length);
-        for (int i=0; i<length; i++) {
-            Integer v1 = i < levels1.length ? Integer.parseInt(levels1[i]) : 0;
-            Integer v2 = i < levels2.length ? Integer.parseInt(levels2[i]) : 0;
-            int compare = v1.compareTo(v2);
-            if (compare != 0) {
-                return compare;
-            }
+        String[] str1 = version1.split("\\.");
+        String[] str2 = version2.split("\\.");
+        
+        int idx1 = 0;
+        int idx2 = 0;
+        
+        while(idx1<str1.length || idx2<str2.length){
+            Integer res1 = Integer.parseInt(idx1<str1.length?str1[idx1]:"0");
+            Integer res2 = Integer.parseInt (idx2<str2.length?str2[idx2]:"0");
+            System.out.println(res1+" "+res2);
+            int val = res1.compareTo(res2);
+            if(val!=0)return val;
+            idx1++;
+            idx2++;
         }
-
         return 0;
     }
+    
 }
