@@ -5,15 +5,14 @@ class Solution {
         int r = 0;
         int c = 0;
         for(int i=0;i<original.length;i++){
-            if(c < n){
-                arr[r][c] = original[i];
-                c++;
-            }else {
-                c = 0;
-                r++;
-                if(r<m){
+            if(r<m){
+                if(c < n){
                     arr[r][c] = original[i];
                     c++;
+                }else {
+                    c = 0;
+                    r++;
+                    i--;
                 }
             }
         }
