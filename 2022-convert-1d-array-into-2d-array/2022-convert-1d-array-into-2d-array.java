@@ -4,15 +4,16 @@ class Solution {
         int[][] arr = new int[m][n];
         int r = 0;
         int c = 0;
-        for(int i=0;i<original.length;i++){
+        int i = 0;
+        while(i<original.length){
             if(r<m){
                 if(c < n){
                     arr[r][c] = original[i];
                     c++;
+                    i++;
                 }else {
                     c = 0;
                     r++;
-                    i--;
                 }
             }
         }
