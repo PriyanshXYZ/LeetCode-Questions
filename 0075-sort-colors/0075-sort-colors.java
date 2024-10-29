@@ -6,10 +6,10 @@ class Solution {
                 swap(nums,i,j);
                 i++;
                 j++;
-            }else if( nums[j]==1){
+            }else if(nums[j]==1){
                 j++;
             }else{
-                swap(nums,j,k);
+                swap(nums,k,j);
                 k--;
             }
         }
