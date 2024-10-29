@@ -33,6 +33,7 @@ public class Solution {
 }
 
 class Solution1 {
+    //more time complexity approach..
     //we sort in this approach and do not go ahead with duplicate number which will produce unique answer
     List<List<Integer>> lists = new ArrayList<>();
     public List<List<Integer>> permuteUnique(int[] nums) {
