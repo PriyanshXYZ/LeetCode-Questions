@@ -1,12 +1,13 @@
 class Solution {
     public String addSpaces(String s, int[] spaces) {
-        List<String> split = new ArrayList<>();
+        StringBuilder ans = new StringBuilder();
         int prevIdx = 0;
         for(int space : spaces){
-            split.add(s.substring(prevIdx,space));
+            ans.append(s.substring(prevIdx,space));
+            ans.append(" ");
             prevIdx = space;
         }
-        split.add(s.substring(prevIdx));
-        return String.join(" ", split);
+        ans.append(s.substring(prevIdx));
+        return ans.toString();
     }
 }
