@@ -1,4 +1,16 @@
 class Solution {
+    public int removeElement(int[] nums, int val) {
+        int i=0;
+        for(int num : nums){
+            if(num!=val){
+                nums[i] = num;
+                i++;
+            }
+        }
+        return i;
+    }
+}
+class Solution1 {
     public void swap(int[] a,int i,int j){
         int temp=a[i];
         a[i]=a[j];
