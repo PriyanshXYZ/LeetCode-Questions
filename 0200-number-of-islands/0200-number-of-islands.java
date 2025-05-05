@@ -1,28 +1,70 @@
 class Solution {
-    int[][] dirs = {{0,1},{0,-1},{1,0},{-1,0}};
-    public int numIslands(char[][] grid) {
-        int n = grid.length;
-        int m = grid[0].length;
-        boolean[][] vis = new boolean[n][m];
+    class UF{
+        private int components;
+        private int[] parent;
+        private int[] size;
+
+        UF(int n){
+            components = n;
+            parent = new int[n];
+            size = new int[n];
+
+            for(int i=0;i<n;i++){
+                parent[i] = i;
+                size[i] = 1;
+            }
+        }
         
-        int cnt=0;
-        for(int i=0;i<n;i++){
-            for(int j=0;j<m;j++){
-                if(grid[i][j] == '1' && vis[i][j]==false){
-                    dfs(i, j, vis, grid);
-                    cnt++;
+        public int find(int x){
+            if(parent[x] == x)return x;
+            return parent[x] = find(parent[x]);
+        }
+
+        public void union(int x, int y){
+            int xLead = find(x);
+            int yLead = find(y);
+
+            if(xLead == yLead){
+                //alreaady a union
+            }else {
+                if(size[xLead]>size[yLead]){
+                    size[xLead] += size[yLead];
+                    parent[yLead] = xLead;
+                }else {
+                    size[yLead] += size[xLead];
+                    parent[xLead] = yLead;
+                }
+                components--;
+            }
+        }
+
+        public int getComponents(){
+            return components;
+        }
+    }
+    public int numIslands(char[][] grid) {
+        int m = grid.length;
+        int n = grid[0].length;
+        boolean[][] vis = new boolean[m][n];
+        int ans = 0;
+        for(int i=0;i<m;i++){
+            for(int j=0;j<n;j++){
+                if(vis[i][j] == false && grid[i][j] == '1'){
+                    ans++;
+                    dfs(i,j,grid,vis);
                 }
             }
         }
-        return cnt;
+        return ans;
     }
-    public void dfs(int r, int c, boolean[][] vis, char[][] grid) {
+    
+    public void dfs(int r, int c, char[][] grid, boolean[][] vis) {
+        //base case
+        if(r<0 || c<0 || r>=grid.length || c>=grid[0].length || vis[r][c] || grid[r][c]=='0')return;
         vis[r][c] = true;
-        for(int[] dir : dirs){
-            int x = dir[0] + r;
-            int y = dir[1] + c;
-            if(x>=grid.length || y>=grid[0].length || x<0 || y<0 || vis[x][y] || grid[x][y]=='0')continue;
-            dfs(x, y, vis, grid);
-        }
+        dfs(r+1, c, grid, vis);
+        dfs(r-1, c, grid, vis);
+        dfs(r, c+1, grid, vis);
+        dfs(r, c-1, grid, vis);
     }
 }
