@@ -21,6 +21,7 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 |  |
 | ------- |
 | [0200-number-of-islands](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/0200-number-of-islands) |
+| [0695-max-area-of-island](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/0695-max-area-of-island) |
 | [0733-flood-fill](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/0733-flood-fill) |
 | [0896-smallest-subtree-with-all-the-deepest-nodes](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/0896-smallest-subtree-with-all-the-deepest-nodes) |
 | [1218-lowest-common-ancestor-of-deepest-leaves](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/1218-lowest-common-ancestor-of-deepest-leaves) |
@@ -28,6 +29,7 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 |  |
 | ------- |
 | [0200-number-of-islands](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/0200-number-of-islands) |
+| [0695-max-area-of-island](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/0695-max-area-of-island) |
 | [0733-flood-fill](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/0733-flood-fill) |
 | [0896-smallest-subtree-with-all-the-deepest-nodes](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/0896-smallest-subtree-with-all-the-deepest-nodes) |
 | [1218-lowest-common-ancestor-of-deepest-leaves](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/1218-lowest-common-ancestor-of-deepest-leaves) |
@@ -42,6 +44,7 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 | [0027-remove-element](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/0027-remove-element) |
 | [0200-number-of-islands](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/0200-number-of-islands) |
 | [0416-partition-equal-subset-sum](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/0416-partition-equal-subset-sum) |
+| [0695-max-area-of-island](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/0695-max-area-of-island) |
 | [0733-flood-fill](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/0733-flood-fill) |
 | [1993-sum-of-all-subset-xor-totals](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/1993-sum-of-all-subset-xor-totals) |
 | [3152-maximum-value-of-an-ordered-triplet-ii](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/3152-maximum-value-of-an-ordered-triplet-ii) |
@@ -96,6 +99,7 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 |  |
 | ------- |
 | [0200-number-of-islands](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/0200-number-of-islands) |
+| [0695-max-area-of-island](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/0695-max-area-of-island) |
 | [0733-flood-fill](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/0733-flood-fill) |
 ## String
 |  |
@@ -109,4 +113,5 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 |  |
 | ------- |
 | [0200-number-of-islands](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/0200-number-of-islands) |
+| [0695-max-area-of-island](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/0695-max-area-of-island) |
 <!---LeetCode Topics End-->
