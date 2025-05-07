@@ -42,6 +42,7 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 |  |
 | ------- |
 | [0027-remove-element](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/0027-remove-element) |
+| [0033-search-in-rotated-sorted-array](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/0033-search-in-rotated-sorted-array) |
 | [0200-number-of-islands](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/0200-number-of-islands) |
 | [0416-partition-equal-subset-sum](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/0416-partition-equal-subset-sum) |
 | [0695-max-area-of-island](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/0695-max-area-of-island) |
@@ -118,5 +119,6 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 ## Binary Search
 |  |
 | ------- |
+| [0033-search-in-rotated-sorted-array](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/0033-search-in-rotated-sorted-array) |
 | [0907-koko-eating-bananas](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/0907-koko-eating-bananas) |
 <!---LeetCode Topics End-->
