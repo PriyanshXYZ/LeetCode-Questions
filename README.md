@@ -22,6 +22,7 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 |  |
 | ------- |
 | [0200-number-of-islands](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/0200-number-of-islands) |
+| [0207-course-schedule](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/0207-course-schedule) |
 | [0419-battleships-in-a-board](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/0419-battleships-in-a-board) |
 | [0695-max-area-of-island](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/0695-max-area-of-island) |
 | [0733-flood-fill](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/0733-flood-fill) |
@@ -31,6 +32,7 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 |  |
 | ------- |
 | [0200-number-of-islands](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/0200-number-of-islands) |
+| [0207-course-schedule](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/0207-course-schedule) |
 | [0695-max-area-of-island](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/0695-max-area-of-island) |
 | [0733-flood-fill](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/0733-flood-fill) |
 | [0896-smallest-subtree-with-all-the-deepest-nodes](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/0896-smallest-subtree-with-all-the-deepest-nodes) |
@@ -83,10 +85,12 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 ## Graph
 |  |
 | ------- |
+| [0207-course-schedule](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/0207-course-schedule) |
 | [1986-largest-color-value-in-a-directed-graph](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/1986-largest-color-value-in-a-directed-graph) |
 ## Topological Sort
 |  |
 | ------- |
+| [0207-course-schedule](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/0207-course-schedule) |
 | [1986-largest-color-value-in-a-directed-graph](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/1986-largest-color-value-in-a-directed-graph) |
 ## Memoization
 |  |
