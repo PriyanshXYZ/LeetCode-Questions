@@ -15,10 +15,11 @@ class Solution {
         dp[0] = 0;
         for(int i=0;i<n;i++){
             for(int amt=0;amt<=amount;amt++){
-                if(coins[i]>amt)continue;
-                int val = amt>=coins[i]?dp[amt - coins[i]]:Integer.MAX_VALUE;
-                if(val!=Integer.MAX_VALUE){
-                    dp[amt] = Math.min(dp[amt], val + 1);
+                if (amt >= coins[i]) {
+                    int val = dp[amt - coins[i]];
+                    if (val != Integer.MAX_VALUE) {
+                        dp[amt] = Math.min(dp[amt], val + 1);
+                    }
                 }
             }
         }
