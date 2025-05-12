@@ -11,19 +11,14 @@ class Solution {
         int n = coins.length;
         if(n==1)return amount%coins[0]>0?-1:amount/coins[0];
         int[] dp = new int[amount + 1];
-        Arrays.fill(dp, Integer.MAX_VALUE);
+        Arrays.fill(dp, amount + 1);
         dp[0] = 0;
         for(int i=0;i<n;i++){
-            for(int amt=0;amt<=amount;amt++){
-                if (amt >= coins[i]) {
-                    int val = dp[amt - coins[i]];
-                    if (val != Integer.MAX_VALUE) {
-                        dp[amt] = Math.min(dp[amt], val + 1);
-                    }
-                }
+            for(int amt=coins[i];amt<=amount;amt++){
+                dp[amt] = Math.min(dp[amt], dp[amt-coins[i]] + 1);
             }
         }
 
-        return dp[amount]!=Integer.MAX_VALUE?dp[amount]:-1;
+        return dp[amount]!=amount + 1?dp[amount]:-1;
     }
 }
