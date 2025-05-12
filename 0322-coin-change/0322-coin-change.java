@@ -13,8 +13,9 @@ class Solution {
         int[] dp = new int[amount + 1];
         Arrays.fill(dp, Integer.MAX_VALUE);
         dp[0] = 0;
-        for(int amt=0;amt<=amount;amt++){
-            for(int i=0;i<n;i++){
+        for(int i=0;i<n;i++){
+            for(int amt=0;amt<=amount;amt++){
+                if(coins[i]>amt)continue;
                 int val = amt>=coins[i]?dp[amt - coins[i]]:Integer.MAX_VALUE;
                 if(val!=Integer.MAX_VALUE){
                     dp[amt] = Math.min(dp[amt], val + 1);
