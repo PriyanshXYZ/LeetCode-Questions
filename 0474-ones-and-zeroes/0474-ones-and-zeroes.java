@@ -13,8 +13,18 @@ class Solution {
                     dp[m][n] = Math.max(take, notTake);
                 }
             }
+            // print(dp);
         }
         return dp[M][N];
+    }
+    private void print(int[][] dp) {
+        for(int[] col : dp) {
+            for(int val : col){
+                System.out.print(val + " ");
+            }
+            System.out.println();
+        }
+        System.out.println();
     }
 
     private int[] getZerosAndOnes(String str) {
