@@ -52,6 +52,7 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 | [0322-coin-change](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/0322-coin-change) |
 | [0416-partition-equal-subset-sum](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/0416-partition-equal-subset-sum) |
 | [0419-battleships-in-a-board](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/0419-battleships-in-a-board) |
+| [0494-target-sum](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/0494-target-sum) |
 | [0518-coin-change-ii](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/0518-coin-change-ii) |
 | [0695-max-area-of-island](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/0695-max-area-of-island) |
 | [0733-flood-fill](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/0733-flood-fill) |
@@ -67,6 +68,7 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 ## Backtracking
 |  |
 | ------- |
+| [0494-target-sum](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/0494-target-sum) |
 | [1993-sum-of-all-subset-xor-totals](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/1993-sum-of-all-subset-xor-totals) |
 ## Bit Manipulation
 |  |
@@ -85,6 +87,7 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 | ------- |
 | [0322-coin-change](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/0322-coin-change) |
 | [0416-partition-equal-subset-sum](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/0416-partition-equal-subset-sum) |
+| [0494-target-sum](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/0494-target-sum) |
 | [0518-coin-change-ii](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/0518-coin-change-ii) |
 | [0583-delete-operation-for-two-strings](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/0583-delete-operation-for-two-strings) |
 | [1250-longest-common-subsequence](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/1250-longest-common-subsequence) |
