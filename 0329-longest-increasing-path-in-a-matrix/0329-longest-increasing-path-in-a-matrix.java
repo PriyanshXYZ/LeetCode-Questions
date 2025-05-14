@@ -1,4 +1,55 @@
-class Solution {
+public class Solution {
+    public int longestIncreasingPath(int[][] matrix) {
+        int m = matrix.length, n = matrix[0].length;
+        int[][] indegree = new int[m][n];
+        int[][] dirs = {{1, 0}, {-1, 0}, {0, 1}, {0, -1}};
+        
+        // Compute indegree for each cell
+        for (int i = 0; i < m; i++) {
+            for (int j = 0; j < n; j++) {
+                for (int[] dir : dirs) {
+                    int ni = i + dir[0], nj = j + dir[1];
+                    if (ni >= 0 && ni < m && nj >= 0 && nj < n && matrix[ni][nj] < matrix[i][j]) {
+                        indegree[i][j]++;
+                    }
+                }
+            }
+        }
+
+        // Initialize the queue with all cells that have indegree 0
+        Queue<int[]> queue = new LinkedList<>();
+        for (int i = 0; i < m; i++) {
+            for (int j = 0; j < n; j++) {
+                if (indegree[i][j] == 0) {
+                    queue.offer(new int[]{i, j});
+                }
+            }
+        }
+
+        int maxIncPath = 0;
+        while (!queue.isEmpty()) {
+            int size = queue.size();
+            for (int s = 0; s < size; s++) {
+                int[] cell = queue.poll();
+                int i = cell[0], j = cell[1];
+                for (int[] dir : dirs) {
+                    int ni = i + dir[0], nj = j + dir[1];
+                    if (ni >= 0 && ni < m && nj >= 0 && nj < n && matrix[ni][nj] > matrix[i][j]) {
+                        indegree[ni][nj]--;
+                        if (indegree[ni][nj] == 0) {
+                            queue.offer(new int[]{ni, nj});
+                        }
+                    }
+                }
+            }
+            maxIncPath++;
+        }
+        
+        return maxIncPath;
+    }
+}
+
+class Solution1 {
     public int longestIncreasingPath(int[][] matrix) {
         int n = matrix.length;
         int m = matrix[0].length;
