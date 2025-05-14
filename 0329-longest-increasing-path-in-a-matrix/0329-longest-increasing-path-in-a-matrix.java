@@ -1,4 +1,40 @@
 public class Solution {
+    Integer[][] dp;
+    int n;
+    int m;
+    public int longestIncreasingPath(int[][] matrix) {
+        n = matrix.length;
+        m = matrix[0].length;
+        dp = new Integer[n + 1][m + 1];
+        int maxLen = 0;
+        for(int i=0;i<n;i++){
+            for(int j=0;j<m;j++){
+                int ans = dfs(i,j,matrix);
+                maxLen = Math.max(ans, maxLen);
+            }
+        }
+        return maxLen;
+    }
+    int[][] dirs = {{1, 0}, {-1, 0}, {0, 1}, {0, -1}};
+    private int dfs(int r, int c, int[][] matrix){
+        if(dp[r][c] != null)return dp[r][c];
+        int ans = 1; //self ans
+        for(int[] dir : dirs){
+            int x = dir[0] + r;
+            int y = dir[1] + c;
+            if(isValidIdx(x,y) && matrix[x][y] > matrix[r][c]){
+                ans = Math.max(1 + dfs(x, y, matrix), ans);
+            }
+        }
+        return dp[r][c] = ans;
+    }
+
+    private boolean isValidIdx(int r, int c) {
+        return r >= 0 && r < n && c >= 0 && c < m;
+    }
+}
+
+class Solution2 {
     public int longestIncreasingPath(int[][] matrix) {
         int m = matrix.length, n = matrix[0].length;
         int[][] indegree = new int[m][n];
