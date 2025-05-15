@@ -52,24 +52,36 @@ class Solution1 {
     public int minimumEffortPath(int[][] heights) {
         int n = heights.length;
         int m = heights[0].length;
-        int[][] efforts = new int[n][m];
-        for(int i=0;i<n;i++)Arrays.fill(efforts[i],Integer.MAX_VALUE);
-        efforts[0][0] = 0;
-        dfs(0, 0, n, m, heights, efforts);
-        return efforts[n-1][m-1];
+        int lo = 0;
+        int hi = (int)(1e6);
+        while(lo < hi) {
+            int mid = lo + (hi - lo) /2;
+            if(dfs(0, 0, mid, heights, new boolean[n][m])){
+                hi = mid;
+            }else{
+                lo = mid + 1;
+            }
+        }
+        
+        return lo;
     }
+
     int[][] dirs = { {0, -1} , {0, 1}, {1, 0}, {-1, 0}};
-    private void dfs(int r, int c, int n, int m, int[][] heights, int[][] efforts) {
+
+    private boolean dfs(int r, int c, int limit, int[][] heights, boolean[][] vis) {
+        if(r == heights.length - 1 && c == heights[0].length - 1)return true;
+        vis[r][c] = true;
+        boolean ans = false;
         for(int[] dir : dirs) {
             int x = r + dir[0];
             int y = c + dir[1];
-            if(x < 0 || y < 0 || y >= m || x >= n)continue;
+            
+            if(x < 0 || y < 0 || y >= heights[0].length || x >= heights.length || vis[x][y])continue;
+            
             int diff = Math.abs(heights[r][c] - heights[x][y]);
-            int currEffort = Math.max(efforts[r][c], diff);
-            if(efforts[x][y] > currEffort){
-                efforts[x][y] = currEffort;
-                dfs(x , y, n, m, heights, efforts);
-            }
+            if(diff<=limit)
+                ans |= dfs(x , y, limit, heights, vis);
         }
+        return ans;
     }
 }
