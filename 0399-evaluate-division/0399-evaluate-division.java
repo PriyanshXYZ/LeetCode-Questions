@@ -1,5 +1,59 @@
 class Solution {
     public double[] calcEquation(List<List<String>> equations, double[] values, List<List<String>> queries) {
+        Map<String, Map<String, Double>> graph = new HashMap();
+        int idx = 0;
+        for(List<String> eq : equations){
+            String srcNode = eq.get(0);
+            String destNode = eq.get(1);
+
+            double wtSrcNodeToDestNode = values[idx];
+            double wtDestNodeToSrcNode = 1/wtSrcNodeToDestNode;
+            if(!graph.containsKey(srcNode)){ //Added this check
+                 graph.put(srcNode, new HashMap());
+            }
+            if(!graph.containsKey(destNode)){ //Added this check
+                 graph.put(destNode, new HashMap());
+            }
+            graph.get(srcNode).put(destNode, wtSrcNodeToDestNode);
+            graph.get(destNode).put(srcNode, wtDestNodeToSrcNode);
+            // System.out.println(srcNode +" "+ destNode+" "+(wtDestNodeToSrcNode));
+            idx++;
+        }
+        // System.out.println(graph);
+        
+        double[] result = new double[queries.size()];
+        idx = 0;
+        for(List<String> query : queries) {
+            String srcNode = query.get(0);
+            String destNode = query.get(1);
+            Set<String> visited = new HashSet();
+            result[idx++] = dfs(srcNode, destNode, graph, visited);
+        }
+        return result;
+    }
+
+    private double dfs(String srcNode, String destNode,Map<String, Map<String, Double>> graph, Set<String> visited) {
+        if(!graph.containsKey(srcNode) || !graph.containsKey(destNode))return -1.0;
+        if(srcNode.equals(destNode))return 1.0;
+
+        visited.add(srcNode);
+
+        for(Map.Entry<String, Double> node : graph.get(srcNode).entrySet()){
+            String nbrNode = node.getKey();
+            double wtNbrNode = node.getValue();
+            if(!visited.contains(nbrNode)){
+                double result = dfs(nbrNode, destNode, graph, visited);
+                if(result != -1.0){
+                    return wtNbrNode * result;
+                }
+            }
+        }
+        return -1.0;
+    }
+}
+
+class Solution1 {
+    public double[] calcEquation(List<List<String>> equations, double[] values, List<List<String>> queries) {
         //1.we first create union between single queries
         parent=new HashMap();
         multiplier=new HashMap();
@@ -25,14 +79,14 @@ class Solution {
             double m1=multiplier.get(s1);
             double m2=multiplier.get(s2);
             
-            
+            System.out.println(s1+" "+s1Lead+" "+m1+", "+s2+" "+s2Lead+" "+m2);
             //union of set leads
             parent.put(s1Lead,s2Lead);
             multiplier.put(s1Lead, (values[i] * m2 )/ m1);
             
         }
-        // System.out.println(parent);
-        // System.out.println(multiplier);
+        System.out.println(parent);
+        System.out.println(multiplier);
         double[] res=new double[queries.size()];
         int idx=0;
         //checking for queries
