@@ -108,6 +108,7 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 | [0583-delete-operation-for-two-strings](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/0583-delete-operation-for-two-strings) |
 | [1250-longest-common-subsequence](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/1250-longest-common-subsequence) |
 | [1986-largest-color-value-in-a-directed-graph](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/1986-largest-color-value-in-a-directed-graph) |
+| [2090-number-of-ways-to-arrive-at-destination](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/2090-number-of-ways-to-arrive-at-destination) |
 ## Graph
 |  |
 | ------- |
@@ -117,12 +118,14 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 | [0684-redundant-connection](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/0684-redundant-connection) |
 | [0744-network-delay-time](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/0744-network-delay-time) |
 | [1986-largest-color-value-in-a-directed-graph](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/1986-largest-color-value-in-a-directed-graph) |
+| [2090-number-of-ways-to-arrive-at-destination](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/2090-number-of-ways-to-arrive-at-destination) |
 ## Topological Sort
 |  |
 | ------- |
 | [0207-course-schedule](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/0207-course-schedule) |
 | [0329-longest-increasing-path-in-a-matrix](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/0329-longest-increasing-path-in-a-matrix) |
 | [1986-largest-color-value-in-a-directed-graph](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/1986-largest-color-value-in-a-directed-graph) |
+| [2090-number-of-ways-to-arrive-at-destination](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/2090-number-of-ways-to-arrive-at-destination) |
 ## Memoization
 |  |
 | ------- |
@@ -187,4 +190,5 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 | ------- |
 | [0399-evaluate-division](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/0399-evaluate-division) |
 | [0744-network-delay-time](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/0744-network-delay-time) |
+| [2090-number-of-ways-to-arrive-at-destination](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/2090-number-of-ways-to-arrive-at-destination) |
 <!---LeetCode Topics End-->
