@@ -7,6 +7,7 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 |  |
 | ------- |
 | [0003-longest-substring-without-repeating-characters](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/0003-longest-substring-without-repeating-characters) |
+| [0560-subarray-sum-equals-k](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/0560-subarray-sum-equals-k) |
 | [0896-smallest-subtree-with-all-the-deepest-nodes](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/0896-smallest-subtree-with-all-the-deepest-nodes) |
 | [1023-time-based-key-value-store](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/1023-time-based-key-value-store) |
 | [1218-lowest-common-ancestor-of-deepest-leaves](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/1218-lowest-common-ancestor-of-deepest-leaves) |
@@ -69,6 +70,7 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 | [0474-ones-and-zeroes](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/0474-ones-and-zeroes) |
 | [0494-target-sum](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/0494-target-sum) |
 | [0518-coin-change-ii](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/0518-coin-change-ii) |
+| [0560-subarray-sum-equals-k](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/0560-subarray-sum-equals-k) |
 | [0695-max-area-of-island](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/0695-max-area-of-island) |
 | [0733-flood-fill](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/0733-flood-fill) |
 | [0907-koko-eating-bananas](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/0907-koko-eating-bananas) |
@@ -197,4 +199,8 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 | [0744-network-delay-time](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/0744-network-delay-time) |
 | [0803-cheapest-flights-within-k-stops](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/0803-cheapest-flights-within-k-stops) |
 | [2090-number-of-ways-to-arrive-at-destination](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/2090-number-of-ways-to-arrive-at-destination) |
+## Prefix Sum
+|  |
+| ------- |
+| [0560-subarray-sum-equals-k](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/0560-subarray-sum-equals-k) |
 <!---LeetCode Topics End-->
