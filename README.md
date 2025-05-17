@@ -62,6 +62,7 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 | [0027-remove-element](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/0027-remove-element) |
 | [0033-search-in-rotated-sorted-array](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/0033-search-in-rotated-sorted-array) |
 | [0200-number-of-islands](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/0200-number-of-islands) |
+| [0304-range-sum-query-2d-immutable](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/0304-range-sum-query-2d-immutable) |
 | [0322-coin-change](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/0322-coin-change) |
 | [0329-longest-increasing-path-in-a-matrix](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/0329-longest-increasing-path-in-a-matrix) |
 | [0399-evaluate-division](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/0399-evaluate-division) |
@@ -149,6 +150,7 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 |  |
 | ------- |
 | [0200-number-of-islands](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/0200-number-of-islands) |
+| [0304-range-sum-query-2d-immutable](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/0304-range-sum-query-2d-immutable) |
 | [0329-longest-increasing-path-in-a-matrix](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/0329-longest-increasing-path-in-a-matrix) |
 | [0419-battleships-in-a-board](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/0419-battleships-in-a-board) |
 | [0695-max-area-of-island](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/0695-max-area-of-island) |
@@ -185,6 +187,7 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 ## Design
 |  |
 | ------- |
+| [0304-range-sum-query-2d-immutable](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/0304-range-sum-query-2d-immutable) |
 | [1023-time-based-key-value-store](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/1023-time-based-key-value-store) |
 ## Heap (Priority Queue)
 |  |
@@ -202,5 +205,6 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 ## Prefix Sum
 |  |
 | ------- |
+| [0304-range-sum-query-2d-immutable](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/0304-range-sum-query-2d-immutable) |
 | [0560-subarray-sum-equals-k](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/0560-subarray-sum-equals-k) |
 <!---LeetCode Topics End-->
