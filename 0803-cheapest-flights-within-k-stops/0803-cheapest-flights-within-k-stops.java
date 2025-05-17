@@ -1,5 +1,33 @@
 class Solution {
+    public int bellmanFord(int n, int[][] flights, int src, int dst, int k){
+        int[][] dp = new int[k + 2][n];
+        for (int i = 0; i <= k + 1; i++) {
+            Arrays.fill(dp[i], Integer.MAX_VALUE);
+        }
+        dp[0][src] = 0;
+
+        for (int stops = 1; stops <= k + 1; stops++) {
+            for (int[] flight : flights) {
+                int u = flight[0];
+                int v = flight[1];
+                int price = flight[2];
+                if (dp[stops - 1][u] != Integer.MAX_VALUE) {
+                    dp[stops][v] = Math.min(dp[stops][v], dp[stops - 1][u] + price);
+                }
+            }
+        }
+
+        int minCost = Integer.MAX_VALUE;
+        for (int i = 0; i <= k + 1; i++) {
+            minCost = Math.min(minCost, dp[i][dst]);
+        }
+
+        return minCost == Integer.MAX_VALUE ? -1 : minCost;
+    }
     public int findCheapestPrice(int n, int[][] flights, int src, int dst, int k) {
+        return bellmanFord(n,flights,src,dst,k);
+    }
+    public int optimizedBFS(int n, int[][] flights, int src, int dst, int k){
         List<List<int[]>> graph  = new ArrayList();
         for(int i = 0; i < n ; i++) graph.add(new ArrayList<>());
         //create the graph
