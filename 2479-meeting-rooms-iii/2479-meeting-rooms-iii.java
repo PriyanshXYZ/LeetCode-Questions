@@ -59,7 +59,6 @@ class Solution {
                 maxMeetingCountRoom = i;
             }
         }
-        System.out.println();
         return maxMeetingCountRoom;
 
     }
