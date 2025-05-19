@@ -15,7 +15,7 @@ class Solution {
             
             if(maxHeap.size() > minHeap.size()) minHeap.add(maxHeap.pollFirst());
             double median = 0;
-            System.out.println("after rebalance :"+maxHeap+" "+minHeap);
+            // System.out.println("after rebalance :"+maxHeap+" "+minHeap);
             if(maxHeap.size() + minHeap.size() == k){
                 if(maxHeap.size() == minHeap.size()){
                     median = nums[maxHeap.first()]/2.0 + (long)nums[minHeap.first()]/2.0;
