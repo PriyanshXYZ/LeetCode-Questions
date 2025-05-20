@@ -7,6 +7,7 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 |  |
 | ------- |
 | [0003-longest-substring-without-repeating-characters](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/0003-longest-substring-without-repeating-characters) |
+| [0133-clone-graph](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/0133-clone-graph) |
 | [0480-sliding-window-median](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/0480-sliding-window-median) |
 | [0560-subarray-sum-equals-k](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/0560-subarray-sum-equals-k) |
 | [0896-smallest-subtree-with-all-the-deepest-nodes](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/0896-smallest-subtree-with-all-the-deepest-nodes) |
@@ -24,6 +25,7 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 ## Depth-First Search
 |  |
 | ------- |
+| [0133-clone-graph](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/0133-clone-graph) |
 | [0200-number-of-islands](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/0200-number-of-islands) |
 | [0207-course-schedule](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/0207-course-schedule) |
 | [0329-longest-increasing-path-in-a-matrix](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/0329-longest-increasing-path-in-a-matrix) |
@@ -40,6 +42,7 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 ## Breadth-First Search
 |  |
 | ------- |
+| [0133-clone-graph](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/0133-clone-graph) |
 | [0200-number-of-islands](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/0200-number-of-islands) |
 | [0207-course-schedule](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/0207-course-schedule) |
 | [0322-coin-change](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/0322-coin-change) |
@@ -123,6 +126,7 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 ## Graph
 |  |
 | ------- |
+| [0133-clone-graph](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/0133-clone-graph) |
 | [0207-course-schedule](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/0207-course-schedule) |
 | [0329-longest-increasing-path-in-a-matrix](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/0329-longest-increasing-path-in-a-matrix) |
 | [0399-evaluate-division](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/0399-evaluate-division) |
