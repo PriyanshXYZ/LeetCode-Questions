@@ -1,72 +1,57 @@
-class MedianFinder {
-    PriorityQueue<Integer> left;
-    PriorityQueue<Integer> right;
-    public MedianFinder() {
-        left=new PriorityQueue(Collections.reverseOrder());
-        right=new PriorityQueue();
-    }
-    
-    public void addNum(int num) {
-        if(left.size()>0 && num<left.peek()){
-            left.add(num);
-        }else{
-            right.add(num);
-        }
-        if(left.size()-right.size()==2){
-            right.add(left.remove());
-        }else if(right.size()-left.size()==2){
-            left.add(right.remove());
-        }
-    }
-    
-    public double findMedian() {
-        if(left.size()>right.size()){
-            return left.peek();
-        }else if(right.size()>left.size()){
-            return right.peek();
-        }else{
-            return (double)(left.peek()+right.peek())/2;
-        }
-    }
-}
-class MedianFinder1 {
-    //worst case O(n^2)..
-    List<Integer> nums;
-    int size;
-    public MedianFinder1() {
-        nums=new ArrayList();
-        size=0;
-    }
-    
-    public void addNum(int num) {
-        int idx=Collections.binarySearch(nums,num);
-        if(idx<0){
-            idx=-idx;
-            idx-=1;
-        }
-        if(size<=idx){
-            nums.add(num);
-        }else{
-            nums.add(idx,num);
-        }
-        size=nums.size();
-        // System.out.println(nums);
-    }
-    
-    public double findMedian() {
-        if(size%2==0){
-            return (double)(nums.get((size-1)/2)+nums.get((size)/2))/2;
-        }
-        return nums.get(size/2);
-    }
-}
-
 /**
- * Your MedianFinder object will be instantiated and called as such:
- * MedianFinder obj = new MedianFinder();
- * obj.addNum(num);
- * double param_2 = obj.findMedian();
+    1 2 3
+    []  [1] => [1] []
+    [1] [2]
+    [1] [2,3] => [1,2] [3]
+
+    1 4 3 2
+    [] [1] => [1] []
+    [1] [4]
+    [1] [3, 4] => [1,3] [4]
+    [1,3] [2,4] 
+
+    -1 -2 -3 -4 -5
+    [] [-1] => [-1] [0]
+    [-1] [-2]
+    [-1] [-3, -2] => [-3,-1] [-2]
+    []
  */
+
+class MedianFinder {
+    PriorityQueue<Integer> maxHeap; // to store lower values
+    PriorityQueue<Integer> minHeap; // to store higher values
+
+    public MedianFinder() {
+        maxHeap = new PriorityQueue<>((a,b) -> b - a);
+        minHeap = new PriorityQueue<>();
+    }
+    
+    public void addNum(int num) {
+        int streamSize = getSize();
+        //balance the heaps
+        maxHeap.add(num);
+        minHeap.add(maxHeap.remove());
+        if(minHeap.size() > maxHeap.size()) {
+            maxHeap.add(minHeap.remove());
+        }
+    }
+    
+    public double findMedian() {
+        int streamSize = getSize();
+        if(streamSize % 2 == 0){
+            double median1 = maxHeap.peek() / 2.0;
+            double median2 = minHeap.peek() / 2.0;
+            return median1 + median2;
+        }else {
+            double median = maxHeap.peek() * 1.0;
+            return median;
+        }
+    }
+
+    private int getSize(){
+        return minHeap.size() + maxHeap.size();
+    }
+}
 
 /**
  * Your MedianFinder object will be instantiated and called as such:
