@@ -9,6 +9,7 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 | [0003-longest-substring-without-repeating-characters](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/0003-longest-substring-without-repeating-characters) |
 | [0133-clone-graph](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/0133-clone-graph) |
 | [0480-sliding-window-median](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/0480-sliding-window-median) |
+| [0525-contiguous-array](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/0525-contiguous-array) |
 | [0560-subarray-sum-equals-k](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/0560-subarray-sum-equals-k) |
 | [0896-smallest-subtree-with-all-the-deepest-nodes](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/0896-smallest-subtree-with-all-the-deepest-nodes) |
 | [1023-time-based-key-value-store](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/1023-time-based-key-value-store) |
@@ -80,6 +81,7 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 | [0480-sliding-window-median](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/0480-sliding-window-median) |
 | [0494-target-sum](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/0494-target-sum) |
 | [0518-coin-change-ii](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/0518-coin-change-ii) |
+| [0525-contiguous-array](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/0525-contiguous-array) |
 | [0560-subarray-sum-equals-k](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/0560-subarray-sum-equals-k) |
 | [0695-max-area-of-island](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/0695-max-area-of-island) |
 | [0733-flood-fill](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/0733-flood-fill) |
@@ -228,6 +230,7 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 |  |
 | ------- |
 | [0304-range-sum-query-2d-immutable](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/0304-range-sum-query-2d-immutable) |
+| [0525-contiguous-array](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/0525-contiguous-array) |
 | [0560-subarray-sum-equals-k](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/0560-subarray-sum-equals-k) |
 ## Queue
 |  |
