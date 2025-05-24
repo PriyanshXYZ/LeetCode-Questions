@@ -23,47 +23,49 @@ class Solution {
     public int numDecodings(String s) {
         int n = s.length();
         long[] dp = new long[n+1];
-        dp[0] = 1;
+        long prev = 1;
+        long prevToPrev = 0;
+        
         for(int i = 1; i <= n; i++) {
             //single digit
+            long curr = 0;    
             char ch = s.charAt(i-1);
-            // System.out.print("for 1 digit: "+i+"=>"+dp[i]+" ");
             if(!Character.isDigit(ch)) {
-                dp[i] += 9*dp[i-1];
+                curr += 9*prev;
             }else if(ch!='0'){
-                dp[i] += dp[i-1];
+                curr += prev;
             }
-            // System.out.println(dp[i]);
-
+            curr%=mod;
             //two digit
             if(i>=2){
-                // System.out.print("for 2 digit: "+i+"=>"+dp[i]+" ");
+            
                 char ch1 = s.charAt(i-2);
                 char ch2 = s.charAt(i-1);
                 if(ch1 != '*' && ch2 != '*') {
                     int num = Integer.parseInt(ch1+""+ch2);
                     if(num>=10 && num<=26)
-                        dp[i] += dp[i-2];
+                        curr += prevToPrev;
                 }else if(ch2 != '*') {
                     if(ch2 > '6'){
-                        dp[i] += 1*dp[i-2];
+                        curr += 1*prevToPrev;
                     }else if(ch1 !='0'){
-                        dp[i] += 2*dp[i-2]; // eg *1 => 11 / 21
+                        curr += 2*prevToPrev; // eg *1 => 11 / 21
                     }
                 }else if(ch1 != '*') {
                     if(ch1=='1') {
-                        dp[i] += 9*dp[i-2]; // 11 ...... 19
+                        curr += 9*prevToPrev; // 11 ...... 19
                     }else if(ch1=='2') {
-                        dp[i] += 6*dp[i-2]; // 21 , 22 , 23, 24, 25, 26
+                        curr += 6*prevToPrev; // 21 , 22 , 23, 24, 25, 26
                     }
                 }else {
-                    dp[i] += 15*dp[i-2]; //11.......20(not included)..........26
+                    curr += 15*prevToPrev; //11.......20(not included)..........26
                 }
-                dp[i] %= mod;
-                // System.out.println(dp[i]);
+                curr %= mod;
             }
-            
+
+            prevToPrev = prev;
+            prev = curr;
         }
-        return (int)dp[n];
+        return (int)prev;
     }
 }
