@@ -59,10 +59,10 @@ class Solution {
                 }else {
                     dp[i] += 15*dp[i-2]; //11.......20(not included)..........26
                 }
-                dp[i] %= mod;
                 // System.out.println(dp[i]);
             }
+            dp[i] %= mod;
         }
-        return (int)dp[n]%mod;
+        return (int)dp[n];
     }
 }
