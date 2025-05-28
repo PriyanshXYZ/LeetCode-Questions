@@ -3,16 +3,14 @@ class Solution {
         int ans=0;
         int idx=0;
         
-        Stack<Integer> stk=new Stack();
-        while(idx<height.length){
-            while(stk.size()>0 && height[idx]>height[stk.peek()]){
-                int top=stk.pop();
-                if(stk.isEmpty()){
-                    break;
-                }
-                int dist=idx-stk.peek()-1;
-                int ht=Math.min(height[idx],height[stk.peek()])-height[top];
-                ans+=dist*ht;
+        Stack<Integer> stk = new Stack();
+        while(idx<height.length) {
+            while(!stk.isEmpty() && height[idx]>height[stk.peek()]){
+                int topIdx = stk.pop();
+                if(stk.isEmpty())break;
+                int dist = idx - stk.peek() - 1;
+                int ht = Math.min(height[idx],height[stk.peek()])-height[topIdx];
+                ans += dist*ht;
             }
             stk.push(idx++);
         }
