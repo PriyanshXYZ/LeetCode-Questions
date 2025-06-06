@@ -190,6 +190,7 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 | [0583-delete-operation-for-two-strings](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/0583-delete-operation-for-two-strings) |
 | [0639-decode-ways-ii](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/0639-decode-ways-ii) |
 | [1023-time-based-key-value-store](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/1023-time-based-key-value-store) |
+| [1058-lexicographically-smallest-equivalent-string](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/1058-lexicographically-smallest-equivalent-string) |
 | [1250-longest-common-subsequence](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/1250-longest-common-subsequence) |
 ## Sliding Window
 |  |
@@ -204,6 +205,7 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 | [0399-evaluate-division](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/0399-evaluate-division) |
 | [0684-redundant-connection](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/0684-redundant-connection) |
 | [0695-max-area-of-island](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/0695-max-area-of-island) |
+| [1058-lexicographically-smallest-equivalent-string](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/1058-lexicographically-smallest-equivalent-string) |
 | [1753-path-with-minimum-effort](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/1753-path-with-minimum-effort) |
 ## Binary Search
 |  |
