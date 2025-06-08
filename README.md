@@ -16,6 +16,7 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 | [1218-lowest-common-ancestor-of-deepest-leaves](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/1218-lowest-common-ancestor-of-deepest-leaves) |
 | [1986-largest-color-value-in-a-directed-graph](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/1986-largest-color-value-in-a-directed-graph) |
 | [2479-meeting-rooms-iii](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/2479-meeting-rooms-iii) |
+| [3445-lexicographically-minimum-string-after-removing-stars](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/3445-lexicographically-minimum-string-after-removing-stars) |
 | [3621-minimum-operations-to-make-array-values-equal-to-k](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/3621-minimum-operations-to-make-array-values-equal-to-k) |
 | [3656-minimum-number-of-operations-to-make-elements-in-array-distinct](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/3656-minimum-number-of-operations-to-make-elements-in-array-distinct) |
 ## Tree
@@ -192,6 +193,7 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 | [1023-time-based-key-value-store](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/1023-time-based-key-value-store) |
 | [1058-lexicographically-smallest-equivalent-string](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/1058-lexicographically-smallest-equivalent-string) |
 | [1250-longest-common-subsequence](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/1250-longest-common-subsequence) |
+| [3445-lexicographically-minimum-string-after-removing-stars](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/3445-lexicographically-minimum-string-after-removing-stars) |
 ## Sliding Window
 |  |
 | ------- |
@@ -230,6 +232,7 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 | [0803-cheapest-flights-within-k-stops](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/0803-cheapest-flights-within-k-stops) |
 | [1753-path-with-minimum-effort](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/1753-path-with-minimum-effort) |
 | [2479-meeting-rooms-iii](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/2479-meeting-rooms-iii) |
+| [3445-lexicographically-minimum-string-after-removing-stars](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/3445-lexicographically-minimum-string-after-removing-stars) |
 ## Shortest Path
 |  |
 | ------- |
@@ -268,8 +271,13 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 |  |
 | ------- |
 | [0042-trapping-rain-water](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/0042-trapping-rain-water) |
+| [3445-lexicographically-minimum-string-after-removing-stars](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/3445-lexicographically-minimum-string-after-removing-stars) |
 ## Monotonic Stack
 |  |
 | ------- |
 | [0042-trapping-rain-water](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/0042-trapping-rain-water) |
+## Greedy
+|  |
+| ------- |
+| [3445-lexicographically-minimum-string-after-removing-stars](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/3445-lexicographically-minimum-string-after-removing-stars) |
 <!---LeetCode Topics End-->
