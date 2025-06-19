@@ -91,6 +91,7 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 | [0907-koko-eating-bananas](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/0907-koko-eating-bananas) |
 | [1753-path-with-minimum-effort](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/1753-path-with-minimum-effort) |
 | [1993-sum-of-all-subset-xor-totals](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/1993-sum-of-all-subset-xor-totals) |
+| [2387-partition-array-such-that-maximum-difference-is-k](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/2387-partition-array-such-that-maximum-difference-is-k) |
 | [2479-meeting-rooms-iii](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/2479-meeting-rooms-iii) |
 | [3152-maximum-value-of-an-ordered-triplet-ii](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/3152-maximum-value-of-an-ordered-triplet-ii) |
 | [3621-minimum-operations-to-make-array-values-equal-to-k](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/3621-minimum-operations-to-make-array-values-equal-to-k) |
@@ -258,6 +259,7 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 |  |
 | ------- |
 | [0295-find-median-from-data-stream](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/0295-find-median-from-data-stream) |
+| [2387-partition-array-such-that-maximum-difference-is-k](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/2387-partition-array-such-that-maximum-difference-is-k) |
 | [2479-meeting-rooms-iii](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/2479-meeting-rooms-iii) |
 ## Simulation
 |  |
@@ -279,5 +281,6 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 ## Greedy
 |  |
 | ------- |
+| [2387-partition-array-such-that-maximum-difference-is-k](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/2387-partition-array-such-that-maximum-difference-is-k) |
 | [3445-lexicographically-minimum-string-after-removing-stars](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/3445-lexicographically-minimum-string-after-removing-stars) |
 <!---LeetCode Topics End-->
