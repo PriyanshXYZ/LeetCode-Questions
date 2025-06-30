@@ -33,16 +33,23 @@ class Solution {
 
     private boolean possibleDiffLessThanK(int[] nums, int difference, int k) {
         int count = 0;
-        int left = 0;
         
-        for (int right = 0; right < nums.length; right++) {
-        
-            while (nums[right] - nums[left] > difference) {
-                left++;
-            }
-        
-            count += (right - left);
+        for (int left = 0; left < nums.length; left++) {
+            int right = upperBound(nums, left, nums.length, nums[left] + difference);
+            count += (right - left - 1);
         }
         return count<k;
+    }
+    private int upperBound(int[] nums, int left, int right, int k) {
+        while(left < right) {
+            int mid = left + (right - left) / 2;
+
+            if(nums[mid] <= k) {
+                left = mid + 1;
+            }else {
+                right = mid;
+            }
+        }
+        return left;
     }
 }
