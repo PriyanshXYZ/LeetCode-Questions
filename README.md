@@ -11,6 +11,7 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 | [0480-sliding-window-median](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/0480-sliding-window-median) |
 | [0525-contiguous-array](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/0525-contiguous-array) |
 | [0560-subarray-sum-equals-k](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/0560-subarray-sum-equals-k) |
+| [0594-longest-harmonious-subsequence](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/0594-longest-harmonious-subsequence) |
 | [0896-smallest-subtree-with-all-the-deepest-nodes](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/0896-smallest-subtree-with-all-the-deepest-nodes) |
 | [1023-time-based-key-value-store](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/1023-time-based-key-value-store) |
 | [1218-lowest-common-ancestor-of-deepest-leaves](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/1218-lowest-common-ancestor-of-deepest-leaves) |
@@ -86,6 +87,7 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 | [0518-coin-change-ii](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/0518-coin-change-ii) |
 | [0525-contiguous-array](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/0525-contiguous-array) |
 | [0560-subarray-sum-equals-k](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/0560-subarray-sum-equals-k) |
+| [0594-longest-harmonious-subsequence](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/0594-longest-harmonious-subsequence) |
 | [0695-max-area-of-island](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/0695-max-area-of-island) |
 | [0719-find-k-th-smallest-pair-distance](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/0719-find-k-th-smallest-pair-distance) |
 | [0733-flood-fill](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/0733-flood-fill) |
@@ -165,6 +167,7 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 ## Counting
 |  |
 | ------- |
+| [0594-longest-harmonious-subsequence](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/0594-longest-harmonious-subsequence) |
 | [1986-largest-color-value-in-a-directed-graph](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/1986-largest-color-value-in-a-directed-graph) |
 ## Two Pointers
 |  |
@@ -203,6 +206,7 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 | [0003-longest-substring-without-repeating-characters](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/0003-longest-substring-without-repeating-characters) |
 | [0239-sliding-window-maximum](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/0239-sliding-window-maximum) |
 | [0480-sliding-window-median](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/0480-sliding-window-median) |
+| [0594-longest-harmonious-subsequence](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/0594-longest-harmonious-subsequence) |
 ## Union Find
 |  |
 | ------- |
@@ -262,6 +266,7 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 |  |
 | ------- |
 | [0295-find-median-from-data-stream](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/0295-find-median-from-data-stream) |
+| [0594-longest-harmonious-subsequence](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/0594-longest-harmonious-subsequence) |
 | [0719-find-k-th-smallest-pair-distance](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/0719-find-k-th-smallest-pair-distance) |
 | [2387-partition-array-such-that-maximum-difference-is-k](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/2387-partition-array-such-that-maximum-difference-is-k) |
 | [2479-meeting-rooms-iii](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/2479-meeting-rooms-iii) |
