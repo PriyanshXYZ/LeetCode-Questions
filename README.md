@@ -7,6 +7,7 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 |  |
 | ------- |
 | [0003-longest-substring-without-repeating-characters](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/0003-longest-substring-without-repeating-characters) |
+| [0105-construct-binary-tree-from-preorder-and-inorder-traversal](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/0105-construct-binary-tree-from-preorder-and-inorder-traversal) |
 | [0133-clone-graph](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/0133-clone-graph) |
 | [0480-sliding-window-median](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/0480-sliding-window-median) |
 | [0525-contiguous-array](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/0525-contiguous-array) |
@@ -23,6 +24,7 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 ## Tree
 |  |
 | ------- |
+| [0105-construct-binary-tree-from-preorder-and-inorder-traversal](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/0105-construct-binary-tree-from-preorder-and-inorder-traversal) |
 | [0896-smallest-subtree-with-all-the-deepest-nodes](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/0896-smallest-subtree-with-all-the-deepest-nodes) |
 | [1218-lowest-common-ancestor-of-deepest-leaves](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/1218-lowest-common-ancestor-of-deepest-leaves) |
 ## Depth-First Search
@@ -63,6 +65,7 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 ## Binary Tree
 |  |
 | ------- |
+| [0105-construct-binary-tree-from-preorder-and-inorder-traversal](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/0105-construct-binary-tree-from-preorder-and-inorder-traversal) |
 | [0896-smallest-subtree-with-all-the-deepest-nodes](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/0896-smallest-subtree-with-all-the-deepest-nodes) |
 | [1218-lowest-common-ancestor-of-deepest-leaves](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/1218-lowest-common-ancestor-of-deepest-leaves) |
 ## Array
@@ -71,6 +74,7 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 | [0027-remove-element](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/0027-remove-element) |
 | [0033-search-in-rotated-sorted-array](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/0033-search-in-rotated-sorted-array) |
 | [0042-trapping-rain-water](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/0042-trapping-rain-water) |
+| [0105-construct-binary-tree-from-preorder-and-inorder-traversal](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/0105-construct-binary-tree-from-preorder-and-inorder-traversal) |
 | [0123-best-time-to-buy-and-sell-stock-iii](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/0123-best-time-to-buy-and-sell-stock-iii) |
 | [0200-number-of-islands](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/0200-number-of-islands) |
 | [0221-maximal-square](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/0221-maximal-square) |
@@ -302,5 +306,6 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 ## Divide and Conquer
 |  |
 | ------- |
+| [0105-construct-binary-tree-from-preorder-and-inorder-traversal](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/0105-construct-binary-tree-from-preorder-and-inorder-traversal) |
 | [0240-search-a-2d-matrix-ii](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/0240-search-a-2d-matrix-ii) |
 <!---LeetCode Topics End-->
