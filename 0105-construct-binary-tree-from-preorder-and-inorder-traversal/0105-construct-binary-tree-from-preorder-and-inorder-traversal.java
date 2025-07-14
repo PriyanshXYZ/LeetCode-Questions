@@ -31,8 +31,7 @@ class Solution {
         if(p_lo>p_hi || i_lo > i_hi)return null;
 
         TreeNode node = new TreeNode(p[p_lo]);
-        int iIdx = p_lo;
-        iIdx = inorderIdxMap.get(p[p_lo]);
+        int iIdx = inorderIdxMap.get(p[p_lo]);
         
         int leftTreeSize = iIdx - i_lo;
 
