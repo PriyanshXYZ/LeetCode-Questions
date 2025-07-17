@@ -101,6 +101,7 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 | [0719-find-k-th-smallest-pair-distance](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/0719-find-k-th-smallest-pair-distance) |
 | [0733-flood-fill](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/0733-flood-fill) |
 | [0907-koko-eating-bananas](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/0907-koko-eating-bananas) |
+| [1025-minimum-cost-for-tickets](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/1025-minimum-cost-for-tickets) |
 | [1753-path-with-minimum-effort](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/1753-path-with-minimum-effort) |
 | [1993-sum-of-all-subset-xor-totals](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/1993-sum-of-all-subset-xor-totals) |
 | [2387-partition-array-such-that-maximum-difference-is-k](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/2387-partition-array-such-that-maximum-difference-is-k) |
@@ -148,6 +149,7 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 | [0639-decode-ways-ii](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/0639-decode-ways-ii) |
 | [0803-cheapest-flights-within-k-stops](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/0803-cheapest-flights-within-k-stops) |
 | [0956-number-of-music-playlists](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/0956-number-of-music-playlists) |
+| [1025-minimum-cost-for-tickets](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/1025-minimum-cost-for-tickets) |
 | [1250-longest-common-subsequence](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/1250-longest-common-subsequence) |
 | [1986-largest-color-value-in-a-directed-graph](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/1986-largest-color-value-in-a-directed-graph) |
 | [2090-number-of-ways-to-arrive-at-destination](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/2090-number-of-ways-to-arrive-at-destination) |
