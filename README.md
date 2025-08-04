@@ -15,6 +15,7 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 | [0560-subarray-sum-equals-k](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/0560-subarray-sum-equals-k) |
 | [0594-longest-harmonious-subsequence](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/0594-longest-harmonious-subsequence) |
 | [0896-smallest-subtree-with-all-the-deepest-nodes](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/0896-smallest-subtree-with-all-the-deepest-nodes) |
+| [0940-fruit-into-baskets](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/0940-fruit-into-baskets) |
 | [1023-time-based-key-value-store](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/1023-time-based-key-value-store) |
 | [1218-lowest-common-ancestor-of-deepest-leaves](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/1218-lowest-common-ancestor-of-deepest-leaves) |
 | [1986-largest-color-value-in-a-directed-graph](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/1986-largest-color-value-in-a-directed-graph) |
@@ -102,6 +103,7 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 | [0719-find-k-th-smallest-pair-distance](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/0719-find-k-th-smallest-pair-distance) |
 | [0733-flood-fill](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/0733-flood-fill) |
 | [0907-koko-eating-bananas](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/0907-koko-eating-bananas) |
+| [0940-fruit-into-baskets](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/0940-fruit-into-baskets) |
 | [1025-minimum-cost-for-tickets](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/1025-minimum-cost-for-tickets) |
 | [1753-path-with-minimum-effort](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/1753-path-with-minimum-effort) |
 | [1993-sum-of-all-subset-xor-totals](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/1993-sum-of-all-subset-xor-totals) |
@@ -226,6 +228,7 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 | [0239-sliding-window-maximum](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/0239-sliding-window-maximum) |
 | [0480-sliding-window-median](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/0480-sliding-window-median) |
 | [0594-longest-harmonious-subsequence](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/0594-longest-harmonious-subsequence) |
+| [0940-fruit-into-baskets](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/0940-fruit-into-baskets) |
 | [2229-maximum-fruits-harvested-after-at-most-k-steps](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/2229-maximum-fruits-harvested-after-at-most-k-steps) |
 ## Union Find
 |  |
