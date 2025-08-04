@@ -2,64 +2,51 @@ class Solution {
 
     public int maxTotalFruits(int[][] fruits, int startPos, int k) {
         int n = fruits.length;
+        int size = fruits[n - 1][0];
+
+        int[] prefixSum = new int[500002];
         
-        // Extract positions and prefix sums
-        int[] positions = new int[n];
-        int[] prefixSum = new int[n + 1];
+        for (int i = 0; i < n; i++) prefixSum[fruits[i][0] + 1] = fruits[i][1];
+
+        for(int i = 1; i < prefixSum.length; i++) {
+            prefixSum[i] += prefixSum[i - 1];
+        }
+
+        // for(int i = 0; i <= size + 1; i++) {
+        //     System.out.print(prefixSum[i]+" ");
+        // }
+        // System.out.println();
+
+        // A cleaner implementation:
+        int result = 0;
         
-        for (int i = 0; i < n; i++) {
-            positions[i] = fruits[i][0];
-            prefixSum[i + 1] = prefixSum[i] + fruits[i][1];
+        // Scenario 1: Go to a point 'l' on the left and come back to a point 'r' on the right
+        // The path is start -> l -> r. Steps = (start - l) + (r - l)
+        for (int l = 0; l <= k; l++) {
+            int leftPos = startPos - l;
+            if (leftPos < 0) continue;
+            int remainingSteps = k - 2 * l; // Steps to go left and back
+            if (remainingSteps < 0) continue;
+            
+            int rightPos = startPos + remainingSteps;
+            int currentFruits = prefixSum[rightPos + 1] - prefixSum[leftPos];
+            result = Math.max(result, currentFruits);
         }
 
-        int maxFruits = 0;
-
-        // Try all combinations: go left then right
-        for (int stepsLeft = 0; stepsLeft <= k; stepsLeft++) {
-            int left = startPos - stepsLeft;
-            int rem = k - 2 * stepsLeft;
-            if (rem < 0) break;
-            int right = startPos + rem;
-            maxFruits = Math.max(maxFruits, getFruitsInRange(positions, prefixSum, left, right));
+        // Scenario 2: Go to a point 'r' on the right and come back to a point 'l' on the left
+        // The path is start -> r -> l. Steps = (r - start) + (r - l)
+        for (int r = 0; r <= k; r++) {
+            int rightPos = startPos + r;
+            int remainingSteps = k - 2 * r;
+            if (remainingSteps < 0) continue;
+            
+            int leftPos = startPos - remainingSteps;
+            if (leftPos < 0) leftPos = 0;
+            
+            int currentFruits = prefixSum[rightPos + 1] - prefixSum[leftPos];
+            result = Math.max(result, currentFruits);
         }
 
-        // Try all combinations: go right then left
-        for (int stepsRight = 0; stepsRight <= k; stepsRight++) {
-            int right = startPos + stepsRight;
-            int rem = k - 2 * stepsRight;
-            if (rem < 0) break;
-            int left = startPos - rem;
-            maxFruits = Math.max(maxFruits, getFruitsInRange(positions, prefixSum, left, right));
-        }
-
-        return maxFruits;
-    }
-
-    private int getFruitsInRange(int[] positions, int[] prefixSum, int left, int right) {
-        int l = lowerBound(positions, left);
-        int r = upperBound(positions, right);
-        return prefixSum[r] - prefixSum[l];
-    }
-
-    // Binary search for first position >= target
-    private int lowerBound(int[] arr, int target) {
-        int low = 0, high = arr.length;
-        while (low < high) {
-            int mid = (low + high) / 2;
-            if (arr[mid] < target) low = mid + 1;
-            else high = mid;
-        }
-        return low;
-    }
-
-    // Binary search for first position > target
-    private int upperBound(int[] arr, int target) {
-        int low = 0, high = arr.length;
-        while (low < high) {
-            int mid = (low + high) / 2;
-            if (arr[mid] <= target) low = mid + 1;
-            else high = mid;
-        }
-        return low;
+        return result;
     }
 }
