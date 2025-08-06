@@ -113,6 +113,7 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 | [3152-maximum-value-of-an-ordered-triplet-ii](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/3152-maximum-value-of-an-ordered-triplet-ii) |
 | [3621-minimum-operations-to-make-array-values-equal-to-k](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/3621-minimum-operations-to-make-array-values-equal-to-k) |
 | [3656-minimum-number-of-operations-to-make-elements-in-array-distinct](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/3656-minimum-number-of-operations-to-make-elements-in-array-distinct) |
+| [3791-fruits-into-baskets-iii](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/3791-fruits-into-baskets-iii) |
 ## Math
 |  |
 | ------- |
@@ -249,6 +250,7 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 | [1023-time-based-key-value-store](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/1023-time-based-key-value-store) |
 | [1753-path-with-minimum-effort](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/1753-path-with-minimum-effort) |
 | [2229-maximum-fruits-harvested-after-at-most-k-steps](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/2229-maximum-fruits-harvested-after-at-most-k-steps) |
+| [3791-fruits-into-baskets-iii](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/3791-fruits-into-baskets-iii) |
 ## Design
 |  |
 | ------- |
@@ -332,4 +334,9 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 |  |
 | ------- |
 | [0673-number-of-longest-increasing-subsequence](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/0673-number-of-longest-increasing-subsequence) |
+| [3791-fruits-into-baskets-iii](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/3791-fruits-into-baskets-iii) |
+## Ordered Set
+|  |
+| ------- |
+| [3791-fruits-into-baskets-iii](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/3791-fruits-into-baskets-iii) |
 <!---LeetCode Topics End-->
