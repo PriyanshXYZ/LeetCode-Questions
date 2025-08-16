@@ -119,6 +119,7 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 | ------- |
 | [0826-soup-servings](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/0826-soup-servings) |
 | [0956-number-of-music-playlists](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/0956-number-of-music-playlists) |
+| [1448-maximum-69-number](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/1448-maximum-69-number) |
 | [1993-sum-of-all-subset-xor-totals](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/1993-sum-of-all-subset-xor-totals) |
 ## Backtracking
 |  |
@@ -321,6 +322,7 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 ## Greedy
 |  |
 | ------- |
+| [1448-maximum-69-number](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/1448-maximum-69-number) |
 | [2387-partition-array-such-that-maximum-difference-is-k](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/2387-partition-array-such-that-maximum-difference-is-k) |
 | [3445-lexicographically-minimum-string-after-removing-stars](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/3445-lexicographically-minimum-string-after-removing-stars) |
 ## Divide and Conquer
