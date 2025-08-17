@@ -118,6 +118,7 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 |  |
 | ------- |
 | [0826-soup-servings](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/0826-soup-servings) |
+| [0867-new-21-game](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/0867-new-21-game) |
 | [0956-number-of-music-playlists](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/0956-number-of-music-playlists) |
 | [1448-maximum-69-number](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/1448-maximum-69-number) |
 | [1993-sum-of-all-subset-xor-totals](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/1993-sum-of-all-subset-xor-totals) |
@@ -157,6 +158,7 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 | [0673-number-of-longest-increasing-subsequence](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/0673-number-of-longest-increasing-subsequence) |
 | [0803-cheapest-flights-within-k-stops](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/0803-cheapest-flights-within-k-stops) |
 | [0826-soup-servings](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/0826-soup-servings) |
+| [0867-new-21-game](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/0867-new-21-game) |
 | [0956-number-of-music-playlists](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/0956-number-of-music-playlists) |
 | [1025-minimum-cost-for-tickets](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/1025-minimum-cost-for-tickets) |
 | [1250-longest-common-subsequence](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/1250-longest-common-subsequence) |
@@ -233,6 +235,7 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 | [0239-sliding-window-maximum](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/0239-sliding-window-maximum) |
 | [0480-sliding-window-median](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/0480-sliding-window-median) |
 | [0594-longest-harmonious-subsequence](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/0594-longest-harmonious-subsequence) |
+| [0867-new-21-game](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/0867-new-21-game) |
 | [0940-fruit-into-baskets](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/0940-fruit-into-baskets) |
 | [2229-maximum-fruits-harvested-after-at-most-k-steps](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/2229-maximum-fruits-harvested-after-at-most-k-steps) |
 ## Union Find
@@ -348,4 +351,5 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 |  |
 | ------- |
 | [0826-soup-servings](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/0826-soup-servings) |
+| [0867-new-21-game](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/0867-new-21-game) |
 <!---LeetCode Topics End-->
