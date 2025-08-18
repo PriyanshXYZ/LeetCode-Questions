@@ -9,7 +9,7 @@ class Solution {
 
     private boolean backtracking(List<Double> cards) {
         if (cards.size() == 1) {
-            return Math.abs(cards.get(0) - 24.0) < 1e-2;
+            return Math.abs(cards.get(0) - 24.0) < 1e-1;
         }
 
         for (int i = 0; i < cards.size(); i++) {
