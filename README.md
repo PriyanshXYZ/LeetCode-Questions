@@ -99,6 +99,7 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 | [0560-subarray-sum-equals-k](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/0560-subarray-sum-equals-k) |
 | [0594-longest-harmonious-subsequence](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/0594-longest-harmonious-subsequence) |
 | [0673-number-of-longest-increasing-subsequence](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/0673-number-of-longest-increasing-subsequence) |
+| [0679-24-game](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/0679-24-game) |
 | [0695-max-area-of-island](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/0695-max-area-of-island) |
 | [0719-find-k-th-smallest-pair-distance](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/0719-find-k-th-smallest-pair-distance) |
 | [0733-flood-fill](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/0733-flood-fill) |
@@ -117,6 +118,7 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 ## Math
 |  |
 | ------- |
+| [0679-24-game](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/0679-24-game) |
 | [0826-soup-servings](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/0826-soup-servings) |
 | [0867-new-21-game](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/0867-new-21-game) |
 | [0956-number-of-music-playlists](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/0956-number-of-music-playlists) |
@@ -126,6 +128,7 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 |  |
 | ------- |
 | [0494-target-sum](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/0494-target-sum) |
+| [0679-24-game](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/0679-24-game) |
 | [1993-sum-of-all-subset-xor-totals](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/1993-sum-of-all-subset-xor-totals) |
 ## Bit Manipulation
 |  |
