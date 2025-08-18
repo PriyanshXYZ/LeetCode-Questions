@@ -8,23 +8,17 @@ class Solution {
     }
 
     private boolean backtracking(List<Double> cards) {
-        // Base case: If we have only one number left
         if (cards.size() == 1) {
-            // Check if the number is close to 24
-            return Math.abs(cards.get(0) - 24.0) < 1e-6;
+            return Math.abs(cards.get(0) - 24.0) < 1e-2;
         }
 
-        // Iterate through all pairs of numbers
         for (int i = 0; i < cards.size(); i++) {
             for (int j = i + 1; j < cards.size(); j++) {
-                // Pick two numbers
                 double num1 = cards.get(i);
                 double num2 = cards.get(j);
 
-                // Create a new list for the recursive call
                 List<Double> nextCards = new ArrayList<>();
 
-                // Add the numbers that were not picked
                 for (int k = 0; k < cards.size(); k++) {
                     if (k != i && k != j) {
                         nextCards.add(cards.get(k));
