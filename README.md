@@ -106,6 +106,7 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 | [0907-koko-eating-bananas](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/0907-koko-eating-bananas) |
 | [0940-fruit-into-baskets](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/0940-fruit-into-baskets) |
 | [1025-minimum-cost-for-tickets](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/1025-minimum-cost-for-tickets) |
+| [1628-count-submatrices-with-all-ones](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/1628-count-submatrices-with-all-ones) |
 | [1753-path-with-minimum-effort](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/1753-path-with-minimum-effort) |
 | [1993-sum-of-all-subset-xor-totals](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/1993-sum-of-all-subset-xor-totals) |
 | [2229-maximum-fruits-harvested-after-at-most-k-steps](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/2229-maximum-fruits-harvested-after-at-most-k-steps) |
@@ -165,6 +166,7 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 | [0956-number-of-music-playlists](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/0956-number-of-music-playlists) |
 | [1025-minimum-cost-for-tickets](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/1025-minimum-cost-for-tickets) |
 | [1250-longest-common-subsequence](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/1250-longest-common-subsequence) |
+| [1628-count-submatrices-with-all-ones](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/1628-count-submatrices-with-all-ones) |
 | [1986-largest-color-value-in-a-directed-graph](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/1986-largest-color-value-in-a-directed-graph) |
 | [2090-number-of-ways-to-arrive-at-destination](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/2090-number-of-ways-to-arrive-at-destination) |
 | [2882-ways-to-express-an-integer-as-sum-of-powers](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/2882-ways-to-express-an-integer-as-sum-of-powers) |
@@ -216,6 +218,7 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 | [0419-battleships-in-a-board](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/0419-battleships-in-a-board) |
 | [0695-max-area-of-island](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/0695-max-area-of-island) |
 | [0733-flood-fill](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/0733-flood-fill) |
+| [1628-count-submatrices-with-all-ones](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/1628-count-submatrices-with-all-ones) |
 | [1753-path-with-minimum-effort](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/1753-path-with-minimum-effort) |
 ## String
 |  |
@@ -320,11 +323,13 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 |  |
 | ------- |
 | [0042-trapping-rain-water](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/0042-trapping-rain-water) |
+| [1628-count-submatrices-with-all-ones](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/1628-count-submatrices-with-all-ones) |
 | [3445-lexicographically-minimum-string-after-removing-stars](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/3445-lexicographically-minimum-string-after-removing-stars) |
 ## Monotonic Stack
 |  |
 | ------- |
 | [0042-trapping-rain-water](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/0042-trapping-rain-water) |
+| [1628-count-submatrices-with-all-ones](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/1628-count-submatrices-with-all-ones) |
 ## Greedy
 |  |
 | ------- |
