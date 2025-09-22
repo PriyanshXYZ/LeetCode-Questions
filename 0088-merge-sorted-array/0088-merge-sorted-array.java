@@ -1,4 +1,5 @@
 class Solution {
+    //most optimised not extra space approach
     public void merge(int[] nums1, int m, int[] nums2, int n) {
         int i = m-1;
         int j = n-1;
