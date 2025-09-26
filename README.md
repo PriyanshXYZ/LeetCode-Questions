@@ -10,6 +10,7 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 | [0105-construct-binary-tree-from-preorder-and-inorder-traversal](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/0105-construct-binary-tree-from-preorder-and-inorder-traversal) |
 | [0106-construct-binary-tree-from-inorder-and-postorder-traversal](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/0106-construct-binary-tree-from-inorder-and-postorder-traversal) |
 | [0133-clone-graph](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/0133-clone-graph) |
+| [0169-majority-element](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/0169-majority-element) |
 | [0480-sliding-window-median](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/0480-sliding-window-median) |
 | [0525-contiguous-array](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/0525-contiguous-array) |
 | [0560-subarray-sum-equals-k](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/0560-subarray-sum-equals-k) |
@@ -84,6 +85,7 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 | [0105-construct-binary-tree-from-preorder-and-inorder-traversal](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/0105-construct-binary-tree-from-preorder-and-inorder-traversal) |
 | [0106-construct-binary-tree-from-inorder-and-postorder-traversal](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/0106-construct-binary-tree-from-inorder-and-postorder-traversal) |
 | [0123-best-time-to-buy-and-sell-stock-iii](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/0123-best-time-to-buy-and-sell-stock-iii) |
+| [0169-majority-element](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/0169-majority-element) |
 | [0200-number-of-islands](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/0200-number-of-islands) |
 | [0221-maximal-square](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/0221-maximal-square) |
 | [0239-sliding-window-maximum](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/0239-sliding-window-maximum) |
@@ -201,6 +203,7 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 ## Counting
 |  |
 | ------- |
+| [0169-majority-element](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/0169-majority-element) |
 | [0594-longest-harmonious-subsequence](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/0594-longest-harmonious-subsequence) |
 | [1986-largest-color-value-in-a-directed-graph](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/1986-largest-color-value-in-a-directed-graph) |
 ## Two Pointers
@@ -313,6 +316,7 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 |  |
 | ------- |
 | [0088-merge-sorted-array](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/0088-merge-sorted-array) |
+| [0169-majority-element](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/0169-majority-element) |
 | [0295-find-median-from-data-stream](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/0295-find-median-from-data-stream) |
 | [0594-longest-harmonious-subsequence](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/0594-longest-harmonious-subsequence) |
 | [0719-find-k-th-smallest-pair-distance](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/0719-find-k-th-smallest-pair-distance) |
@@ -348,6 +352,7 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 | ------- |
 | [0105-construct-binary-tree-from-preorder-and-inorder-traversal](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/0105-construct-binary-tree-from-preorder-and-inorder-traversal) |
 | [0106-construct-binary-tree-from-inorder-and-postorder-traversal](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/0106-construct-binary-tree-from-inorder-and-postorder-traversal) |
+| [0169-majority-element](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/0169-majority-element) |
 | [0240-search-a-2d-matrix-ii](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/0240-search-a-2d-matrix-ii) |
 ## Binary Indexed Tree
 |  |
