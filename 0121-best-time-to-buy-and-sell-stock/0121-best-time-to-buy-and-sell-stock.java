@@ -1,13 +1,13 @@
 class Solution {
     public int maxProfit(int[] prices) {
-        //approach to this question is we keep a dynamic min till the curr ptr and then we compare if we can get max profit 
-        
-        int min=Integer.MAX_VALUE;
+        int n = prices.length;
+        int currMin = Integer.MAX_VALUE;
         int profit = 0;
-        for(int val : prices){
-            min = Math.min(min , val);
-            int currProfit = val - min;
-            profit = Math.max(currProfit , profit);
+        
+        for(int i = 0; i < n; i++) {
+            currMin = Math.min(currMin, prices[i]);
+            int currDiff = prices[i] - currMin;
+            profit = Math.max(currDiff, profit);
         }
         return profit;
     }
