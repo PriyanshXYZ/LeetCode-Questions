@@ -3,9 +3,27 @@ class Solution {
     private static final int SELL = 1;
     public int maxProfit(int[] prices) {
         int n = prices.length;
-        Integer[][][] dp = new Integer[n][2][2];
-        return getMaxProfit(0, 0, BUY, prices, dp);
+        if (n == 0) return 0;
+        
+        int[][][] dp = new int[n][2][3]; // [day][buy or sell][transactions completed]
+
+        // Initialization for day 0
+        for (int t = 0; t <= 2; t++) {
+            dp[0][BUY][t] = -prices[0];  // If we buy on day 0, we spent money
+            dp[0][SELL][t] = 0;           // If we don't hold stock, profit = 0
+        }
+
+
+        for (int i = 1; i < n; i++) {
+            for (int t = 1; t <= 2; t++) {
+                dp[i][SELL][t] = Math.max(dp[i-1][SELL][t], dp[i-1][BUY][t] + prices[i]);
+                dp[i][BUY][t] = Math.max(dp[i-1][BUY][t], dp[i-1][SELL][t-1] - prices[i]);
+            }
+        }
+        
+        return dp[n-1][SELL][2]; // max profit with 2 transactions and can buy (no stock in hand)
     }
+
     private static int getMaxProfit(int idx, int transaction, int buyOrSell, int[] prices , Integer[][][] dp) {
         //base case 
         if(idx >= prices.length || transaction>=2)return 0;
