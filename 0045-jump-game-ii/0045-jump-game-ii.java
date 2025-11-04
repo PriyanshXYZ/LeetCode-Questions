@@ -1,9 +1,24 @@
 class Solution {
     public int jump(int[] nums) {
-        int[] dp=new int[nums.length];
+        int n=nums.length;
+        //greedy = approach is to go as farthest we can go from current point , which automatically lead us to shortest jump path
+        int minJumps = 0, currIdx = 0, idxAfterJump = 0;
         
+
+        for(int i = 0; i < n - 1; i++) {
+            idxAfterJump = Math.max(idxAfterJump, i + nums[i]);
+            if(i == currIdx) {
+                minJumps++;
+                currIdx = idxAfterJump;
+
+                if(idxAfterJump >= n -1)break;
+            }
+        }
+        return minJumps;
+    }
+    private int tabulation(int[] nums ){
+        int[] dp=new int[nums.length];
         int n=nums.length-1;
-        //tabulation
         for(int idx=n;idx>=0;idx--){
             if(idx==n){
                 dp[idx]=0;
@@ -21,8 +36,6 @@ class Solution {
             dp[idx]=ans;    
         }
         return dp[0];
-        // return recursion(0,nums.length-1,nums);
-        // return memoization(0,nums.length-1,nums,dp);
     }
     public int recursion(int idx,int n,int[] nums){
         if(idx==n)return 0;
