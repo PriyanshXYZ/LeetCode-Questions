@@ -94,6 +94,7 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 | [0221-maximal-square](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/0221-maximal-square) |
 | [0239-sliding-window-maximum](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/0239-sliding-window-maximum) |
 | [0240-search-a-2d-matrix-ii](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/0240-search-a-2d-matrix-ii) |
+| [0274-h-index](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/0274-h-index) |
 | [0304-range-sum-query-2d-immutable](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/0304-range-sum-query-2d-immutable) |
 | [0322-coin-change](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/0322-coin-change) |
 | [0329-longest-increasing-path-in-a-matrix](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/0329-longest-increasing-path-in-a-matrix) |
@@ -326,6 +327,7 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 | ------- |
 | [0088-merge-sorted-array](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/0088-merge-sorted-array) |
 | [0169-majority-element](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/0169-majority-element) |
+| [0274-h-index](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/0274-h-index) |
 | [0295-find-median-from-data-stream](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/0295-find-median-from-data-stream) |
 | [0594-longest-harmonious-subsequence](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/0594-longest-harmonious-subsequence) |
 | [0719-find-k-th-smallest-pair-distance](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/0719-find-k-th-smallest-pair-distance) |
@@ -383,4 +385,8 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 | ------- |
 | [0826-soup-servings](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/0826-soup-servings) |
 | [0867-new-21-game](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/0867-new-21-game) |
+## Counting Sort
+|  |
+| ------- |
+| [0274-h-index](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/0274-h-index) |
 <!---LeetCode Topics End-->
