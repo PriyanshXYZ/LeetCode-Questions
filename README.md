@@ -32,6 +32,7 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 | [0094-binary-tree-inorder-traversal](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/0094-binary-tree-inorder-traversal) |
 | [0105-construct-binary-tree-from-preorder-and-inorder-traversal](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/0105-construct-binary-tree-from-preorder-and-inorder-traversal) |
 | [0106-construct-binary-tree-from-inorder-and-postorder-traversal](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/0106-construct-binary-tree-from-inorder-and-postorder-traversal) |
+| [0543-diameter-of-binary-tree](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/0543-diameter-of-binary-tree) |
 | [0896-smallest-subtree-with-all-the-deepest-nodes](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/0896-smallest-subtree-with-all-the-deepest-nodes) |
 | [1218-lowest-common-ancestor-of-deepest-leaves](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/1218-lowest-common-ancestor-of-deepest-leaves) |
 ## Depth-First Search
@@ -44,6 +45,7 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 | [0329-longest-increasing-path-in-a-matrix](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/0329-longest-increasing-path-in-a-matrix) |
 | [0399-evaluate-division](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/0399-evaluate-division) |
 | [0419-battleships-in-a-board](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/0419-battleships-in-a-board) |
+| [0543-diameter-of-binary-tree](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/0543-diameter-of-binary-tree) |
 | [0684-redundant-connection](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/0684-redundant-connection) |
 | [0695-max-area-of-island](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/0695-max-area-of-island) |
 | [0733-flood-fill](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/0733-flood-fill) |
@@ -76,6 +78,7 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 | [0094-binary-tree-inorder-traversal](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/0094-binary-tree-inorder-traversal) |
 | [0105-construct-binary-tree-from-preorder-and-inorder-traversal](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/0105-construct-binary-tree-from-preorder-and-inorder-traversal) |
 | [0106-construct-binary-tree-from-inorder-and-postorder-traversal](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/0106-construct-binary-tree-from-inorder-and-postorder-traversal) |
+| [0543-diameter-of-binary-tree](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/0543-diameter-of-binary-tree) |
 | [0896-smallest-subtree-with-all-the-deepest-nodes](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/0896-smallest-subtree-with-all-the-deepest-nodes) |
 | [1218-lowest-common-ancestor-of-deepest-leaves](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/1218-lowest-common-ancestor-of-deepest-leaves) |
 ## Array
