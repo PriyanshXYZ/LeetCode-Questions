@@ -14,45 +14,26 @@
  * }
  */
 class Solution {
-    int maxSum;
+    int maxSum = Integer.MIN_VALUE;
     public int maxPathSum(TreeNode root) {
-        maxSum=Integer.MIN_VALUE;
-        dfs2(root);
+        //sum can include 
+        // self 
+        // left subtree matching condition
+        // right subtree matching condition
+        dfs(root);
         return maxSum;
     }
-    public int dfs2(TreeNode root){
-        //base case
-        if(root==null)return 0;
-        int left=dfs2(root.left);
-        int right=dfs2(root.right);
+
+    private int dfs(TreeNode node) {
+        if(node == null) return 0;
+
+        int leftSum = Math.max(dfs(node.left), 0);
+        int rightSum = Math.max(dfs(node.right), 0);
         
-        int left_dash=Math.max(0,left);//handling negative value
-        int right_dash=Math.max(0,right);//handling negative value
-        
-        int currMaxIncRoot=Math.max(left_dash,right_dash)+root.val;
-            
-        int currN2N=left_dash+right_dash+root.val;
-        
-        maxSum=Math.max(maxSum,currN2N);
-        
-        
-        return currMaxIncRoot;
-    }
-    public int dfs(TreeNode root){
-        if(root==null)return 0; //no gain in ans 
-        
-        int lchMaxSum=dfs(root.left);
-        int rchMaxSum=dfs(root.right);
-        
-        int lchMaxSumIncRoot=lchMaxSum+root.val;
-        int rchMaxSumIncRoot=rchMaxSum+root.val;
-        
-        int currMaxSum=Math.max(lchMaxSum,rchMaxSum);//this cannot be added to maxSum as path will be discontinous
-        int currMaxSumIncRoot=currMaxSum+root.val;
-        int allPathSum=lchMaxSum+rchMaxSum+root.val;
-        
-        maxSum=Math.max(maxSum,Math.max(currMaxSumIncRoot,Math.max(root.val,allPathSum)));//leftSum and rightSum cannot be added because there possibility of whole tree having negative values;
-        return Math.max(root.val,Math.max(lchMaxSumIncRoot,rchMaxSumIncRoot));
-        
+        int maxPathSumIncRoot = Math.max(leftSum, rightSum) + node.val;
+        int currMaxSum = leftSum + rightSum + node.val;
+        maxSum = Math.max(currMaxSum, maxSum);
+
+        return maxPathSumIncRoot;
     }
 }
