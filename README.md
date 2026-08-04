@@ -60,6 +60,7 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 | [0896-smallest-subtree-with-all-the-deepest-nodes](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/0896-smallest-subtree-with-all-the-deepest-nodes) |
 | [1218-lowest-common-ancestor-of-deepest-leaves](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/1218-lowest-common-ancestor-of-deepest-leaves) |
 | [1753-path-with-minimum-effort](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/1753-path-with-minimum-effort) |
+| [2101-detonate-the-maximum-bombs](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/2101-detonate-the-maximum-bombs) |
 | [2438-find-closest-node-to-given-two-nodes](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/2438-find-closest-node-to-given-two-nodes) |
 ## Breadth-First Search
 |  |
@@ -78,6 +79,7 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 | [0896-smallest-subtree-with-all-the-deepest-nodes](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/0896-smallest-subtree-with-all-the-deepest-nodes) |
 | [1218-lowest-common-ancestor-of-deepest-leaves](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/1218-lowest-common-ancestor-of-deepest-leaves) |
 | [1753-path-with-minimum-effort](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/1753-path-with-minimum-effort) |
+| [2101-detonate-the-maximum-bombs](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/2101-detonate-the-maximum-bombs) |
 ## Binary Tree
 |  |
 | ------- |
@@ -139,6 +141,7 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 | [1628-count-submatrices-with-all-ones](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/1628-count-submatrices-with-all-ones) |
 | [1753-path-with-minimum-effort](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/1753-path-with-minimum-effort) |
 | [1993-sum-of-all-subset-xor-totals](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/1993-sum-of-all-subset-xor-totals) |
+| [2101-detonate-the-maximum-bombs](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/2101-detonate-the-maximum-bombs) |
 | [2229-maximum-fruits-harvested-after-at-most-k-steps](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/2229-maximum-fruits-harvested-after-at-most-k-steps) |
 | [2387-partition-array-such-that-maximum-difference-is-k](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/2387-partition-array-such-that-maximum-difference-is-k) |
 | [2479-meeting-rooms-iii](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/2479-meeting-rooms-iii) |
@@ -158,6 +161,7 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 | [0956-number-of-music-playlists](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/0956-number-of-music-playlists) |
 | [1448-maximum-69-number](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/1448-maximum-69-number) |
 | [1993-sum-of-all-subset-xor-totals](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/1993-sum-of-all-subset-xor-totals) |
+| [2101-detonate-the-maximum-bombs](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/2101-detonate-the-maximum-bombs) |
 ## Backtracking
 |  |
 | ------- |
@@ -429,4 +433,12 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 |  |
 | ------- |
 | [0002-add-two-numbers](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/0002-add-two-numbers) |
+## Graph Theory
+|  |
+| ------- |
+| [2101-detonate-the-maximum-bombs](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/2101-detonate-the-maximum-bombs) |
+## Geometry
+|  |
+| ------- |
+| [2101-detonate-the-maximum-bombs](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/2101-detonate-the-maximum-bombs) |
 <!---LeetCode Topics End-->
