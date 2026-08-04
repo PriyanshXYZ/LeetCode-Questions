@@ -22,26 +22,16 @@ class Solution {
     Map<Node,Node> map = new HashMap<>();
     public Node cloneGraph(Node node) {
         if(node==null)return null;
-        Node clone = new Node(node.val);
-        Set<Integer> vis = new HashSet<>();
-        
-        dfs(clone, node, vis);
-        return clone;
-    }
-
-    private void dfs(Node clone, Node node, Set<Integer> vis) {
-        vis.add(clone.val);
-        map.put(node,clone);
-        for(Node nbr : node.neighbors) {
-            Node cloneNbr;
-            if(!vis.contains(nbr.val)) {
-                cloneNbr = new Node(nbr.val);
-                clone.neighbors.add(cloneNbr);
-                dfs(cloneNbr, nbr, vis);
-            }else{
-                cloneNbr = map.get(nbr);
-                clone.neighbors.add(cloneNbr);
-            }
+        if(map.containsKey(node)){
+            return map.get(node);
         }
+        Node clone = new Node(node.val);
+        map.put(node, clone);
+        for(Node nbr : node.neighbors) {
+
+            clone.neighbors.add(cloneGraph(nbr));
+        }
+        
+        return clone;
     }
 }
