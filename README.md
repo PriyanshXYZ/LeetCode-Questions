@@ -37,6 +37,7 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 | [0129-sum-root-to-leaf-numbers](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/0129-sum-root-to-leaf-numbers) |
 | [0257-binary-tree-paths](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/0257-binary-tree-paths) |
 | [0543-diameter-of-binary-tree](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/0543-diameter-of-binary-tree) |
+| [0834-sum-of-distances-in-tree](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/0834-sum-of-distances-in-tree) |
 | [0896-smallest-subtree-with-all-the-deepest-nodes](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/0896-smallest-subtree-with-all-the-deepest-nodes) |
 | [1218-lowest-common-ancestor-of-deepest-leaves](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/1218-lowest-common-ancestor-of-deepest-leaves) |
 ## Depth-First Search
@@ -58,6 +59,7 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 | [0733-flood-fill](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/0733-flood-fill) |
 | [0744-network-delay-time](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/0744-network-delay-time) |
 | [0803-cheapest-flights-within-k-stops](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/0803-cheapest-flights-within-k-stops) |
+| [0834-sum-of-distances-in-tree](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/0834-sum-of-distances-in-tree) |
 | [0896-smallest-subtree-with-all-the-deepest-nodes](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/0896-smallest-subtree-with-all-the-deepest-nodes) |
 | [0947-most-stones-removed-with-same-row-or-column](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/0947-most-stones-removed-with-same-row-or-column) |
 | [1218-lowest-common-ancestor-of-deepest-leaves](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/1218-lowest-common-ancestor-of-deepest-leaves) |
@@ -207,6 +209,7 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 | [0673-number-of-longest-increasing-subsequence](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/0673-number-of-longest-increasing-subsequence) |
 | [0803-cheapest-flights-within-k-stops](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/0803-cheapest-flights-within-k-stops) |
 | [0826-soup-servings](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/0826-soup-servings) |
+| [0834-sum-of-distances-in-tree](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/0834-sum-of-distances-in-tree) |
 | [0867-new-21-game](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/0867-new-21-game) |
 | [0956-number-of-music-playlists](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/0956-number-of-music-playlists) |
 | [1025-minimum-cost-for-tickets](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/1025-minimum-cost-for-tickets) |
@@ -439,6 +442,7 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 |  |
 | ------- |
 | [0133-clone-graph](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/0133-clone-graph) |
+| [0834-sum-of-distances-in-tree](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/0834-sum-of-distances-in-tree) |
 | [0947-most-stones-removed-with-same-row-or-column](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/0947-most-stones-removed-with-same-row-or-column) |
 | [2101-detonate-the-maximum-bombs](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/2101-detonate-the-maximum-bombs) |
 ## Geometry
@@ -453,4 +457,8 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 |  |
 | ------- |
 | [0947-most-stones-removed-with-same-row-or-column](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/0947-most-stones-removed-with-same-row-or-column) |
+## DP on Trees
+|  |
+| ------- |
+| [0834-sum-of-distances-in-tree](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/0834-sum-of-distances-in-tree) |
 <!---LeetCode Topics End-->
