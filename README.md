@@ -36,6 +36,7 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 | [0124-binary-tree-maximum-path-sum](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/0124-binary-tree-maximum-path-sum) |
 | [0129-sum-root-to-leaf-numbers](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/0129-sum-root-to-leaf-numbers) |
 | [0257-binary-tree-paths](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/0257-binary-tree-paths) |
+| [0449-serialize-and-deserialize-bst](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/0449-serialize-and-deserialize-bst) |
 | [0543-diameter-of-binary-tree](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/0543-diameter-of-binary-tree) |
 | [0834-sum-of-distances-in-tree](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/0834-sum-of-distances-in-tree) |
 | [0896-smallest-subtree-with-all-the-deepest-nodes](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/0896-smallest-subtree-with-all-the-deepest-nodes) |
@@ -53,6 +54,7 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 | [0329-longest-increasing-path-in-a-matrix](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/0329-longest-increasing-path-in-a-matrix) |
 | [0399-evaluate-division](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/0399-evaluate-division) |
 | [0419-battleships-in-a-board](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/0419-battleships-in-a-board) |
+| [0449-serialize-and-deserialize-bst](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/0449-serialize-and-deserialize-bst) |
 | [0543-diameter-of-binary-tree](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/0543-diameter-of-binary-tree) |
 | [0684-redundant-connection](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/0684-redundant-connection) |
 | [0695-max-area-of-island](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/0695-max-area-of-island) |
@@ -75,6 +77,7 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 | [0322-coin-change](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/0322-coin-change) |
 | [0329-longest-increasing-path-in-a-matrix](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/0329-longest-increasing-path-in-a-matrix) |
 | [0399-evaluate-division](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/0399-evaluate-division) |
+| [0449-serialize-and-deserialize-bst](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/0449-serialize-and-deserialize-bst) |
 | [0684-redundant-connection](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/0684-redundant-connection) |
 | [0695-max-area-of-island](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/0695-max-area-of-island) |
 | [0733-flood-fill](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/0733-flood-fill) |
@@ -93,6 +96,7 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 | [0124-binary-tree-maximum-path-sum](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/0124-binary-tree-maximum-path-sum) |
 | [0129-sum-root-to-leaf-numbers](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/0129-sum-root-to-leaf-numbers) |
 | [0257-binary-tree-paths](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/0257-binary-tree-paths) |
+| [0449-serialize-and-deserialize-bst](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/0449-serialize-and-deserialize-bst) |
 | [0543-diameter-of-binary-tree](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/0543-diameter-of-binary-tree) |
 | [0896-smallest-subtree-with-all-the-deepest-nodes](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/0896-smallest-subtree-with-all-the-deepest-nodes) |
 | [1218-lowest-common-ancestor-of-deepest-leaves](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/1218-lowest-common-ancestor-of-deepest-leaves) |
@@ -280,6 +284,7 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 | [0091-decode-ways](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/0091-decode-ways) |
 | [0257-binary-tree-paths](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/0257-binary-tree-paths) |
 | [0399-evaluate-division](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/0399-evaluate-division) |
+| [0449-serialize-and-deserialize-bst](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/0449-serialize-and-deserialize-bst) |
 | [0474-ones-and-zeroes](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/0474-ones-and-zeroes) |
 | [0583-delete-operation-for-two-strings](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/0583-delete-operation-for-two-strings) |
 | [0639-decode-ways-ii](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/0639-decode-ways-ii) |
@@ -324,6 +329,7 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 | [0295-find-median-from-data-stream](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/0295-find-median-from-data-stream) |
 | [0304-range-sum-query-2d-immutable](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/0304-range-sum-query-2d-immutable) |
 | [0380-insert-delete-getrandom-o1](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/0380-insert-delete-getrandom-o1) |
+| [0449-serialize-and-deserialize-bst](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/0449-serialize-and-deserialize-bst) |
 | [1023-time-based-key-value-store](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/1023-time-based-key-value-store) |
 ## Heap (Priority Queue)
 |  |
@@ -461,4 +467,8 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 |  |
 | ------- |
 | [0834-sum-of-distances-in-tree](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/0834-sum-of-distances-in-tree) |
+## Binary Search Tree
+|  |
+| ------- |
+| [0449-serialize-and-deserialize-bst](https://github.com/PriyanshXYZ/LeetCode-Questions/tree/master/0449-serialize-and-deserialize-bst) |
 <!---LeetCode Topics End-->
