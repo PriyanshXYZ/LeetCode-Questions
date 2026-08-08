@@ -17,6 +17,7 @@ class Solution {
                 // System.out.println(prevPt[0] + " "+ prevPt[1] + "->" + pt[0] + " " +pt[1]);
                 if(prevPt[1] >= pt[0]){ // merge exist and we do not need to throw a new arrow
                     prevPt[0] = pt[0]; //update the previous interval
+                    prevPt[1] = Math.min(prevPt[1], pt[1]);
                 }else{
                     intervals.add(pt);
                     arrows++;
