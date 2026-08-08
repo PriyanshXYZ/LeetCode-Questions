@@ -1,59 +1,51 @@
 class Solution {
     public int numDecodings(String s) {
-        if(s.charAt(0)=='0')return 0;
         int n = s.length();
-        int[] dp=new int[s.length()+1];
-        dp[0] = 1; //empty string is possible by doing nothing
-        dp[1] = 1; // first digit is possible
-        for(int idx=2;idx<=n;idx++){
-            int ans=0;
-            int ch=s.charAt(idx-1)-'0';
-            if(ch>=1 && ch<=9){
-                ans+=dp[idx-1];
-            }
-            if(idx>=2){
-                int ch2=Integer.parseInt(s.substring(idx-2,idx));
-                if(ch2>=10 && ch2<=26){
-                    ans+=dp[idx-2];
-                }
-            }
-            dp[idx]=ans;
-        }
-        return dp[n];
+        Integer[] dp = new Integer[n];
+        return possibleDecodings(0, s, dp);
     }
-    public int recursion(int idx,String s){
+    
+    private int possibleDecodings(int idx, String s, Integer[] dp) {
         //base case
-        if(idx==s.length())return 1;
-        int ans=0;
-        int ch=s.charAt(idx)-'0';
-        if(ch>=1 && ch<=9){
-            ans+=recursion(idx+1,s);
-        }
-        if(idx+2<=s.length()){
-            int ch2=Integer.parseInt(s.substring(idx,idx+2));
-            if(ch2>=10 && ch2<=26){
-                ans+=recursion(idx+2,s);
-            }
-        }
-        
-        return ans;
-    }
-    public int memo(int idx,String s,Integer[] dp){
-        if(idx==s.length())return 1;
+        if(idx >=s.length()) return 1;
         
         if(dp[idx]!=null)return dp[idx];
-        int ans=0;
-        int ch=s.charAt(idx)-'0';
-        if(ch>=1 && ch<=9){
-            ans+=memo(idx+1,s,dp);
-        }
-        if(idx+2<=s.length()){
-            int ch2=Integer.parseInt(s.substring(idx,idx+2));
-            if(ch2>=10 && ch2<=26){
-                ans+=memo(idx+2,s,dp);
+        
+        char ch = s.charAt(idx);
+        int ans = 0;
+        if(ch!='0')
+            ans = possibleDecodings(idx + 1, s, dp);
+        if(idx + 1 <s.length()){
+            char ch2 = s.charAt(idx+1);
+            if(ch=='1' || (ch == '2' && ch2 <='6')){
+                ans += possibleDecodings(idx+2, s, dp);
             }
         }
-        
-        return dp[idx]=ans;
+        return dp[idx] = ans;
     }
 }
+
+
+// "0", "1"
+/*
+  s = 16537
+                            2        ""
+                            1            16
+                       1<- 1,6   16,5 ->1 
+          1<  1,6,5    16,5,3 ->1       
+           1<- 1,6,5,3  16,5,3,7 ->1
+            1,6,5,3,7 ->
+  
+  if we reach at the >=n  -> 1
+  
+  
+  fn(s) = fn(s.substring(0,1)) + fn(s.substring(0,2))
+    dp[idx][digitChoice]
+       0  1  
+    1  1  0
+    6  1  1
+    5  1  0 
+    3  1  0
+    7  1  0
+    
+*/
