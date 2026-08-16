@@ -1,21 +1,23 @@
 class Solution {
     public int minPenalty(int period, int[] lights, int[] arrivalTime) {
-        int maxGreen = 0;
+    TreeSet<Integer> lightSet = Arrays.stream(lights)
+            .boxed()
+            .collect(Collectors.toCollection(TreeSet::new));
 
-        for (int light : lights) {
-            maxGreen = Math.max(maxGreen, light);
+    int minPenalty = 0;
+
+    for (int arrival : arrivalTime) {
+        int r = arrival % period;
+
+        // Find the smallest green duration strictly greater than r
+        Integer green = lightSet.higher(r);
+
+        if (green == null) {
+            // Every light is red
+            minPenalty = Math.max(minPenalty, period - r);
         }
-
-        int penalty = 0;
-
-        for (int arrival : arrivalTime) {
-            int r = arrival % period;
-
-            if (r >= maxGreen) {
-                penalty = Math.max(penalty, period - r);
-            }
-        }
-
-        return penalty;
     }
+
+    return minPenalty;
+}
 }
